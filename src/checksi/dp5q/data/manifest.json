@@ -1,0 +1,632 @@
+{
+  "format_version": 1,
+  "model_id": "dp5q-cascade-owned-v1",
+  "preprocessing_id": "dp5q-spatial-v1",
+  "score_id": "dp5q-logtail-v1",
+  "geometry_policy": "converged-single-v2",
+  "architecture": "three-256-message-blocks-shared-encoder-two-heads",
+  "raw_weight_bytes": 11625924,
+  "files": {
+    "weights.npz": {
+      "bytes": 10799857,
+      "sha256": "f312df0795de1951223cc1f4802770ed3d01c5f2aa461046cad4eea20f13ff2b"
+    }
+  },
+  "tensors": {
+    "shared.atom_embedding": {
+      "shape": [
+        13,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "fe1f32826f18517462cbeb4daed371cba15ab1220d8d49bb25c499f51cadaf0d"
+    },
+    "shared.atomwise_shift": {
+      "shape": [
+        13,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "c4de4e5844c88e9ab48ad429c83d9cd39cba31e36a6e271132b479c0b29c31e4"
+    },
+    "shared.dense.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "7e86474f59c734515d93eaeca3962191a801a18f498573050f78819fdb119d99"
+    },
+    "shared.dense_1.kernel": {
+      "shape": [
+        768,
+        512
+      ],
+      "dtype": "float32",
+      "sha256": "eea2d53c77fc4cca694afbd6fc8474a1b2144a053318a659f73a1764f4ccda11"
+    },
+    "shared.dense_1.bias": {
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "sha256": "ae8c1ee906cc079b4e33f687b4d6f9166d637ed64f0312b414366fd827659324"
+    },
+    "shared.dense_2.kernel": {
+      "shape": [
+        512,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "e3883f59a1bf4fc46a870fb2cc0d4e56bb95e21057a0a01980cb459f2697a3e1"
+    },
+    "shared.dense_2.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "cb2ecdf07ce56b6fd7881f205ab1abd7e815b8c68fba5e441535a98d99d12b2b"
+    },
+    "shared.dense_3.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "b07ea7a209d3f71a2e54ca39191e1e1a5790c690d23b466c3d112a7b906b1523"
+    },
+    "shared.dense_3.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "63cac5d2f65946473bd916f7dedb016440de809bd203b9cbad7ef006316a053d"
+    },
+    "shared.dense_4.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "2f555e6df931b36481743c6776413e196d899ab3d825f53092b2545da8bf18a5"
+    },
+    "shared.dense_4.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "ff8d766fad225929a1f3e39cc272cde43c337f7378138658de2e0143e47f99c8"
+    },
+    "shared.dense_5.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "a28e1e8513dcd534c3cd6a4a96eba7e1ed972b76d2d70c37bc1bb1933cd82312"
+    },
+    "shared.dense_5.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "17a363398fd6229476303b91025cf5af99e20067da2b08cd4bc57534ff71eb19"
+    },
+    "shared.dense_6.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "3e36440b8991db4e2c6aa79981d2148fdf17931844a12707b5996bbaafaa537c"
+    },
+    "shared.dense_6.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "f024e52c8cf90a479ba8a432bb74b67e3729bda34e0ce6514b3546b04fd0a5ea"
+    },
+    "shared.dense_7.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "63c55eaa5dd900357c6be7e9273e83ebfea07f331b78f045248c2ee92a6b4afd"
+    },
+    "shared.dense_8.kernel": {
+      "shape": [
+        768,
+        512
+      ],
+      "dtype": "float32",
+      "sha256": "cec7ec0cab20cc45a0ad7fd306bdae0293bdd21c5d30d1a9cbc3302976efabe5"
+    },
+    "shared.dense_8.bias": {
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "sha256": "8dfd7228ee93f5a2c27657d32175cc8afd0a852bb82d6370d0e9b9f923a4fd29"
+    },
+    "shared.dense_9.kernel": {
+      "shape": [
+        512,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "a87cb938512435692853f0690032316e91ca8456aea24fb1edad87929c6010b1"
+    },
+    "shared.dense_9.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "202e28f35a00b0768bd82da357a928d685da0d80eb277d56a1ef762bbb3fcb29"
+    },
+    "shared.dense_10.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "c34029655e66d7822ce84e16fe8c6916ce09c2c83566f3df0a6dff8a012d289e"
+    },
+    "shared.dense_10.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "37f625f372c27a6a4227c84344237e12146eb99342c7f5b096ab7a785f44c665"
+    },
+    "shared.dense_11.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "f17968b06562611a2c6f1053680f4a0299a93f57d664c78055d982e6ed2a132f"
+    },
+    "shared.dense_11.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "a68b4c690c6fa874503094df6ec48f82e4f1ebb3c5ba56537621e8267d69c55d"
+    },
+    "shared.dense_12.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "8aa67c3c851221534b3b3e7e8bc8c17028b3c3f9a55b271463c192ffbf208fce"
+    },
+    "shared.dense_12.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "eed77c2137c5c532dd334c8a11219321e5e246ac21f05c5e679d1052a14e92c7"
+    },
+    "shared.dense_13.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "c65eaae334bcf7987aa17d29bbe8de6528e57414936ddf66b50010dff6070041"
+    },
+    "shared.dense_13.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "1bae7274a1ac9b72300b071d91d2f56210b0b48da5d7e1dd5f73df06c031cf54"
+    },
+    "shared.dense_14.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "5ac75220ff4bbd036466ff978e1e59d40d77af557ae893cc84873cdf1395fa80"
+    },
+    "shared.dense_15.kernel": {
+      "shape": [
+        768,
+        512
+      ],
+      "dtype": "float32",
+      "sha256": "adf50fa96e8d2a84465e0a49fd350c29da3477ebb89e3627f40a1b162806c9c6"
+    },
+    "shared.dense_15.bias": {
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "sha256": "700400b67bfe276078ced6dd3321f9f6d18c0338c35ab2dc3b40a21d003588d2"
+    },
+    "shared.dense_16.kernel": {
+      "shape": [
+        512,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "ed26dcc5352bd3ef66b0a0ec1172d8f96627885692a32ef4bcfb5249542bb327"
+    },
+    "shared.dense_16.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "24bf9c8fea9b8d44877487ae1354ea51d85adfc7e46e1d5a933323bf3d75dd2d"
+    },
+    "shared.dense_17.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "dac91ddc9e66d8cb6a3ed3060a1a583084fd5808981a190bdf78a377bef567cd"
+    },
+    "shared.dense_17.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "5d82f5b7979d62fb4a3634596262c73cf68d865d3f7915b3ccf2c85241e1f308"
+    },
+    "shared.dense_18.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "9030b7e685ebe4862448bdff892c8847c44415ceea45834c056e8a2d527f69d0"
+    },
+    "shared.dense_18.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "dfe4ee04fbf7108bcd47b4904a4f11aee9e0c44910c2a72806b93d3a6364db21"
+    },
+    "shared.dense_19.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "4f387bbccfafc43c9e6e9d51a267e47c9f51191a876a449c9680b0dfc59b1545"
+    },
+    "shared.dense_19.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "d90500054cf581bd4a5f24950d5156d210277d5d7a633dc222068cee8a598a25"
+    },
+    "shared.dense_20.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "45eaf3d9b07252b7d3904f015db27cc788485290e8c91255563222b097a4ea2f"
+    },
+    "shared.dense_20.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "b3d35986802fb7981fb038519ec064a5873726b0af79733c36d4dec3eb86f06c"
+    },
+    "mean.loc_1.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "4d53819f5442ce3af23391e8c8ed158b2a0dc2da8dccc3d9da0387721b47226b"
+    },
+    "mean.loc_1.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "529503d4a9685031d6f75dd82795728ecfa085b78284bdf05f786c6dba809065"
+    },
+    "mean.loc_2.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "8cd75a8287a37d2abd09a069e8d69764560f00cb5480c850d2ab4ba9bf502e24"
+    },
+    "mean.loc_2.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "91262ecd7b8010e1bccf28335732bf7934ac3ff325236695e9fb6f3bfacaa15c"
+    },
+    "mean.loc_3.kernel": {
+      "shape": [
+        256,
+        128
+      ],
+      "dtype": "float32",
+      "sha256": "a485a3f9d9b90ac609be138ef05663341e78c4dfbc703756b72fd5010633a694"
+    },
+    "mean.loc_3.bias": {
+      "shape": [
+        128
+      ],
+      "dtype": "float32",
+      "sha256": "5d8cb6016ab5fc4841cfb05e337452681feae049f1daf3496dea698d3af9afc7"
+    },
+    "mean.loc_reduce.kernel": {
+      "shape": [
+        128,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "991e5b4c945365ed9265e3ca847bd152b67e5117ffd5ea755fbd1546af9105df"
+    },
+    "mean.loc_reduce.bias": {
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "b45937826a12d788670d04604b2a50a25943aff9ed3325b3bfb329ef0f9482fc"
+    },
+    "quantile.loc_1.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "27c81a2729d7e0b5d229f970c3de583a91cc167fe9291c3d490c81dca437e3bd"
+    },
+    "quantile.loc_1.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "97ca589ffdab50aa2f2d24daa3b5afed838d9b96784b635e0268700bc24542ea"
+    },
+    "quantile.loc_2.kernel": {
+      "shape": [
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "b8e6aae78dc97c2ee2b40ae93ea68c1ea14a96b652ff0eedb43a3d2f6ef15ee9"
+    },
+    "quantile.loc_2.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "float32",
+      "sha256": "2ce3c052cea0a4221dbb9b9ff2c0b801213b0e26bf8876e85de168cf23060a76"
+    },
+    "quantile.loc_3.kernel": {
+      "shape": [
+        256,
+        128
+      ],
+      "dtype": "float32",
+      "sha256": "9730c388efd1c0a96235defce46aaafb37d67eb3a7575220a42b8131e6f9d069"
+    },
+    "quantile.loc_3.bias": {
+      "shape": [
+        128
+      ],
+      "dtype": "float32",
+      "sha256": "fc88f9e6b25916afe936ca7639eeec0266c417e6be147d7c216a4a02e2d3dce8"
+    },
+    "quantile.loc_reduce.kernel": {
+      "shape": [
+        128,
+        99
+      ],
+      "dtype": "float32",
+      "sha256": "bec6d9a6d99e5184681b0234f71eaa442581094b0361277c022aeb21c854aa91"
+    },
+    "quantile.loc_reduce.bias": {
+      "shape": [
+        99
+      ],
+      "dtype": "float32",
+      "sha256": "02595faf83a6956a2752604e9cbd458100d670a0a8cb456b90716e89cff06a7f"
+    }
+  },
+  "tokens": {
+    "16": 6,
+    "1": 4,
+    "17": 7,
+    "6": 2,
+    "7": 5,
+    "8": 3,
+    "9": 8,
+    "15": 9,
+    "35": 10,
+    "14": 11,
+    "5": 12
+  },
+  "quantile_levels": [
+    0.01,
+    0.02,
+    0.03,
+    0.04,
+    0.05,
+    0.060000000000000005,
+    0.06999999999999999,
+    0.08,
+    0.09,
+    0.09999999999999999,
+    0.11,
+    0.12,
+    0.13,
+    0.14,
+    0.15000000000000002,
+    0.16,
+    0.17,
+    0.18000000000000002,
+    0.19,
+    0.2,
+    0.21000000000000002,
+    0.22,
+    0.23,
+    0.24000000000000002,
+    0.25,
+    0.26,
+    0.27,
+    0.28,
+    0.29000000000000004,
+    0.3,
+    0.31,
+    0.32,
+    0.33,
+    0.34,
+    0.35000000000000003,
+    0.36000000000000004,
+    0.37,
+    0.38,
+    0.39,
+    0.4,
+    0.41000000000000003,
+    0.42000000000000004,
+    0.43,
+    0.44,
+    0.45,
+    0.46,
+    0.47000000000000003,
+    0.48000000000000004,
+    0.49,
+    0.5,
+    0.51,
+    0.52,
+    0.53,
+    0.54,
+    0.55,
+    0.56,
+    0.5700000000000001,
+    0.5800000000000001,
+    0.59,
+    0.6,
+    0.61,
+    0.62,
+    0.63,
+    0.64,
+    0.65,
+    0.66,
+    0.67,
+    0.68,
+    0.6900000000000001,
+    0.7000000000000001,
+    0.7100000000000001,
+    0.72,
+    0.73,
+    0.74,
+    0.75,
+    0.76,
+    0.77,
+    0.78,
+    0.79,
+    0.8,
+    0.81,
+    0.8200000000000001,
+    0.8300000000000001,
+    0.8400000000000001,
+    0.85,
+    0.86,
+    0.87,
+    0.88,
+    0.89,
+    0.9,
+    0.91,
+    0.92,
+    0.93,
+    0.9400000000000001,
+    0.9500000000000001,
+    0.9600000000000001,
+    0.97,
+    0.98,
+    0.99
+  ],
+  "preprocessing": {
+    "cutoff_angstrom": 5.0,
+    "max_neighbors": 100,
+    "rbf_width": 256,
+    "rbf_delta": 0.1,
+    "rbf_distance_dtype": "float32",
+    "rbf_expansion_dtype": "float64",
+    "input_dtype": "float32"
+  },
+  "provenance": {
+    "source_revision": "8f8e22364654bbce71dcb6abb414eee793b00d92",
+    "source_url": "https://github.com/aelashkin/DP5",
+    "original_asset_hashes": {
+      "dp5/neural_net/CASCADE_quantile_extended.keras": "737ee0480bf227cbe3a65e08f08ccaf8ef9518023473bb04ef4d422c557e8813",
+      "dp5/neural_net/NMRdb-CASCADEset_Exp_mean_model_atom_features256.hdf5": "2d453b9c340a45b7e3c8d789a0c6071167e677ccbfe972eec5a5e9c26033d095",
+      "dp5/neural_net/NMRdb_CASCADE_99quantiles.zip": "4a0a760343a4f7cdfdb33e65a0ca684ae2b0bad7e61551f64120934c61fb8ec4",
+      "dp5/neural_net/mean_model_preprocessor.p": "6d143a468595797a05434a32da76cdcf57cb8b0cc929bfe27181acc297fde1b0"
+    },
+    "reference_receipt_sha256": "ce14c8bb79d16fe1e0cbbb35ce3f7ee6adacf7a92d26ab8bda9221cd979d8a1b",
+    "tensor_map_sha256": "76d81ae00ba3cd91f1243fd8df616a0967e1dc41eda8d84c9462ea09c91177a4",
+    "shared_tensor_count": 41,
+    "unique_tensor_count": 57,
+    "semantic_and_activation_gate": "PASS",
+    "source_license": "MIT, Copyright (c) 2022 Goodman Lab",
+    "modified_asset_notice": "NOTICE.txt",
+    "notices": {
+      "LICENSE.nfp.txt": {
+        "url": "https://raw.githubusercontent.com/NatLabRockies/nfp/master/LICENSE",
+        "bytes": 1744,
+        "sha256": "c58461b51282ee3c9f7434e114d0572c6133fa3ff48ff856c9ded7d0337e0647",
+        "source_sha256": "c58461b51282ee3c9f7434e114d0572c6133fa3ff48ff856c9ded7d0337e0647",
+        "source_bytes": 1744,
+        "transformation": "UTF-8 text with trailing line whitespace and extra terminal blank lines removed; license wording unchanged."
+      },
+      "LICENSE.cascade.txt": {
+        "url": "https://raw.githubusercontent.com/patonlab/CASCADE/master/LICENSE",
+        "bytes": 1095,
+        "sha256": "2b75877d5cb3855d75597d74b4aeaa3fb18098b23d23117327be9ecfd0f3827a",
+        "source_sha256": "2b75877d5cb3855d75597d74b4aeaa3fb18098b23d23117327be9ecfd0f3827a",
+        "source_bytes": 1095,
+        "transformation": "UTF-8 text with trailing line whitespace and extra terminal blank lines removed; license wording unchanged."
+      },
+      "LICENSE.nmrshiftdb2.txt": {
+        "url": "https://nmrshiftdb.nmr.uni-koeln.de/nmrshiftdbhtml/nmrshiftdb2datalicense.txt",
+        "bytes": 26529,
+        "sha256": "ad0ea9f3c2806d657f1d630ece6aa6dba4c1f07ff7c0cc222b816e27baf6cc03",
+        "source_sha256": "00322cc450c2e53e305c082e1ab7454f108b7df51c0dbee0a07932666b245516",
+        "source_bytes": 26584,
+        "transformation": "UTF-8 text with trailing line whitespace and extra terminal blank lines removed; license wording unchanged."
+      },
+      "LICENSE.dp5.txt": {
+        "url": "https://github.com/aelashkin/DP5/blob/8f8e22364654bbce71dcb6abb414eee793b00d92/license.md",
+        "bytes": 1067,
+        "sha256": "545df4733c6cd12723315caad5fffe976a35cc2a44afff412e50b9e952b3b51a",
+        "source_bytes": 1067,
+        "source_sha256": "545df4733c6cd12723315caad5fffe976a35cc2a44afff412e50b9e952b3b51a",
+        "transformation": "Exact frozen upstream license bytes; no transformation."
+      },
+      "NOTICE.txt": {
+        "path": "src/checksi/dp5q/data/NOTICE.txt",
+        "bytes": 1899,
+        "sha256": "82ff59c1bfc0a5e5bd4ec69e4d94cfae7bf3f80cb0867d2eefcd8d5a4a843dfa",
+        "transformation": "Authoritative CheckSI modification and third-party attribution notice; copied byte-for-byte."
+      }
+    },
+    "public_derived_dataset": "https://github.com/aelashkin/DP5/tree/8f8e22364654bbce71dcb6abb414eee793b00d92/nmrdb-dataset",
+    "method_publication": "https://doi.org/10.1039/D5SC06988B",
+    "cascade_publication": "https://doi.org/10.1039/D1SC03343C",
+    "training_data_distributed": false,
+    "training_data_provenance": "Public developmental corpus overlaps the pinned dataset: 94/370 candidate constitutions across provided train/valid/test splits (78 train, 0 valid, 50 test); all four BMRB depictions overlap that union. Stereo-aware exact identities and per-split/cohort metrics are recorded in tests/fixtures/dp5q/development-audit.json. These are not independent validation data or proof of membership in a particular training run."
+  }
+}

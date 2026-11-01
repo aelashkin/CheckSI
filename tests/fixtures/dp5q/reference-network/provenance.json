@@ -1,0 +1,390 @@
+{
+  "source_revision": "8f8e22364654bbce71dcb6abb414eee793b00d92",
+  "reference_receipt_sha256": "563207c2b58c1d39ebf718bcb0b7b1360588d05c25c3f95a6bd6a63b8ade6d10",
+  "model_archive_sha256": "f312df0795de1951223cc1f4802770ed3d01c5f2aa461046cad4eea20f13ff2b",
+  "versions": {
+    "tensorflow": "2.14.0",
+    "keras": "2.14.0",
+    "numpy": "1.26.4",
+    "rdkit": "2025.9.3",
+    "scipy": "1.15.3",
+    "h5py": "3.10.0"
+  },
+  "fixtures": [
+    {
+      "name": "ethanol",
+      "smiles": "CCO",
+      "role": "authored software fixture; arbitrary synthetic shifts, not experimental truth",
+      "sdf_sha256": "5bd584fafeca9886acadcb858b087d83dc862ecb164944a38854c7ceec6b7fc7",
+      "npz_sha256": "c185c84e35f9f0bdf9a520cf4e51d62b8a40efee042e4a2232090d817e4fe999",
+      "reference_summary": {
+        "sdf_source_name": "ethanol.sdf",
+        "initial_sdf_sha256": "5bd584fafeca9886acadcb858b087d83dc862ecb164944a38854c7ceec6b7fc7",
+        "final_sdf_sha256": "5bd584fafeca9886acadcb858b087d83dc862ecb164944a38854c7ceec6b7fc7",
+        "shared_activations": {
+          "embedding": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "representations": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "atomic_shift": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          }
+        },
+        "atom_count": 9,
+        "edge_count": 72,
+        "experimental_dtype": "float64",
+        "assignment": {
+          "mode": "strict",
+          "required_group_count": 2,
+          "experimental_carbon_signal_count": 2,
+          "omitted_atoms": [],
+          "extra_experimental_shifts": [],
+          "missing_groups": [],
+          "assignments": [
+            {
+              "group": "C1",
+              "members": [
+                "C1"
+              ],
+              "experimental_shift": 20.1235,
+              "status": "assigned"
+            },
+            {
+              "group": "C2",
+              "members": [
+                "C2"
+              ],
+              "experimental_shift": 65.7654,
+              "status": "assigned"
+            }
+          ],
+          "status": "complete",
+          "rescaling_applied": true,
+          "secondary_rescaling_skipped_for_grouping": false
+        },
+        "legacy_score": 0.010098858825782592,
+        "assessment": {
+          "status": "assessed"
+        }
+      }
+    },
+    {
+      "name": "toluene",
+      "smiles": "Cc1ccccc1",
+      "role": "authored software fixture; arbitrary synthetic shifts, not experimental truth",
+      "sdf_sha256": "043bb0d8a6a2a810d504580d2cdb7cca81d8199f1ca859e0fde08926f195769e",
+      "npz_sha256": "18194b672d5046228d43e80272b03b6ae17ad3a04ec07318508c076c24f7ce74",
+      "reference_summary": {
+        "sdf_source_name": "toluene.sdf",
+        "initial_sdf_sha256": "043bb0d8a6a2a810d504580d2cdb7cca81d8199f1ca859e0fde08926f195769e",
+        "final_sdf_sha256": "043bb0d8a6a2a810d504580d2cdb7cca81d8199f1ca859e0fde08926f195769e",
+        "shared_activations": {
+          "embedding": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "representations": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "atomic_shift": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          }
+        },
+        "atom_count": 15,
+        "edge_count": 194,
+        "experimental_dtype": "float64",
+        "assignment": {
+          "mode": "strict",
+          "required_group_count": 7,
+          "experimental_carbon_signal_count": 7,
+          "omitted_atoms": [],
+          "extra_experimental_shifts": [],
+          "missing_groups": [],
+          "assignments": [
+            {
+              "group": "C1",
+              "members": [
+                "C1"
+              ],
+              "experimental_shift": 20.1235,
+              "status": "assigned"
+            },
+            {
+              "group": "C2",
+              "members": [
+                "C2"
+              ],
+              "experimental_shift": 135.7778,
+              "status": "assigned"
+            },
+            {
+              "group": "C3",
+              "members": [
+                "C3"
+              ],
+              "experimental_shift": 129.5556,
+              "status": "assigned"
+            },
+            {
+              "group": "C4",
+              "members": [
+                "C4"
+              ],
+              "experimental_shift": 127.3333,
+              "status": "assigned"
+            },
+            {
+              "group": "C5",
+              "members": [
+                "C5"
+              ],
+              "experimental_shift": 126.2222,
+              "status": "assigned"
+            },
+            {
+              "group": "C6",
+              "members": [
+                "C6"
+              ],
+              "experimental_shift": 128.4444,
+              "status": "assigned"
+            },
+            {
+              "group": "C7",
+              "members": [
+                "C7"
+              ],
+              "experimental_shift": 130.6667,
+              "status": "assigned"
+            }
+          ],
+          "status": "complete",
+          "rescaling_applied": true,
+          "secondary_rescaling_skipped_for_grouping": false
+        },
+        "legacy_score": 0.5280139368202914,
+        "assessment": {
+          "status": "assessed"
+        }
+      }
+    },
+    {
+      "name": "all-elements",
+      "smiles": "B(C)(O)C[SiH2]CP(CCN)CSCC(F)(Cl)Br",
+      "role": "authored software geometry fixture; no experimental shifts or independent chemical labels",
+      "sdf_sha256": "f58d4caaac01f76d9977904ad9b16ab9a723590124d5c1f81021546cb92da186",
+      "npz_sha256": "b8acf25f4e71cdd4c13886a83f11808e3a98b0c3602dd0f2a505aa968d7f4977",
+      "reference_receipt_sha256": "9d9b575b21c573d7e0c44288bb8114a3054cafb78517703049c927323984862f",
+      "reference_capture_sha256": "c938c271492bf1703149ed4b2a245b813ed2b0b5aebc9a412542f22eeb9dfee6",
+      "versions": {
+        "tensorflow": "2.14.0",
+        "keras": "2.14.0",
+        "numpy": "1.26.4",
+        "rdkit": "2025.9.3",
+        "scipy": "1.15.3",
+        "h5py": "3.10.0"
+      },
+      "source_unchanged": true,
+      "reference_summary": {
+        "sdf_source_name": "all-elements-initial.sdf",
+        "initial_sdf_sha256": "ee14d38421cb05e5c839efdb37ce58644ba8dc52525458cb189b7d5b2edc5d65",
+        "final_sdf_sha256": "f58d4caaac01f76d9977904ad9b16ab9a723590124d5c1f81021546cb92da186",
+        "shared_activations": {
+          "embedding": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "representations": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "atomic_shift": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_1.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_2.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.projected_atom": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.bond_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.atom_state": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          },
+          "block_3.messages": {
+            "exact": true,
+            "max_absolute_error": 0.0
+          }
+        },
+        "atom_count": 37,
+        "edge_count": 608
+      },
+      "capture_bounds": {
+        "cpu_seconds": 300,
+        "native_threads": 1,
+        "gpu": false,
+        "training": false,
+        "network": false,
+        "output_bytes": 67108864
+      },
+      "graph_capture_keys": [
+        "atom",
+        "atom_index",
+        "connectivity",
+        "distance"
+      ],
+      "covered_atomic_numbers": [
+        1,
+        5,
+        6,
+        7,
+        8,
+        9,
+        14,
+        15,
+        16,
+        17,
+        35
+      ]
+    }
+  ],
+  "licensing": "Authored input geometries/software vectors under project MIT; model attribution in data_checker.dp5q/data/NOTICE.txt."
+}

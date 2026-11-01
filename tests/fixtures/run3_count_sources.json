@@ -1,0 +1,35 @@
+{
+  "description": "Source text and resolved SMILES only; expected diagnostic behavior comes from the 2026-10-28 letters, not historical outputs.",
+  "cases": [
+    {
+      "identifier": "1.41",
+      "smiles": "CN(Cc1ccccc1)C(=O)C1(Br)N=C1c1ccccc1",
+      "original_text": "1H NMR (400 MHz, CDCl3) δ 8.19 (d, J = 7.8 Hz, 5.5H), 7.67–7.63 (m, 8.25H), 7.40–7.27 (m, 13.75H), 5.45 (d, J = 15.4 Hz, 1H), 5.09 (d, J = 15.4 Hz, 1H), 4.71 (d, J = 14.7 Hz, 1.75H), 4.52 (d, J = 14.7 Hz, 1.75H), 3.52 (s, 5.25H), 2.85 (s, 3H); 13C NMR (100 MHz, CDCl3) δ 172.7, 172.4, 164.8, 164.6, 136.1, 135.7, 135.1, 131.3 (2C), 130.3, 129.5 (2C), 128.7 (2C), 127.9 (2C), 127.8, 127.5, 120.7 (2C), 53.9, 50.8, 48.3, 47.7, 35.3, 32.3; HRMS (ESI) m/z: [M+Na]+ Calcd for C17H1579BrN2NaO+ 365.0260; Found 365.0252."
+    },
+    {
+      "identifier": "1.43",
+      "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+      "original_text": "1H NMR (400 MHz, (CD3)2SO) δ 7.44 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 144.4 (2C), 129.7, 126.7, 113.1, 50.1–50.0 (br. m), 39.5, 36.3, 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302."
+    },
+    {
+      "identifier": "1.49",
+      "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+      "original_text": "1H NMR (400 MHz, CDCl3) δ 7.66 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 146.6 (2C) 129.7, 126.7, 113.1, 50.1 39.5, 36.3 (d, J = 2 Hz) 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302."
+    },
+    {
+      "identifier": "1.67",
+      "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+      "original_text": "1H NMR (400 MHz, CDCl3) δ 7.85 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 148.5 (d), 129.7 (q, ), 126.7 (d, 2C), 113.1-113.0 (d), 50.1, 39.5, 36.3, 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302."
+    },
+    {
+      "identifier": "1.71",
+      "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+      "original_text": "1H NMR (400 MHz, CDCl3) δ 7.91 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 149.1 (J = 8.0 Hz, 2C), 129.7, 126.7, 113.1 (J = 8.0 Hz), 50.1, 39.5, 36.3, 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302."
+    },
+    {
+      "identifier": "1.73",
+      "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+      "original_text": "1H NMR (400 MHz, CDCl3) δ 7.93 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 149.3 (m, J = 8.0 Hz, 4C), 129.7, 126.7, 113.1, 50.1, 39.5, 36.3, 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302."
+    }
+  ]
+}

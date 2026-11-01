@@ -1,0 +1,2193 @@
+{
+  "schema_version": 1,
+  "purpose": "Four public external applicability/mapping cases and eight candidate requests; separate from370 source-labeled regression candidates.",
+  "adjudication_status": "NOT RUN: domain reviewer must check identity, solution protonation, shift-set/sample joins and methyl assignment ambiguity before any scientific label.",
+  "pretraining_exposure": "Unknown; no untouched holdout or accuracy/calibration claim.",
+  "source_notice": "BMRB public archive data; retain accession/DOI/source links. Archive data policy: https://bmrb.io/metabolomics/data_policy.shtml . No raw time-domain archive is included.",
+  "records": [
+    {
+      "accession": "bmse000028",
+      "doi": "10.13018/BMSE000028",
+      "source_page": "https://bmrb.io/metabolomics/mol_summary/show_data.php?id=bmse000028",
+      "files": {
+        "str": {
+          "source": "https://bmrb.io/ftp/pub/bmrb/metabolomics/entry_directories/bmse000028/bmse000028.str",
+          "bytes": 57630,
+          "sha256": "7b49b322ccb35f20cf19022d1ba0da89ad2abdc3a3492b6b17620835a11b82b8"
+        },
+        "mol": {
+          "source": "https://bmrb.io/ftp/pub/bmrb/metabolomics/entry_directories/bmse000028/bmse000028.mol",
+          "bytes": 1252,
+          "sha256": "fe7265372b773c1a1c59886752d12ed41ed08c25cd506cd250d7e1cb1614068a"
+        }
+      },
+      "carbon_assignment_rows": [
+        {
+          "ID": "1",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C2",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "53.2",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C2",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C3",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "178.56",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C3",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C1",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "18.83",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C5",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        }
+      ],
+      "chemical_equivalence_groups": [],
+      "carbon_assignment_status": "explicit_rows_unadjudicated",
+      "assigned_shift_list_scalars": [
+        {
+          "tag": "_Assigned_chem_shift_list.Sf_category",
+          "value": "assigned_chemical_shifts"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sf_framecode",
+          "value": "assigned_chemical_shifts"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Entry_ID",
+          "value": "bmse000028"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sample_condition_list_ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sample_condition_list_label",
+          "value": "$sample_conditions_1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Chem_shift_reference_ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Chem_shift_reference_label",
+          "value": "$chem_shift_reference"
+        }
+      ],
+      "conditions": [
+        {
+          "Type": "pH",
+          "Val": "7.4",
+          "Val_units": "pH",
+          "Entry_ID": "bmse000028",
+          "Sample_condition_list_ID": "1"
+        },
+        {
+          "Type": "temperature",
+          "Val": "298",
+          "Val_units": "K",
+          "Entry_ID": "bmse000028",
+          "Sample_condition_list_ID": "1"
+        }
+      ],
+      "shift_references": [
+        {
+          "Atom_type": "H",
+          "Atom_isotope_number": "1",
+          "Mol_common_name": "DSS",
+          "Atom_group": "methyl protons",
+          "Chem_shift_units": "ppm",
+          "Chem_shift_val": "0.00",
+          "Ref_method": "internal",
+          "Ref_type": "direct",
+          "Indirect_shift_ratio": "1.000000000",
+          "Entry_ID": "bmse000028",
+          "Chem_shift_reference_ID": "1"
+        },
+        {
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Mol_common_name": "DSS",
+          "Atom_group": "methyl protons",
+          "Chem_shift_units": "ppm",
+          "Chem_shift_val": "0.00",
+          "Ref_method": "?",
+          "Ref_type": "indirect",
+          "Indirect_shift_ratio": "0.251449530",
+          "Entry_ID": "bmse000028",
+          "Chem_shift_reference_ID": "1"
+        }
+      ],
+      "shift_experiments": [
+        {
+          "Experiment_ID": "1",
+          "Experiment_name": "1D 1H",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "2",
+          "Experiment_name": "2D [1H,1H]-TOCSY",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "3",
+          "Experiment_name": "1D 13C",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "4",
+          "Experiment_name": "1D DEPT90",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "5",
+          "Experiment_name": "1D DEPT135",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "6",
+          "Experiment_name": "2D [1H,13C]-HSQC",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000028",
+          "Assigned_chem_shift_list_ID": "1"
+        }
+      ],
+      "experiments": [
+        {
+          "ID": "1",
+          "Name": "1D 1H",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_400",
+          "Entry_ID": "bmse000028",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Name": "2D [1H,1H]-TOCSY",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_400",
+          "Entry_ID": "bmse000028",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Name": "1D 13C",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_400",
+          "Entry_ID": "bmse000028",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Name": "1D DEPT90",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_400",
+          "Entry_ID": "bmse000028",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Name": "1D DEPT135",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_400",
+          "Entry_ID": "bmse000028",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "6",
+          "Name": "2D [1H,13C]-HSQC",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_400",
+          "Entry_ID": "bmse000028",
+          "Experiment_list_ID": "1"
+        }
+      ],
+      "sample_components": [
+        {
+          "ID": "1",
+          "Mol_common_name": "L-Alanine",
+          "Isotopic_labeling": "natural abundance",
+          "Entity_ID": "1",
+          "Entity_label": "$L_alanine",
+          "Type": "Solute",
+          "Concentration_val": "100",
+          "Concentration_val_units": "mM",
+          "Vendor": "Sigma",
+          "Vendor_product_name": "l-alanine",
+          "Vendor_product_code": "a7627",
+          "Entry_ID": "bmse000028",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Mol_common_name": "D2O",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "1",
+          "Entity_label": "?",
+          "Type": "Solvent",
+          "Concentration_val": "100",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Vendor_product_code": "?",
+          "Entry_ID": "bmse000028",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Mol_common_name": "sodium phosphate",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "1",
+          "Entity_label": "?",
+          "Type": "Buffer",
+          "Concentration_val": "50",
+          "Concentration_val_units": "mM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Vendor_product_code": "?",
+          "Entry_ID": "bmse000028",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Mol_common_name": "sodium azide",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "1",
+          "Entity_label": "?",
+          "Type": "Cytocide",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Vendor_product_code": "?",
+          "Entry_ID": "bmse000028",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Mol_common_name": "DSS",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "1",
+          "Entity_label": "?",
+          "Type": "Reference",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Vendor_product_code": "?",
+          "Entry_ID": "bmse000028",
+          "Sample_ID": "1"
+        }
+      ],
+      "topology_mapping": {
+        "method": "Exact heavy element/bond topology; all graph isomorphisms up to64, chirality ignored. STAR PDBX_ordinal is not MOL index.",
+        "status": "topology_matches_unadjudicated",
+        "match_count": 1,
+        "carbon_bmrb_id_to_possible_mol_indices_1based": {
+          "C2": [
+            2
+          ],
+          "C3": [
+            3
+          ],
+          "C1": [
+            1
+          ]
+        },
+        "mol_formula": "C3H7NO2",
+        "provided_depiction_smiles": "C[C@H](N)C(=O)O",
+        "limitations": [
+          "No solution protonation or tautomer adjudication.",
+          "Topology matches do not certify stereochemistry or experimental assignment."
+        ]
+      }
+    },
+    {
+      "accession": "bmse000967",
+      "doi": "10.13018/BMSE000967",
+      "source_page": "https://bmrb.io/metabolomics/mol_summary/show_data.php?id=bmse000967",
+      "files": {
+        "str": {
+          "source": "https://bmrb.io/ftp/pub/bmrb/metabolomics/entry_directories/bmse000967/bmse000967.str",
+          "bytes": 35868,
+          "sha256": "cbd6a424e6bea3b2bd4d9d944ddb5b130370061b8a2aefc11650214e80acf09a"
+        },
+        "mol": {
+          "source": "https://bmrb.io/ftp/pub/bmrb/metabolomics/entry_directories/bmse000967/bmse000967.mol",
+          "bytes": 1251,
+          "sha256": "7217e44b74bdd28694111c012e4d4a12935c37fbc79e020cfb6700af30dce72c"
+        }
+      },
+      "carbon_assignment_rows": [
+        {
+          "ID": "1",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C3",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "181.156",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C1",
+          "Entry_ID": "bmse000967",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C1",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "36.292",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C2",
+          "Entry_ID": "bmse000967",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C2",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "39.233",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C6",
+          "Entry_ID": "bmse000967",
+          "Assigned_chem_shift_list_ID": "1"
+        }
+      ],
+      "chemical_equivalence_groups": [],
+      "carbon_assignment_status": "explicit_rows_unadjudicated",
+      "assigned_shift_list_scalars": [
+        {
+          "tag": "_Assigned_chem_shift_list.Sf_category",
+          "value": "assigned_chemical_shifts"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sf_framecode",
+          "value": "assigned_chemical_shifts"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Entry_ID",
+          "value": "bmse000967"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sample_condition_list_ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sample_condition_list_label",
+          "value": "$sample_conditions_1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Chem_shift_reference_ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Chem_shift_reference_label",
+          "value": "$chem_shift_reference"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Details",
+          "value": "The chemical shift assignments have been taken from BMRB entry bmse000159"
+        }
+      ],
+      "conditions": [
+        {
+          "Type": "pH",
+          "Val": "7.4",
+          "Val_units": "pH",
+          "Entry_ID": "bmse000967",
+          "Sample_condition_list_ID": "1"
+        },
+        {
+          "Type": "temperature",
+          "Val": "298",
+          "Val_units": "K",
+          "Entry_ID": "bmse000967",
+          "Sample_condition_list_ID": "1"
+        }
+      ],
+      "shift_references": [
+        {
+          "Atom_type": "H",
+          "Atom_isotope_number": "1",
+          "Mol_common_name": "DSS",
+          "Atom_group": "methyl protons",
+          "Chem_shift_units": "ppm",
+          "Chem_shift_val": "0.00",
+          "Ref_method": "internal",
+          "Ref_type": "direct",
+          "Indirect_shift_ratio": "1.000000000",
+          "Entry_ID": "bmse000967",
+          "Chem_shift_reference_ID": "1"
+        },
+        {
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Mol_common_name": "DSS",
+          "Atom_group": "methyl carbons",
+          "Chem_shift_units": "ppm",
+          "Chem_shift_val": "0.00",
+          "Ref_method": "internal",
+          "Ref_type": "direct",
+          "Indirect_shift_ratio": "1.000000000",
+          "Entry_ID": "bmse000967",
+          "Chem_shift_reference_ID": "1"
+        }
+      ],
+      "shift_experiments": [],
+      "experiments": [
+        {
+          "ID": "1",
+          "Name": "1D 1H",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Name": "2D [1H,1H]-TOCSY",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Name": "1D DEPT90",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Name": "1D DEPT135",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Name": "2D [1H,13C]-HSQC",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "6",
+          "Name": "2D [1H,13C]-HMBC",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "7",
+          "Name": "2D [1H,1H]-COSY",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "8",
+          "Name": "2D [1H,13C]-HMQC",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "9",
+          "Name": "2D [1H,13C]-HSQC SW small",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_600",
+          "Entry_ID": "bmse000967",
+          "Experiment_list_ID": "1"
+        }
+      ],
+      "sample_components": [
+        {
+          "ID": "1",
+          "Mol_common_name": "beta-alanine",
+          "Isotopic_labeling": "natural abundance",
+          "Entity_ID": "1",
+          "Entity_label": "$beta_alanine",
+          "Type": "Solute",
+          "Concentration_val": "100",
+          "Concentration_val_units": "mM",
+          "Vendor": "sigma/aldrich",
+          "Vendor_product_name": "beta-alanine",
+          "Entry_ID": "bmse000967",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Mol_common_name": "D2O",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Solvent",
+          "Concentration_val": "100",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000967",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Mol_common_name": "sodium phosphate",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Buffer",
+          "Concentration_val": "50",
+          "Concentration_val_units": "mM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000967",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Mol_common_name": "sodium azide",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Cytocide",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000967",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Mol_common_name": "DSS",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Reference",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000967",
+          "Sample_ID": "1"
+        }
+      ],
+      "topology_mapping": {
+        "method": "Exact heavy element/bond topology; all graph isomorphisms up to64, chirality ignored. STAR PDBX_ordinal is not MOL index.",
+        "status": "topology_matches_unadjudicated",
+        "match_count": 1,
+        "carbon_bmrb_id_to_possible_mol_indices_1based": {
+          "C3": [
+            3
+          ],
+          "C1": [
+            1
+          ],
+          "C2": [
+            2
+          ]
+        },
+        "mol_formula": "C3H7NO2",
+        "provided_depiction_smiles": "NCCC(=O)O",
+        "limitations": [
+          "No solution protonation or tautomer adjudication.",
+          "Topology matches do not certify stereochemistry or experimental assignment."
+        ]
+      }
+    },
+    {
+      "accession": "bmse000041",
+      "doi": "10.13018/BMSE000041",
+      "source_page": "https://bmrb.io/metabolomics/mol_summary/show_data.php?id=bmse000041",
+      "files": {
+        "str": {
+          "source": "https://bmrb.io/ftp/pub/bmrb/metabolomics/entry_directories/bmse000041/bmse000041.str",
+          "bytes": 80117,
+          "sha256": "fd17fb08ac19e787d2cfc1cf40fa360dc406bc741ce0b32022ca1d98bb499880"
+        },
+        "mol": {
+          "source": "https://bmrb.io/ftp/pub/bmrb/metabolomics/entry_directories/bmse000041/bmse000041.mol",
+          "bytes": 2080,
+          "sha256": "8298f94f21595ca6997773f5fc6ab4a0eb24b54f613048d252b87fbb32f69297"
+        }
+      },
+      "carbon_assignment_rows": [
+        {
+          "ID": "1",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C3",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "27.174",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C4",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "38.614",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C2",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C5",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "62.249",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C3",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C6",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "176.972",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C4",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C1",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "13.834",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C6",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "6",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C2",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "17.411",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C7",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        }
+      ],
+      "chemical_equivalence_groups": [],
+      "carbon_assignment_status": "explicit_rows_unadjudicated",
+      "assigned_shift_list_scalars": [
+        {
+          "tag": "_Assigned_chem_shift_list.Sf_category",
+          "value": "assigned_chemical_shifts"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sf_framecode",
+          "value": "assigned_chemical_shifts"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Entry_ID",
+          "value": "bmse000041"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sample_condition_list_ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sample_condition_list_label",
+          "value": "$sample_conditions_1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Chem_shift_reference_ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Chem_shift_reference_label",
+          "value": "$chem_shift_reference"
+        }
+      ],
+      "conditions": [
+        {
+          "Type": "pH",
+          "Val": "7.4",
+          "Val_units": "pH",
+          "Entry_ID": "bmse000041",
+          "Sample_condition_list_ID": "1"
+        },
+        {
+          "Type": "temperature",
+          "Val": "298",
+          "Val_units": "K",
+          "Entry_ID": "bmse000041",
+          "Sample_condition_list_ID": "1"
+        }
+      ],
+      "shift_references": [
+        {
+          "Atom_type": "H",
+          "Atom_isotope_number": "1",
+          "Mol_common_name": "DSS",
+          "Atom_group": "methyl protons",
+          "Chem_shift_units": "ppm",
+          "Chem_shift_val": "0.00",
+          "Ref_method": "internal",
+          "Ref_type": "direct",
+          "Indirect_shift_ratio": "1.000000000",
+          "Entry_ID": "bmse000041",
+          "Chem_shift_reference_ID": "1"
+        },
+        {
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Mol_common_name": "DSS",
+          "Atom_group": "methyl carbons",
+          "Chem_shift_units": "ppm",
+          "Chem_shift_val": "0.00",
+          "Ref_method": "internal",
+          "Ref_type": "direct",
+          "Indirect_shift_ratio": "1.000000000",
+          "Entry_ID": "bmse000041",
+          "Chem_shift_reference_ID": "1"
+        }
+      ],
+      "shift_experiments": [
+        {
+          "Experiment_ID": "1",
+          "Experiment_name": "1D 1H, 0.5 mM",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "2",
+          "Experiment_name": "1D 1H, 2.0 mM",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "3",
+          "Experiment_name": "1D 1H",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "4",
+          "Experiment_name": "2D [1H,1H]-TOCSY",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "5",
+          "Experiment_name": "1D 13C",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "6",
+          "Experiment_name": "1D DEPT90",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "7",
+          "Experiment_name": "1D DEPT135",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "8",
+          "Experiment_name": "2D [1H,13C]-HSQC",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "9",
+          "Experiment_name": "2D [1H,13C]-HMBC",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "10",
+          "Experiment_name": "2D [1H,1H]-COSY",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000041",
+          "Assigned_chem_shift_list_ID": "1"
+        }
+      ],
+      "experiments": [
+        {
+          "ID": "1",
+          "Name": "1D 1H, 0.5 mM",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "2",
+          "Sample_label": "$sample_2",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Name": "1D 1H, 2.0 mM",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "3",
+          "Sample_label": "$sample_3",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Name": "1D 1H",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Name": "2D [1H,1H]-TOCSY",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Name": "1D 13C",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "6",
+          "Name": "1D DEPT90",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "7",
+          "Name": "1D DEPT135",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "8",
+          "Name": "2D [1H,13C]-HSQC",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "9",
+          "Name": "2D [1H,13C]-HMBC",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "10",
+          "Name": "2D [1H,1H]-COSY",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "11",
+          "Name": "2D [1H,13C]-HSQC SW small",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000041",
+          "Experiment_list_ID": "1"
+        }
+      ],
+      "sample_components": [
+        {
+          "ID": "1",
+          "Mol_common_name": "L-Isoleucine",
+          "Isotopic_labeling": "natural abundance",
+          "Entity_ID": "1",
+          "Entity_label": "$L_isoleucine",
+          "Type": "Solute",
+          "Concentration_val": "100",
+          "Concentration_val_units": "mM",
+          "Vendor": "sigma",
+          "Vendor_product_name": "L-Isoleucine",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Mol_common_name": "D2O",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Solvent",
+          "Concentration_val": "100",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Mol_common_name": "sodium phosphate",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Buffer",
+          "Concentration_val": "50",
+          "Concentration_val_units": "mM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Mol_common_name": "sodium azide",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Cytocide",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Mol_common_name": "DSS",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Reference",
+          "Concentration_val": "0.1",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "1",
+          "Mol_common_name": "L-Isoleucine",
+          "Isotopic_labeling": "natural abundance",
+          "Entity_ID": "1",
+          "Entity_label": "$L_isoleucine",
+          "Type": "Solute",
+          "Concentration_val": "0.5",
+          "Concentration_val_units": "mM",
+          "Vendor": "sigma",
+          "Vendor_product_name": "L-Isoleucine",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "2",
+          "Mol_common_name": "D2O",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Solvent",
+          "Concentration_val": "100",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "3",
+          "Mol_common_name": "sodium phosphate",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Buffer",
+          "Concentration_val": "50",
+          "Concentration_val_units": "mM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "4",
+          "Mol_common_name": "sodium azide",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Cytocide",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "5",
+          "Mol_common_name": "DSS",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Reference",
+          "Concentration_val": "0.0005",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "1",
+          "Mol_common_name": "L-Isoleucine",
+          "Isotopic_labeling": "natural abundance",
+          "Entity_ID": "1",
+          "Entity_label": "$L_isoleucine",
+          "Type": "Solute",
+          "Concentration_val": "2.0",
+          "Concentration_val_units": "mM",
+          "Vendor": "sigma",
+          "Vendor_product_name": "L-Isoleucine",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "3"
+        },
+        {
+          "ID": "2",
+          "Mol_common_name": "D2O",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Solvent",
+          "Concentration_val": "100",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "3"
+        },
+        {
+          "ID": "3",
+          "Mol_common_name": "sodium phosphate",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Buffer",
+          "Concentration_val": "50",
+          "Concentration_val_units": "mM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "3"
+        },
+        {
+          "ID": "4",
+          "Mol_common_name": "sodium azide",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Cytocide",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "3"
+        },
+        {
+          "ID": "5",
+          "Mol_common_name": "DSS",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Reference",
+          "Concentration_val": "0.002",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000041",
+          "Sample_ID": "3"
+        }
+      ],
+      "topology_mapping": {
+        "method": "Exact heavy element/bond topology; all graph isomorphisms up to64, chirality ignored. STAR PDBX_ordinal is not MOL index.",
+        "status": "topology_matches_unadjudicated",
+        "match_count": 1,
+        "carbon_bmrb_id_to_possible_mol_indices_1based": {
+          "C3": [
+            3
+          ],
+          "C4": [
+            4
+          ],
+          "C5": [
+            5
+          ],
+          "C6": [
+            6
+          ],
+          "C1": [
+            1
+          ],
+          "C2": [
+            2
+          ]
+        },
+        "mol_formula": "C6H13NO2",
+        "provided_depiction_smiles": "CC[C@H](C)[C@H](N)C(=O)O",
+        "limitations": [
+          "No solution protonation or tautomer adjudication.",
+          "Topology matches do not certify stereochemistry or experimental assignment."
+        ]
+      }
+    },
+    {
+      "accession": "bmse000042",
+      "doi": "10.13018/BMSE000042",
+      "source_page": "https://bmrb.io/metabolomics/mol_summary/show_data.php?id=bmse000042",
+      "files": {
+        "str": {
+          "source": "https://bmrb.io/ftp/pub/bmrb/metabolomics/entry_directories/bmse000042/bmse000042.str",
+          "bytes": 73525,
+          "sha256": "838f038dc250b45ff5f693276353d78d2ebeb7cf6700011a1b2b5dc1f8e5bf15"
+        },
+        "mol": {
+          "source": "https://bmrb.io/ftp/pub/bmrb/metabolomics/entry_directories/bmse000042/bmse000042.mol",
+          "bytes": 2080,
+          "sha256": "6a40e5fac0c2457e23184fec3f6a9d5ae298381185d0fdaade3f3e2640979d88"
+        }
+      },
+      "carbon_assignment_rows": [
+        {
+          "ID": "1",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C5",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "56.112",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C2",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C6",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "178.382",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C3",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C3",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "42.526",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C5",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C4",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "26.871",
+          "Ambiguity_code": "1",
+          "Auth_atom_ID": "C6",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C1",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "24.751",
+          "Ambiguity_code": "2",
+          "Auth_atom_ID": "C7",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "6",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C1",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "23.589",
+          "Ambiguity_code": "2",
+          "Auth_atom_ID": "C7",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "7",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C2",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "24.751",
+          "Ambiguity_code": "2",
+          "Auth_atom_ID": "C8",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "ID": "8",
+          "Entity_ID": "1",
+          "Comp_index_ID": "1",
+          "Comp_ID": "1",
+          "Atom_ID": "C2",
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Val": "23.589",
+          "Ambiguity_code": "2",
+          "Auth_atom_ID": "C8",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        }
+      ],
+      "chemical_equivalence_groups": [],
+      "carbon_assignment_status": "alternative_methyl_assignments_unadjudicated",
+      "assigned_shift_list_scalars": [
+        {
+          "tag": "_Assigned_chem_shift_list.Sf_category",
+          "value": "assigned_chemical_shifts"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sf_framecode",
+          "value": "assigned_chemical_shifts"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Entry_ID",
+          "value": "bmse000042"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sample_condition_list_ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Sample_condition_list_label",
+          "value": "$sample_conditions_1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Chem_shift_reference_ID",
+          "value": "1"
+        },
+        {
+          "tag": "_Assigned_chem_shift_list.Chem_shift_reference_label",
+          "value": "$chem_shift_reference"
+        }
+      ],
+      "conditions": [
+        {
+          "Type": "pH",
+          "Val": "7.4",
+          "Val_units": "pH",
+          "Entry_ID": "bmse000042",
+          "Sample_condition_list_ID": "1"
+        },
+        {
+          "Type": "temperature",
+          "Val": "298",
+          "Val_units": "K",
+          "Entry_ID": "bmse000042",
+          "Sample_condition_list_ID": "1"
+        }
+      ],
+      "shift_references": [
+        {
+          "Atom_type": "H",
+          "Atom_isotope_number": "1",
+          "Mol_common_name": "DSS",
+          "Atom_group": "methyl protons",
+          "Chem_shift_units": "ppm",
+          "Chem_shift_val": "0.00",
+          "Ref_method": "internal",
+          "Ref_type": "direct",
+          "Indirect_shift_ratio": "1.000000000",
+          "Entry_ID": "bmse000042",
+          "Chem_shift_reference_ID": "1"
+        },
+        {
+          "Atom_type": "C",
+          "Atom_isotope_number": "13",
+          "Mol_common_name": "DSS",
+          "Atom_group": "methyl carbons",
+          "Chem_shift_units": "ppm",
+          "Chem_shift_val": "0.00",
+          "Ref_method": "internal",
+          "Ref_type": "direct",
+          "Indirect_shift_ratio": "1.000000000",
+          "Entry_ID": "bmse000042",
+          "Chem_shift_reference_ID": "1"
+        }
+      ],
+      "shift_experiments": [
+        {
+          "Experiment_ID": "1",
+          "Experiment_name": "1D 1H, 0.5 mM",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "2",
+          "Experiment_name": "1D 1H, 2.0 mM",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "3",
+          "Experiment_name": "1D 1H",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "4",
+          "Experiment_name": "2D [1H,1H]-TOCSY",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "5",
+          "Experiment_name": "1D 13C",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "6",
+          "Experiment_name": "1D DEPT90",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "7",
+          "Experiment_name": "1D DEPT135",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "8",
+          "Experiment_name": "2D [1H,13C]-HSQC",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "9",
+          "Experiment_name": "2D [1H,13C]-HMBC",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        },
+        {
+          "Experiment_ID": "10",
+          "Experiment_name": "2D [1H,1H]-COSY",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Entry_ID": "bmse000042",
+          "Assigned_chem_shift_list_ID": "1"
+        }
+      ],
+      "experiments": [
+        {
+          "ID": "1",
+          "Name": "1D 1H, 0.5 mM",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "2",
+          "Sample_label": "$sample_2",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Name": "1D 1H, 2.0 mM",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "3",
+          "Sample_label": "$sample_3",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Name": "1D 1H",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Name": "2D [1H,1H]-TOCSY",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Name": "1D 13C",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "6",
+          "Name": "1D DEPT90",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "7",
+          "Name": "1D DEPT135",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "8",
+          "Name": "2D [1H,13C]-HSQC",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "9",
+          "Name": "2D [1H,13C]-HMBC",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "10",
+          "Name": "2D [1H,1H]-COSY",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "1",
+          "NMR_spectrometer_label": "$Bruker_DMX_500",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        },
+        {
+          "ID": "11",
+          "Name": "2D [1H,13C]-HSQC SW small",
+          "Raw_data_flag": "yes",
+          "Sample_ID": "1",
+          "Sample_label": "$sample_1",
+          "Sample_state": "isotropic",
+          "Sample_condition_list_ID": "1",
+          "Sample_condition_list_label": "$sample_conditions_1",
+          "NMR_spectrometer_ID": "2",
+          "NMR_spectrometer_label": "$Bruker_DMX_400",
+          "Entry_ID": "bmse000042",
+          "Experiment_list_ID": "1"
+        }
+      ],
+      "sample_components": [
+        {
+          "ID": "1",
+          "Mol_common_name": "L- Leucine",
+          "Isotopic_labeling": "natural abundance",
+          "Entity_ID": "1",
+          "Entity_label": "$L_leucine",
+          "Type": "Solute",
+          "Concentration_val": "100",
+          "Concentration_val_units": "mM",
+          "Vendor": "sigma",
+          "Vendor_product_name": "L- Leucine",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "2",
+          "Mol_common_name": "D2O",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Solvent",
+          "Concentration_val": "100",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "3",
+          "Mol_common_name": "sodium phosphate",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Buffer",
+          "Concentration_val": "50",
+          "Concentration_val_units": "mM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "4",
+          "Mol_common_name": "sodium azide",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Cytocide",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "5",
+          "Mol_common_name": "DSS",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Reference",
+          "Concentration_val": "0.1",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "1"
+        },
+        {
+          "ID": "1",
+          "Mol_common_name": "L- Leucine",
+          "Isotopic_labeling": "natural abundance",
+          "Entity_ID": "1",
+          "Entity_label": "$L_leucine",
+          "Type": "Solute",
+          "Concentration_val": "0.5",
+          "Concentration_val_units": "mM",
+          "Vendor": "sigma",
+          "Vendor_product_name": "L- Leucine",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "2",
+          "Mol_common_name": "D2O",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Solvent",
+          "Concentration_val": "100",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "3",
+          "Mol_common_name": "sodium phosphate",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Buffer",
+          "Concentration_val": "50",
+          "Concentration_val_units": "mM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "4",
+          "Mol_common_name": "sodium azide",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Cytocide",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "5",
+          "Mol_common_name": "DSS",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Reference",
+          "Concentration_val": "0.0005",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "2"
+        },
+        {
+          "ID": "1",
+          "Mol_common_name": "L- Leucine",
+          "Isotopic_labeling": "natural abundance",
+          "Entity_ID": "1",
+          "Entity_label": "$L_leucine",
+          "Type": "Solute",
+          "Concentration_val": "2.0",
+          "Concentration_val_units": "mM",
+          "Vendor": "sigma",
+          "Vendor_product_name": "L- Leucine",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "3"
+        },
+        {
+          "ID": "2",
+          "Mol_common_name": "D2O",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Solvent",
+          "Concentration_val": "100",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "3"
+        },
+        {
+          "ID": "3",
+          "Mol_common_name": "sodium phosphate",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Buffer",
+          "Concentration_val": "50",
+          "Concentration_val_units": "mM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "3"
+        },
+        {
+          "ID": "4",
+          "Mol_common_name": "sodium azide",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Cytocide",
+          "Concentration_val": "500",
+          "Concentration_val_units": "uM",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "3"
+        },
+        {
+          "ID": "5",
+          "Mol_common_name": "DSS",
+          "Isotopic_labeling": "?",
+          "Entity_ID": "?",
+          "Entity_label": "?",
+          "Type": "Reference",
+          "Concentration_val": "0.002",
+          "Concentration_val_units": "%",
+          "Vendor": "?",
+          "Vendor_product_name": "?",
+          "Entry_ID": "bmse000042",
+          "Sample_ID": "3"
+        }
+      ],
+      "topology_mapping": {
+        "method": "Exact heavy element/bond topology; all graph isomorphisms up to64, chirality ignored. STAR PDBX_ordinal is not MOL index.",
+        "status": "topology_matches_unadjudicated",
+        "match_count": 2,
+        "carbon_bmrb_id_to_possible_mol_indices_1based": {
+          "C5": [
+            5
+          ],
+          "C6": [
+            6
+          ],
+          "C3": [
+            3
+          ],
+          "C4": [
+            4
+          ],
+          "C1": [
+            1,
+            2
+          ],
+          "C2": [
+            1,
+            2
+          ]
+        },
+        "mol_formula": "C6H13NO2",
+        "provided_depiction_smiles": "CC(C)C[C@H](N)C(=O)O",
+        "limitations": [
+          "No solution protonation or tautomer adjudication.",
+          "Topology matches do not certify stereochemistry or experimental assignment."
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "case_id": "bmse000028__bmse000028",
+      "spectrum_accession": "bmse000028",
+      "candidate_accession": "bmse000028",
+      "relation": "same_deposition",
+      "scientific_status": "unscorable_adjudication_pending",
+      "source_label_correct": null,
+      "assessment_executed": false,
+      "unscorable_reason": "solution_state_and_assignment_adjudication_pending"
+    },
+    {
+      "case_id": "bmse000028__bmse000967",
+      "spectrum_accession": "bmse000028",
+      "candidate_accession": "bmse000967",
+      "relation": "same_formula_swap",
+      "scientific_status": "unscorable_adjudication_pending",
+      "source_label_correct": null,
+      "assessment_executed": false,
+      "unscorable_reason": "solution_state_and_assignment_adjudication_pending"
+    },
+    {
+      "case_id": "bmse000967__bmse000028",
+      "spectrum_accession": "bmse000967",
+      "candidate_accession": "bmse000028",
+      "relation": "same_formula_swap",
+      "scientific_status": "unscorable_adjudication_pending",
+      "source_label_correct": null,
+      "assessment_executed": false,
+      "unscorable_reason": "solution_state_and_assignment_adjudication_pending"
+    },
+    {
+      "case_id": "bmse000967__bmse000967",
+      "spectrum_accession": "bmse000967",
+      "candidate_accession": "bmse000967",
+      "relation": "same_deposition",
+      "scientific_status": "unscorable_adjudication_pending",
+      "source_label_correct": null,
+      "assessment_executed": false,
+      "unscorable_reason": "solution_state_and_assignment_adjudication_pending"
+    },
+    {
+      "case_id": "bmse000041__bmse000041",
+      "spectrum_accession": "bmse000041",
+      "candidate_accession": "bmse000041",
+      "relation": "same_deposition",
+      "scientific_status": "unscorable_adjudication_pending",
+      "source_label_correct": null,
+      "assessment_executed": false,
+      "unscorable_reason": "solution_state_and_assignment_adjudication_pending"
+    },
+    {
+      "case_id": "bmse000041__bmse000042",
+      "spectrum_accession": "bmse000041",
+      "candidate_accession": "bmse000042",
+      "relation": "same_formula_swap",
+      "scientific_status": "unscorable_adjudication_pending",
+      "source_label_correct": null,
+      "assessment_executed": false,
+      "unscorable_reason": "solution_state_and_assignment_adjudication_pending"
+    },
+    {
+      "case_id": "bmse000042__bmse000041",
+      "spectrum_accession": "bmse000042",
+      "candidate_accession": "bmse000041",
+      "relation": "same_formula_swap",
+      "scientific_status": "unscorable_adjudication_pending",
+      "source_label_correct": null,
+      "assessment_executed": false,
+      "unscorable_reason": "solution_state_and_assignment_adjudication_pending"
+    },
+    {
+      "case_id": "bmse000042__bmse000042",
+      "spectrum_accession": "bmse000042",
+      "candidate_accession": "bmse000042",
+      "relation": "same_deposition",
+      "scientific_status": "unscorable_adjudication_pending",
+      "source_label_correct": null,
+      "assessment_executed": false,
+      "unscorable_reason": "solution_state_and_assignment_adjudication_pending"
+    }
+  ]
+}

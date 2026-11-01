@@ -1,0 +1,947 @@
+{
+  "status": "PASS tensor-byte comparison only",
+  "mapping_gate": "Tensor name/order mapping inferred from graph config and Dense construction order. Release requires TF exporter name-map and intermediate parity; this is not graph/inference parity.",
+  "mapped_rows": 49,
+  "shared_rows": 41,
+  "separate_model_bytes": 21884408,
+  "duplicated_shared_bytes": 10258484,
+  "deduplicated_inference_bytes": 11625924,
+  "rows": [
+    {
+      "semantic_layer": "atom_embedding",
+      "mean_key": "model_weights/atom_embedding/atom_embedding/embeddings:0",
+      "quantile_key": "_layer_checkpoint_dependencies/embedding/vars/0",
+      "mean_shape": [
+        13,
+        256
+      ],
+      "quantile_shape": [
+        13,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 13312,
+      "quantile_bytes": 13312,
+      "mean_sha256": "fe1f32826f18517462cbeb4daed371cba15ab1220d8d49bb25c499f51cadaf0d",
+      "quantile_sha256": "fe1f32826f18517462cbeb4daed371cba15ab1220d8d49bb25c499f51cadaf0d",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "atomwise_shift",
+      "mean_key": "model_weights/atomwise_shift/atomwise_shift/embeddings:0",
+      "quantile_key": "_layer_checkpoint_dependencies/embedding_1/vars/0",
+      "mean_shape": [
+        13,
+        1
+      ],
+      "quantile_shape": [
+        13,
+        1
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 52,
+      "quantile_bytes": 52,
+      "mean_sha256": "c4de4e5844c88e9ab48ad429c83d9cd39cba31e36a6e271132b479c0b29c31e4",
+      "quantile_sha256": "c4de4e5844c88e9ab48ad429c83d9cd39cba31e36a6e271132b479c0b29c31e4",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense",
+      "mean_key": "model_weights/dense/dense/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "7e86474f59c734515d93eaeca3962191a801a18f498573050f78819fdb119d99",
+      "quantile_sha256": "7e86474f59c734515d93eaeca3962191a801a18f498573050f78819fdb119d99",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_1",
+      "mean_key": "model_weights/dense_1/dense_1/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_1/vars/0",
+      "mean_shape": [
+        768,
+        512
+      ],
+      "quantile_shape": [
+        768,
+        512
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1572864,
+      "quantile_bytes": 1572864,
+      "mean_sha256": "eea2d53c77fc4cca694afbd6fc8474a1b2144a053318a659f73a1764f4ccda11",
+      "quantile_sha256": "eea2d53c77fc4cca694afbd6fc8474a1b2144a053318a659f73a1764f4ccda11",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_1",
+      "mean_key": "model_weights/dense_1/dense_1/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_1/vars/1",
+      "mean_shape": [
+        512
+      ],
+      "quantile_shape": [
+        512
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 2048,
+      "quantile_bytes": 2048,
+      "mean_sha256": "ae8c1ee906cc079b4e33f687b4d6f9166d637ed64f0312b414366fd827659324",
+      "quantile_sha256": "ae8c1ee906cc079b4e33f687b4d6f9166d637ed64f0312b414366fd827659324",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_2",
+      "mean_key": "model_weights/dense_2/dense_2/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_2/vars/0",
+      "mean_shape": [
+        512,
+        256
+      ],
+      "quantile_shape": [
+        512,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 524288,
+      "quantile_bytes": 524288,
+      "mean_sha256": "e3883f59a1bf4fc46a870fb2cc0d4e56bb95e21057a0a01980cb459f2697a3e1",
+      "quantile_sha256": "e3883f59a1bf4fc46a870fb2cc0d4e56bb95e21057a0a01980cb459f2697a3e1",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_2",
+      "mean_key": "model_weights/dense_2/dense_2/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_2/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "cb2ecdf07ce56b6fd7881f205ab1abd7e815b8c68fba5e441535a98d99d12b2b",
+      "quantile_sha256": "cb2ecdf07ce56b6fd7881f205ab1abd7e815b8c68fba5e441535a98d99d12b2b",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_3",
+      "mean_key": "model_weights/dense_3/dense_3/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_3/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "b07ea7a209d3f71a2e54ca39191e1e1a5790c690d23b466c3d112a7b906b1523",
+      "quantile_sha256": "b07ea7a209d3f71a2e54ca39191e1e1a5790c690d23b466c3d112a7b906b1523",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_3",
+      "mean_key": "model_weights/dense_3/dense_3/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_3/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "63cac5d2f65946473bd916f7dedb016440de809bd203b9cbad7ef006316a053d",
+      "quantile_sha256": "63cac5d2f65946473bd916f7dedb016440de809bd203b9cbad7ef006316a053d",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_4",
+      "mean_key": "model_weights/dense_4/dense_4/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_4/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "2f555e6df931b36481743c6776413e196d899ab3d825f53092b2545da8bf18a5",
+      "quantile_sha256": "2f555e6df931b36481743c6776413e196d899ab3d825f53092b2545da8bf18a5",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_4",
+      "mean_key": "model_weights/dense_4/dense_4/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_4/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "ff8d766fad225929a1f3e39cc272cde43c337f7378138658de2e0143e47f99c8",
+      "quantile_sha256": "ff8d766fad225929a1f3e39cc272cde43c337f7378138658de2e0143e47f99c8",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_5",
+      "mean_key": "model_weights/dense_5/dense_5/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_5/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "a28e1e8513dcd534c3cd6a4a96eba7e1ed972b76d2d70c37bc1bb1933cd82312",
+      "quantile_sha256": "a28e1e8513dcd534c3cd6a4a96eba7e1ed972b76d2d70c37bc1bb1933cd82312",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_5",
+      "mean_key": "model_weights/dense_5/dense_5/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_5/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "17a363398fd6229476303b91025cf5af99e20067da2b08cd4bc57534ff71eb19",
+      "quantile_sha256": "17a363398fd6229476303b91025cf5af99e20067da2b08cd4bc57534ff71eb19",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_6",
+      "mean_key": "model_weights/dense_6/dense_6/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_6/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "3e36440b8991db4e2c6aa79981d2148fdf17931844a12707b5996bbaafaa537c",
+      "quantile_sha256": "3e36440b8991db4e2c6aa79981d2148fdf17931844a12707b5996bbaafaa537c",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_6",
+      "mean_key": "model_weights/dense_6/dense_6/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_6/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "f024e52c8cf90a479ba8a432bb74b67e3729bda34e0ce6514b3546b04fd0a5ea",
+      "quantile_sha256": "f024e52c8cf90a479ba8a432bb74b67e3729bda34e0ce6514b3546b04fd0a5ea",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_7",
+      "mean_key": "model_weights/dense_7/dense_7/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_7/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "63c55eaa5dd900357c6be7e9273e83ebfea07f331b78f045248c2ee92a6b4afd",
+      "quantile_sha256": "63c55eaa5dd900357c6be7e9273e83ebfea07f331b78f045248c2ee92a6b4afd",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_8",
+      "mean_key": "model_weights/dense_8/dense_8/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_8/vars/0",
+      "mean_shape": [
+        768,
+        512
+      ],
+      "quantile_shape": [
+        768,
+        512
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1572864,
+      "quantile_bytes": 1572864,
+      "mean_sha256": "cec7ec0cab20cc45a0ad7fd306bdae0293bdd21c5d30d1a9cbc3302976efabe5",
+      "quantile_sha256": "cec7ec0cab20cc45a0ad7fd306bdae0293bdd21c5d30d1a9cbc3302976efabe5",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_8",
+      "mean_key": "model_weights/dense_8/dense_8/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_8/vars/1",
+      "mean_shape": [
+        512
+      ],
+      "quantile_shape": [
+        512
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 2048,
+      "quantile_bytes": 2048,
+      "mean_sha256": "8dfd7228ee93f5a2c27657d32175cc8afd0a852bb82d6370d0e9b9f923a4fd29",
+      "quantile_sha256": "8dfd7228ee93f5a2c27657d32175cc8afd0a852bb82d6370d0e9b9f923a4fd29",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_9",
+      "mean_key": "model_weights/dense_9/dense_9/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_9/vars/0",
+      "mean_shape": [
+        512,
+        256
+      ],
+      "quantile_shape": [
+        512,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 524288,
+      "quantile_bytes": 524288,
+      "mean_sha256": "a87cb938512435692853f0690032316e91ca8456aea24fb1edad87929c6010b1",
+      "quantile_sha256": "a87cb938512435692853f0690032316e91ca8456aea24fb1edad87929c6010b1",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_9",
+      "mean_key": "model_weights/dense_9/dense_9/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_9/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "202e28f35a00b0768bd82da357a928d685da0d80eb277d56a1ef762bbb3fcb29",
+      "quantile_sha256": "202e28f35a00b0768bd82da357a928d685da0d80eb277d56a1ef762bbb3fcb29",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_10",
+      "mean_key": "model_weights/dense_10/dense_10/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_10/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "c34029655e66d7822ce84e16fe8c6916ce09c2c83566f3df0a6dff8a012d289e",
+      "quantile_sha256": "c34029655e66d7822ce84e16fe8c6916ce09c2c83566f3df0a6dff8a012d289e",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_10",
+      "mean_key": "model_weights/dense_10/dense_10/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_10/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "37f625f372c27a6a4227c84344237e12146eb99342c7f5b096ab7a785f44c665",
+      "quantile_sha256": "37f625f372c27a6a4227c84344237e12146eb99342c7f5b096ab7a785f44c665",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_11",
+      "mean_key": "model_weights/dense_11/dense_11/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_11/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "f17968b06562611a2c6f1053680f4a0299a93f57d664c78055d982e6ed2a132f",
+      "quantile_sha256": "f17968b06562611a2c6f1053680f4a0299a93f57d664c78055d982e6ed2a132f",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_11",
+      "mean_key": "model_weights/dense_11/dense_11/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_11/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "a68b4c690c6fa874503094df6ec48f82e4f1ebb3c5ba56537621e8267d69c55d",
+      "quantile_sha256": "a68b4c690c6fa874503094df6ec48f82e4f1ebb3c5ba56537621e8267d69c55d",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_12",
+      "mean_key": "model_weights/dense_12/dense_12/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_12/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "8aa67c3c851221534b3b3e7e8bc8c17028b3c3f9a55b271463c192ffbf208fce",
+      "quantile_sha256": "8aa67c3c851221534b3b3e7e8bc8c17028b3c3f9a55b271463c192ffbf208fce",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_12",
+      "mean_key": "model_weights/dense_12/dense_12/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_12/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "eed77c2137c5c532dd334c8a11219321e5e246ac21f05c5e679d1052a14e92c7",
+      "quantile_sha256": "eed77c2137c5c532dd334c8a11219321e5e246ac21f05c5e679d1052a14e92c7",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_13",
+      "mean_key": "model_weights/dense_13/dense_13/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_13/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "c65eaae334bcf7987aa17d29bbe8de6528e57414936ddf66b50010dff6070041",
+      "quantile_sha256": "c65eaae334bcf7987aa17d29bbe8de6528e57414936ddf66b50010dff6070041",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_13",
+      "mean_key": "model_weights/dense_13/dense_13/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_13/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "1bae7274a1ac9b72300b071d91d2f56210b0b48da5d7e1dd5f73df06c031cf54",
+      "quantile_sha256": "1bae7274a1ac9b72300b071d91d2f56210b0b48da5d7e1dd5f73df06c031cf54",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_14",
+      "mean_key": "model_weights/dense_14/dense_14/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_14/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "5ac75220ff4bbd036466ff978e1e59d40d77af557ae893cc84873cdf1395fa80",
+      "quantile_sha256": "5ac75220ff4bbd036466ff978e1e59d40d77af557ae893cc84873cdf1395fa80",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_15",
+      "mean_key": "model_weights/dense_15/dense_15/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_15/vars/0",
+      "mean_shape": [
+        768,
+        512
+      ],
+      "quantile_shape": [
+        768,
+        512
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1572864,
+      "quantile_bytes": 1572864,
+      "mean_sha256": "adf50fa96e8d2a84465e0a49fd350c29da3477ebb89e3627f40a1b162806c9c6",
+      "quantile_sha256": "adf50fa96e8d2a84465e0a49fd350c29da3477ebb89e3627f40a1b162806c9c6",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_15",
+      "mean_key": "model_weights/dense_15/dense_15/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_15/vars/1",
+      "mean_shape": [
+        512
+      ],
+      "quantile_shape": [
+        512
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 2048,
+      "quantile_bytes": 2048,
+      "mean_sha256": "700400b67bfe276078ced6dd3321f9f6d18c0338c35ab2dc3b40a21d003588d2",
+      "quantile_sha256": "700400b67bfe276078ced6dd3321f9f6d18c0338c35ab2dc3b40a21d003588d2",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_16",
+      "mean_key": "model_weights/dense_16/dense_16/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_16/vars/0",
+      "mean_shape": [
+        512,
+        256
+      ],
+      "quantile_shape": [
+        512,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 524288,
+      "quantile_bytes": 524288,
+      "mean_sha256": "ed26dcc5352bd3ef66b0a0ec1172d8f96627885692a32ef4bcfb5249542bb327",
+      "quantile_sha256": "ed26dcc5352bd3ef66b0a0ec1172d8f96627885692a32ef4bcfb5249542bb327",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_16",
+      "mean_key": "model_weights/dense_16/dense_16/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_16/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "24bf9c8fea9b8d44877487ae1354ea51d85adfc7e46e1d5a933323bf3d75dd2d",
+      "quantile_sha256": "24bf9c8fea9b8d44877487ae1354ea51d85adfc7e46e1d5a933323bf3d75dd2d",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_17",
+      "mean_key": "model_weights/dense_17/dense_17/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_17/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "dac91ddc9e66d8cb6a3ed3060a1a583084fd5808981a190bdf78a377bef567cd",
+      "quantile_sha256": "dac91ddc9e66d8cb6a3ed3060a1a583084fd5808981a190bdf78a377bef567cd",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_17",
+      "mean_key": "model_weights/dense_17/dense_17/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_17/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "5d82f5b7979d62fb4a3634596262c73cf68d865d3f7915b3ccf2c85241e1f308",
+      "quantile_sha256": "5d82f5b7979d62fb4a3634596262c73cf68d865d3f7915b3ccf2c85241e1f308",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_18",
+      "mean_key": "model_weights/dense_18/dense_18/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_18/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "9030b7e685ebe4862448bdff892c8847c44415ceea45834c056e8a2d527f69d0",
+      "quantile_sha256": "9030b7e685ebe4862448bdff892c8847c44415ceea45834c056e8a2d527f69d0",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_18",
+      "mean_key": "model_weights/dense_18/dense_18/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_18/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "dfe4ee04fbf7108bcd47b4904a4f11aee9e0c44910c2a72806b93d3a6364db21",
+      "quantile_sha256": "dfe4ee04fbf7108bcd47b4904a4f11aee9e0c44910c2a72806b93d3a6364db21",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_19",
+      "mean_key": "model_weights/dense_19/dense_19/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_19/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "4f387bbccfafc43c9e6e9d51a267e47c9f51191a876a449c9680b0dfc59b1545",
+      "quantile_sha256": "4f387bbccfafc43c9e6e9d51a267e47c9f51191a876a449c9680b0dfc59b1545",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_19",
+      "mean_key": "model_weights/dense_19/dense_19/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_19/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "d90500054cf581bd4a5f24950d5156d210277d5d7a633dc222068cee8a598a25",
+      "quantile_sha256": "d90500054cf581bd4a5f24950d5156d210277d5d7a633dc222068cee8a598a25",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_20",
+      "mean_key": "model_weights/dense_20/dense_20/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_20/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "45eaf3d9b07252b7d3904f015db27cc788485290e8c91255563222b097a4ea2f",
+      "quantile_sha256": "45eaf3d9b07252b7d3904f015db27cc788485290e8c91255563222b097a4ea2f",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "dense_20",
+      "mean_key": "model_weights/dense_20/dense_20/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_20/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "b3d35986802fb7981fb038519ec064a5873726b0af79733c36d4dec3eb86f06c",
+      "quantile_sha256": "b3d35986802fb7981fb038519ec064a5873726b0af79733c36d4dec3eb86f06c",
+      "byte_identical": true
+    },
+    {
+      "semantic_layer": "loc_1",
+      "mean_key": "model_weights/loc_1/loc_1/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_21/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "4d53819f5442ce3af23391e8c8ed158b2a0dc2da8dccc3d9da0387721b47226b",
+      "quantile_sha256": "27c81a2729d7e0b5d229f970c3de583a91cc167fe9291c3d490c81dca437e3bd",
+      "byte_identical": false
+    },
+    {
+      "semantic_layer": "loc_1",
+      "mean_key": "model_weights/loc_1/loc_1/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_21/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "529503d4a9685031d6f75dd82795728ecfa085b78284bdf05f786c6dba809065",
+      "quantile_sha256": "97ca589ffdab50aa2f2d24daa3b5afed838d9b96784b635e0268700bc24542ea",
+      "byte_identical": false
+    },
+    {
+      "semantic_layer": "loc_2",
+      "mean_key": "model_weights/loc_2/loc_2/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_22/vars/0",
+      "mean_shape": [
+        256,
+        256
+      ],
+      "quantile_shape": [
+        256,
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 262144,
+      "quantile_bytes": 262144,
+      "mean_sha256": "8cd75a8287a37d2abd09a069e8d69764560f00cb5480c850d2ab4ba9bf502e24",
+      "quantile_sha256": "b8e6aae78dc97c2ee2b40ae93ea68c1ea14a96b652ff0eedb43a3d2f6ef15ee9",
+      "byte_identical": false
+    },
+    {
+      "semantic_layer": "loc_2",
+      "mean_key": "model_weights/loc_2/loc_2/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_22/vars/1",
+      "mean_shape": [
+        256
+      ],
+      "quantile_shape": [
+        256
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 1024,
+      "quantile_bytes": 1024,
+      "mean_sha256": "91262ecd7b8010e1bccf28335732bf7934ac3ff325236695e9fb6f3bfacaa15c",
+      "quantile_sha256": "2ce3c052cea0a4221dbb9b9ff2c0b801213b0e26bf8876e85de168cf23060a76",
+      "byte_identical": false
+    },
+    {
+      "semantic_layer": "loc_3",
+      "mean_key": "model_weights/loc_3/loc_3/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_23/vars/0",
+      "mean_shape": [
+        256,
+        128
+      ],
+      "quantile_shape": [
+        256,
+        128
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 131072,
+      "quantile_bytes": 131072,
+      "mean_sha256": "a485a3f9d9b90ac609be138ef05663341e78c4dfbc703756b72fd5010633a694",
+      "quantile_sha256": "9730c388efd1c0a96235defce46aaafb37d67eb3a7575220a42b8131e6f9d069",
+      "byte_identical": false
+    },
+    {
+      "semantic_layer": "loc_3",
+      "mean_key": "model_weights/loc_3/loc_3/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_23/vars/1",
+      "mean_shape": [
+        128
+      ],
+      "quantile_shape": [
+        128
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 512,
+      "quantile_bytes": 512,
+      "mean_sha256": "5d8cb6016ab5fc4841cfb05e337452681feae049f1daf3496dea698d3af9afc7",
+      "quantile_sha256": "fc88f9e6b25916afe936ca7639eeec0266c417e6be147d7c216a4a02e2d3dce8",
+      "byte_identical": false
+    },
+    {
+      "semantic_layer": "loc_reduce",
+      "mean_key": "model_weights/loc_reduce/loc_reduce/kernel:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_24/vars/0",
+      "mean_shape": [
+        128,
+        1
+      ],
+      "quantile_shape": [
+        128,
+        99
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 512,
+      "quantile_bytes": 50688,
+      "mean_sha256": "991e5b4c945365ed9265e3ca847bd152b67e5117ffd5ea755fbd1546af9105df",
+      "quantile_sha256": "bec6d9a6d99e5184681b0234f71eaa442581094b0361277c022aeb21c854aa91",
+      "byte_identical": false
+    },
+    {
+      "semantic_layer": "loc_reduce",
+      "mean_key": "model_weights/loc_reduce/loc_reduce/bias:0",
+      "quantile_key": "_layer_checkpoint_dependencies/dense_24/vars/1",
+      "mean_shape": [
+        1
+      ],
+      "quantile_shape": [
+        99
+      ],
+      "mean_dtype": "float32",
+      "quantile_dtype": "float32",
+      "mean_bytes": 4,
+      "quantile_bytes": 396,
+      "mean_sha256": "b45937826a12d788670d04604b2a50a25943aff9ed3325b3bfb329ef0f9482fc",
+      "quantile_sha256": "02595faf83a6956a2752604e9cbd458100d670a0a8cb456b90716e89cff06a7f",
+      "byte_identical": false
+    }
+  ]
+}

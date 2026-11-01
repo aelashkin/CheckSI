@@ -1,0 +1,1897 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "checkSI_dp5q_test_v2.docx",
+    "sha256": "5c6d8828be4c198ad358a02fdfb1bee44c203fedeefa9df7209b3378c38da242"
+  },
+  "extraction": {
+    "data_checker_commit": "9e5ff9cb0c779f7681a3507b01d5f8d8b89a293c",
+    "data_checker_version": "0.4.0",
+    "name_resolution": "Local OPSIN via pyopsin==0.2.4; deep name analysis on",
+    "command": "data-checker run checkSI_dp5q_test_v2.docx --dp5 --deep-name-analysis on --override dp5.keep_artifacts=true --output-dir <new-directory>",
+    "results_json_sha256": "ad0fcbc50f6680914282baffa560c8a1bdd8cdb265e10acdfd5865393f095383",
+    "method": "Verbatim typed requests from dp5_artifacts/compound_N/assessment.json, cross-checked against results.json and original DOCX names and observations in document order. Original SMILES atom order, carbon groups, observations, capacities and IDs are retained. source_paragraph_1based is the parser source index; docx_paragraph_1based locates the original python-docx observation paragraph.",
+    "limits": "Requests are regression inputs from the actual DOCX names, not adjudicated scientific truth. 3.9 revised and 3.10 original differ from historical SDF SMILES; do not substitute that manifest."
+  },
+  "score_threshold_percent": 20.0,
+  "part_a_pairs": [
+    {
+      "original": "3.2",
+      "revised": "3.2, revised"
+    },
+    {
+      "original": "3.3",
+      "revised": "3.3, revised"
+    },
+    {
+      "original": "3.4",
+      "revised": "3.4, revised"
+    },
+    {
+      "original": "3.5",
+      "revised": "3.5, revised"
+    },
+    {
+      "original": "3.7",
+      "revised": "3.7, revised"
+    },
+    {
+      "original": "3.8",
+      "revised": "3.8, revised"
+    },
+    {
+      "original": "3.9",
+      "revised": "3.9, revised"
+    },
+    {
+      "original": "3.10",
+      "revised": "3.10, revised"
+    },
+    {
+      "original": "3.11",
+      "revised": "3.11, revised"
+    },
+    {
+      "original": "3.17",
+      "revised": "3.17, revised"
+    },
+    {
+      "original": "3.20",
+      "revised": "3.20, revised"
+    },
+    {
+      "original": "3.22",
+      "revised": "3.22, revised"
+    },
+    {
+      "original": "3.23",
+      "revised": "3.23, revised"
+    },
+    {
+      "original": "3.24",
+      "revised": "3.24, revised"
+    }
+  ],
+  "part_b_order": [
+    "1.1",
+    "1.3",
+    "1.4",
+    "1.2"
+  ],
+  "cases": [
+    {
+      "case_id": "3.2",
+      "source_paragraph_1based": 2,
+      "docx_paragraph_1based": 6,
+      "docx_name": "4,6-dimethoxy-3,7-dimethylchromen-2-one (3.2)",
+      "source_name": "4,6-dimethoxy-3,7-dimethylchromen-2-one",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 177.6, 162.6, 160.7, 158.5, 156.5, 110.9, 108.0, 105.3, 91.1, 56.0, 55.4, 19.4, 7.3.",
+      "captured_assessment_sha256": "57980f2af564e0ccb8f838c2c8530c6ff8f116e36b53314e273b6765ae9a99a2",
+      "request": {
+        "compound_id": "1",
+        "smiles": "COc1cc2c(OC)c(C)c(=O)oc2cc1C",
+        "carbon_shifts": [
+          177.6,
+          162.6,
+          160.7,
+          158.5,
+          156.5,
+          110.9,
+          108.0,
+          105.3,
+          91.1,
+          56.0,
+          55.4,
+          19.4,
+          7.3
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C14",
+          "C15",
+          "C16",
+          "C17"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.2, revised",
+      "source_paragraph_1based": 4,
+      "docx_paragraph_1based": 11,
+      "docx_name": "5,7-dimethoxy-2,8-dimethylchromen-4-one (3.2, revised)",
+      "source_name": "5,7-dimethoxy-2,8-dimethylchromen-4-one",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 177.6, 162.6, 160.7, 158.5, 156.5, 110.9, 108.0, 105.3, 91.1, 56.0, 55.4, 19.4, 7.3.",
+      "captured_assessment_sha256": "987c4300afcb4d92593d63c20a63299f0b31c46ecb1b68da203879a6d1dafe1b",
+      "request": {
+        "compound_id": "2",
+        "smiles": "COc1cc(OC)c2c(=O)cc(C)oc2c1C",
+        "carbon_shifts": [
+          177.6,
+          162.6,
+          160.7,
+          158.5,
+          156.5,
+          110.9,
+          108.0,
+          105.3,
+          91.1,
+          56.0,
+          55.4,
+          19.4,
+          7.3
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C11",
+          "C12",
+          "C13",
+          "C15",
+          "C16",
+          "C17"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.3",
+      "source_paragraph_1based": 6,
+      "docx_paragraph_1based": 16,
+      "docx_name": "(5S)-1-hydroxy-4-methoxy-3-methyl-5-octyl-5,6,7,8-tetrahydroisoquinolin-8-one (3.3)",
+      "source_name": "(5S)-1-hydroxy-4-methoxy-3-methyl-5-octyl-5,6,7,8-tetrahydroisoquinolin-8-one",
+      "source_observations": "1H NMR (500 MHz, CDCl3) δ not reported; 13C NMR (125 MHz, CDCl3) δ 194.6, 172.8, 147.5, 139.0, 138.9, 132.2, 59.4, 32.2, 31.8, 30.5, 30.3, 29.6, 29.5, 29.2, 28.4, 24.3, 22.6, 14.5, 14.0.",
+      "captured_assessment_sha256": "6542e8b5219fb0a8c9d30858620670416564b1d930f6a80107ca1e00125003be",
+      "request": {
+        "compound_id": "3",
+        "smiles": "CCCCCCCC[C@H]1CCC(=O)c2c(O)nc(C)c(OC)c21",
+        "carbon_shifts": [
+          194.6,
+          172.8,
+          147.5,
+          139.0,
+          138.9,
+          132.2,
+          59.4,
+          32.2,
+          31.8,
+          30.5,
+          30.3,
+          29.6,
+          29.5,
+          29.2,
+          28.4,
+          24.3,
+          22.6,
+          14.5,
+          14.0
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C14",
+          "C15",
+          "C18",
+          "C19",
+          "C20",
+          "C22",
+          "C23"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.3, revised",
+      "source_paragraph_1based": 8,
+      "docx_paragraph_1based": 21,
+      "docx_name": "(5S)-3-methoxy-2-methyl-5-octyl-1,5,6,7-tetrahydroquinoline-4,8-dione (3.3, revised)",
+      "source_name": "(5S)-3-methoxy-2-methyl-5-octyl-1,5,6,7-tetrahydroquinoline-4,8-dione",
+      "source_observations": "1H NMR (500 MHz, CDCl3) δ not reported; 13C NMR (125 MHz, CDCl3) δ 194.6, 172.8, 147.5, 139.0, 138.9, 132.2, 59.4, 32.2, 31.8, 30.5, 30.3, 29.6, 29.5, 29.2, 28.4, 24.3, 22.6, 14.5, 14.0.",
+      "captured_assessment_sha256": "ae36a8a02f5ec07226366104018f6f27111db483ba0b6904f6cb1c548375bffb",
+      "request": {
+        "compound_id": "4",
+        "smiles": "CCCCCCCC[C@H]1CCC(=O)c2[nH]c(C)c(OC)c(=O)c21",
+        "carbon_shifts": [
+          194.6,
+          172.8,
+          147.5,
+          139.0,
+          138.9,
+          132.2,
+          59.4,
+          32.2,
+          31.8,
+          30.5,
+          30.3,
+          29.6,
+          29.5,
+          29.2,
+          28.4,
+          24.3,
+          22.6,
+          14.5,
+          14.0
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C14",
+          "C16",
+          "C17",
+          "C18",
+          "C20",
+          "C21",
+          "C23"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.4",
+      "source_paragraph_1based": 10,
+      "docx_paragraph_1based": 26,
+      "docx_name": "(3S,4R)-5,5-dimethyl-4-(3-oxobutyl)-1-oxaspiro[2.5]octan-7-one (3.4)",
+      "source_name": "(3S,4R)-5,5-dimethyl-4-(3-oxobutyl)-1-oxaspiro[2.5]octan-7-one",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 208.7, 207.2, 83.4, 78.3, 53.1, 49.4, 48.6, 43.4, 42.6, 30.0, 24.9, 20.8, 18.7.",
+      "captured_assessment_sha256": "d0042781438c39d665ff2008c91fa3ae5994e54a543abcba1701885da9287340",
+      "request": {
+        "compound_id": "5",
+        "smiles": "CC(=O)CC[C@@H]1C(C)(C)CC(=O)C[C@@]12CO2",
+        "carbon_shifts": [
+          208.7,
+          207.2,
+          83.4,
+          78.3,
+          53.1,
+          49.4,
+          48.6,
+          43.4,
+          42.6,
+          30.0,
+          24.9,
+          20.8,
+          18.7
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C13",
+          "C14",
+          "C15"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.4, revised",
+      "source_paragraph_1based": 12,
+      "docx_paragraph_1based": 31,
+      "docx_name": "(1S,5R,8R)-1,5-dimethyl-8-(3-oxobutyl)-6-oxabicyclo[3.2.1]octan-3-one (3.4, revised)",
+      "source_name": "(1S,5R,8R)-1,5-dimethyl-8-(3-oxobutyl)-6-oxabicyclo[3.2.1]octan-3-one",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 208.7, 207.2, 83.4, 78.3, 53.1, 49.4, 48.6, 43.4, 42.6, 30.0, 24.9, 20.8, 18.7.",
+      "captured_assessment_sha256": "60a06d80b35e4951977a724d73f86a25100844d068ece8eb8acc82859014a8b9",
+      "request": {
+        "compound_id": "6",
+        "smiles": "CC(=O)CC[C@@H]1[C@@]2(C)CO[C@]1(C)CC(=O)C2",
+        "carbon_shifts": [
+          208.7,
+          207.2,
+          83.4,
+          78.3,
+          53.1,
+          49.4,
+          48.6,
+          43.4,
+          42.6,
+          30.0,
+          24.9,
+          20.8,
+          18.7
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C16"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.5",
+      "source_paragraph_1based": 14,
+      "docx_paragraph_1based": 36,
+      "docx_name": "(11S,12S,13S,14S)-12,14-dihydroxy-13-methoxy-11-methyl-17-oxapentacyclo[9.7.1.02,10.03,7.015,19]nonadeca-1(19),2(10),3(7),8,15-pentaene-6,18-dione (3.5)",
+      "source_name": "(11S,12S,13S,14S)-12,14-dihydroxy-13-methoxy-11-methyl-17-oxapentacyclo[9.7.1.02,10.03,7.015,19]nonadeca-1(19),2(10),3(7),8,15-pentaene-6,18-dione",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 206.7, 173.5, 158.7, 158.1, 145.8, 145.6, 142.4, 137.0, 129.9, 127.4, 127.3, 122.1, 81.7, 71.8, 61.7, 60.8, 42.4, 36.5, 30.5, 28.5.",
+      "captured_assessment_sha256": "c19adde6c8f8f633914a8b495a05485f0981ff4d5608d59bb724c4125356a9a6",
+      "request": {
+        "compound_id": "7",
+        "smiles": "CO[C@H]1[C@@H](O)[C@@]2(C)c3ccc4c(c3-c3c2c(coc3=O)[C@@H]1O)CCC4=O",
+        "carbon_shifts": [
+          206.7,
+          173.5,
+          158.7,
+          158.1,
+          145.8,
+          145.6,
+          142.4,
+          137.0,
+          129.9,
+          127.4,
+          127.3,
+          122.1,
+          81.7,
+          71.8,
+          61.7,
+          60.8,
+          42.4,
+          36.5,
+          30.5,
+          28.5
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C3",
+          "C4",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C19",
+          "C21",
+          "C23",
+          "C24",
+          "C25"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.5, revised",
+      "source_paragraph_1based": 16,
+      "docx_paragraph_1based": 41,
+      "docx_name": "(1S,16R,17S,18S)-16,18-dihydroxy-17-methoxy-1-methyl-13-oxapentacyclo[10.6.1.02,10.05,9.015,19]nonadeca-2(10),3,5(9),12(19),14-pentaene-6,11-dione (3.5, revised)",
+      "source_name": "(1S,16R,17S,18S)-16,18-dihydroxy-17-methoxy-1-methyl-13-oxapentacyclo[10.6.1.02,10.05,9.015,19]nonadeca-2(10),3,5(9),12(19),14-pentaene-6,11-dione",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 206.7, 173.5, 158.7, 158.1, 145.8, 145.6, 142.4, 137.0, 129.9, 127.4, 127.3, 122.1, 81.7, 71.8, 61.7, 60.8, 42.4, 36.5, 30.5, 28.5.",
+      "captured_assessment_sha256": "78766fd9aab2015ebfe1af43fa8ec51d0607238f137857bc2ca9577609e600b2",
+      "request": {
+        "compound_id": "8",
+        "smiles": "CO[C@@H]1[C@H](O)c2coc3c2[C@](C)(c2ccc4c(c2C3=O)CCC4=O)[C@@H]1O",
+        "carbon_shifts": [
+          206.7,
+          173.5,
+          158.7,
+          158.1,
+          145.8,
+          145.6,
+          142.4,
+          137.0,
+          129.9,
+          127.4,
+          127.3,
+          122.1,
+          81.7,
+          71.8,
+          61.7,
+          60.8,
+          42.4,
+          36.5,
+          30.5,
+          28.5
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C3",
+          "C4",
+          "C6",
+          "C7",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C21",
+          "C22",
+          "C23",
+          "C25"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.7",
+      "source_paragraph_1based": 18,
+      "docx_paragraph_1based": 46,
+      "docx_name": "(4R,6R)-4-hydroxy-2,2,6-trimethyl-9-oxabicyclo[4.2.1]non-1(8)-en-7-one (3.7)",
+      "source_name": "(4R,6R)-4-hydroxy-2,2,6-trimethyl-9-oxabicyclo[4.2.1]non-1(8)-en-7-one",
+      "source_observations": "1H NMR (400 MHz, DMSO-d6) δ not reported; 13C NMR (100 MHz, DMSO-d6) δ 183.5, 171.5, 112.5, 86.9, 65.3, 47.0, 45.7, 36.1, 30.9, 27.3, 26.6.",
+      "captured_assessment_sha256": "61408e0a042e19f9efcb2c491d64e6656d7e067eb329f1363e0529ea1c095080",
+      "request": {
+        "compound_id": "9",
+        "smiles": "CC1(C)C[C@@H](O)C[C@@]2(C)OC1=CC2=O",
+        "carbon_shifts": [
+          183.5,
+          171.5,
+          112.5,
+          86.9,
+          65.3,
+          47.0,
+          45.7,
+          36.1,
+          30.9,
+          27.3,
+          26.6
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C11",
+          "C12",
+          "C13"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.7, revised",
+      "source_paragraph_1based": 20,
+      "docx_paragraph_1based": 51,
+      "docx_name": "(6S,7aR)-6-hydroxy-4,4,7a-trimethyl-5,6,7,7a-tetrahydro-1-benzofuran-2(4H)-one (3.7, revised)",
+      "source_name": "(6S,7aR)-6-hydroxy-4,4,7a-trimethyl-5,6,7,7a-tetrahydro-1-benzofuran-2(4H)-one",
+      "source_observations": "1H NMR (400 MHz, DMSO-d6) δ not reported; 13C NMR (100 MHz, DMSO-d6) δ 183.5, 171.5, 112.5, 86.9, 65.3, 47.0, 45.7, 36.1, 30.9, 27.3, 26.6.",
+      "captured_assessment_sha256": "14f2d9751fa148f7b79372dbba9983f8082a849527ccfa4fd1682eea58281cd3",
+      "request": {
+        "compound_id": "10",
+        "smiles": "CC1(C)C[C@H](O)C[C@@]2(C)OC(=O)C=C12",
+        "carbon_shifts": [
+          183.5,
+          171.5,
+          112.5,
+          86.9,
+          65.3,
+          47.0,
+          45.7,
+          36.1,
+          30.9,
+          27.3,
+          26.6
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C11",
+          "C13",
+          "C14"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.8",
+      "source_paragraph_1based": 22,
+      "docx_paragraph_1based": 56,
+      "docx_name": "(3S,4R,5R)-3,4-dihydroxy-6-oxabicyclo[3.2.1]oct-1-en-7-one (3.8)",
+      "source_name": "(3S,4R,5R)-3,4-dihydroxy-6-oxabicyclo[3.2.1]oct-1-en-7-one",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 174.9, 135.5, 130.9, 71.9, 66.7, 66.2, 32.4.",
+      "captured_assessment_sha256": "9598550acf193a5b26c00fc5bc6bb66a314df83eed255045d7dff3aa37183799",
+      "request": {
+        "compound_id": "11",
+        "smiles": "O=C1O[C@@H]2CC1=C[C@H](O)[C@H]2O",
+        "carbon_shifts": [
+          174.9,
+          135.5,
+          130.9,
+          71.9,
+          66.7,
+          66.2,
+          32.4
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C2",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C10"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.8, revised",
+      "source_paragraph_1based": 24,
+      "docx_paragraph_1based": 61,
+      "docx_name": "(3R,4S,5R)-3,4,5-trihydroxycyclohex-1-ene-1-carboxylic acid (3.8, revised)",
+      "source_name": "(3R,4S,5R)-3,4,5-trihydroxycyclohex-1-ene-1-carboxylic acid",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 174.9, 135.5, 130.9, 71.9, 66.7, 66.2, 32.4.",
+      "captured_assessment_sha256": "dd2c1f6aa088e83d3739944b3c2c599576b8254e5addc991164e2f8ede7bef3f",
+      "request": {
+        "compound_id": "12",
+        "smiles": "O=C(O)C1=C[C@@H](O)[C@@H](O)[C@H](O)C1",
+        "carbon_shifts": [
+          174.9,
+          135.5,
+          130.9,
+          71.9,
+          66.7,
+          66.2,
+          32.4
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C2",
+          "C4",
+          "C5",
+          "C6",
+          "C8",
+          "C10",
+          "C12"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.9",
+      "source_paragraph_1based": 26,
+      "docx_paragraph_1based": 66,
+      "docx_name": "(2S,3S,4aR,6S,7S,8aR)-3,7-dibromo-6-ethyl-2-[(Z)-pent-2-en-4-ynyl]-2,3,4,4a,6,7,8,8a-octahydropyrano[3,2-b]pyran (3.9)",
+      "source_name": "(2S,3S,4aR,6S,7S,8aR)-3,7-dibromo-6-ethyl-2-[(Z)-pent-2-en-4-ynyl]-2,3,4,4a,6,7,8,8a-octahydropyrano[3,2-b]pyran",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 140.1, 111.4, 89.0, 86.7, 82.7, 80.2, 80.1, 79.5, 49.2, 48.8, 39.2, 39.0, 34.8, 27.0, 10.3.",
+      "captured_assessment_sha256": "e3bf8cc551fee2082ab7e157a6b6c31e99d13fa93e9579a8265c6ffe09374ed6",
+      "request": {
+        "compound_id": "13",
+        "smiles": "C#C/C=C\\C[C@@H]1O[C@@H]2C[C@H](Br)[C@H](CC)O[C@@H]2C[C@@H]1Br",
+        "carbon_shifts": [
+          140.1,
+          111.4,
+          89.0,
+          86.7,
+          82.7,
+          80.2,
+          80.1,
+          79.5,
+          49.2,
+          48.8,
+          39.2,
+          39.0,
+          34.8,
+          27.0,
+          10.3
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C12",
+          "C13",
+          "C14",
+          "C16",
+          "C17",
+          "C18"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.9, revised",
+      "source_paragraph_1based": 28,
+      "docx_paragraph_1based": 71,
+      "docx_name": "3-bromo-5-(4-bromo-5-ethyloxolan-2-yl)-2-pent-2-en-4-ynyloxolane (3.9, revised)",
+      "source_name": "3-bromo-5-(4-bromo-5-ethyloxolan-2-yl)-2-pent-2-en-4-ynyloxolane",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 140.1, 111.4, 89.0, 86.7, 82.7, 80.2, 80.1, 79.5, 49.2, 48.8, 39.2, 39.0, 34.8, 27.0, 10.3.",
+      "captured_assessment_sha256": "0a7b5a9f6db98a66fd880ef9083a161e5d3731db6ec2c547a263ce2885e0192e",
+      "request": {
+        "compound_id": "14",
+        "smiles": "C#CC=CCC1OC(C2CC(Br)C(CC)O2)CC1Br",
+        "carbon_shifts": [
+          140.1,
+          111.4,
+          89.0,
+          86.7,
+          82.7,
+          80.2,
+          80.1,
+          79.5,
+          49.2,
+          48.8,
+          39.2,
+          39.0,
+          34.8,
+          27.0,
+          10.3
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C13",
+          "C14",
+          "C15",
+          "C17",
+          "C18"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.10",
+      "source_paragraph_1based": 30,
+      "docx_paragraph_1based": 76,
+      "docx_name": "5,9,9-trimethyl-11-oxatetracyclo[6.4.1.0^{1,7}.0^{10,13}]tridec-4-ene-6,12-dione (3.10)",
+      "source_name": "5,9,9-trimethyl-11-oxatetracyclo[6.4.1.0^{1,7}.0^{10,13}]tridec-4-ene-6,12-dione",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 211.6, 177.3, 135.1, 130.9, 84.1, 62.8, 62.6, 54.5, 54.4, 41.7, 28.5, 22.7, 22.5, 22.1, 22.0.",
+      "captured_assessment_sha256": "6aa2c018d732501d024ad12b93ebbafdefdd57aa784c6f5830b3b73e8925808a",
+      "request": {
+        "compound_id": "15",
+        "smiles": "CC1=CCCC23C(=O)OC4C2C(C3C1=O)C4(C)C",
+        "carbon_shifts": [
+          211.6,
+          177.3,
+          135.1,
+          130.9,
+          84.1,
+          62.8,
+          62.6,
+          54.5,
+          54.4,
+          41.7,
+          28.5,
+          22.7,
+          22.5,
+          22.1,
+          22.0
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C16",
+          "C17",
+          "C18"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.10, revised",
+      "source_paragraph_1based": 32,
+      "docx_paragraph_1based": 81,
+      "docx_name": "(1S,4S,6R,7S,9Z,13R)-5,5,9-trimethyl-3-oxatetracyclo[5.5.1.01,6.04,13]tridec-9-ene-2,8-dione (3.10, revised)",
+      "source_name": "(1S,4S,6R,7S,9Z,13R)-5,5,9-trimethyl-3-oxatetracyclo[5.5.1.01,6.04,13]tridec-9-ene-2,8-dione",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 211.6, 177.3, 135.1, 130.9, 84.1, 62.8, 62.6, 54.5, 54.4, 41.7, 28.5, 22.7, 22.5, 22.1, 22.0.",
+      "captured_assessment_sha256": "8635a5d63b862e1864b1b21507ef44d3e821a27f78bd133490c554db7c3759a4",
+      "request": {
+        "compound_id": "16",
+        "smiles": "C/C1=C/CC[C@@]23C(=O)O[C@H]4[C@@H]2[C@@H](C1=O)[C@@H]3C4(C)C",
+        "carbon_shifts": [
+          211.6,
+          177.3,
+          135.1,
+          130.9,
+          84.1,
+          62.8,
+          62.6,
+          54.5,
+          54.4,
+          41.7,
+          28.5,
+          22.7,
+          22.5,
+          22.1,
+          22.0
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C15",
+          "C16",
+          "C17",
+          "C18"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.11",
+      "source_paragraph_1based": 34,
+      "docx_paragraph_1based": 86,
+      "docx_name": "2-phenyl-4,5,6,7-tetrahydro-1,3-oxazepine (3.11)",
+      "source_name": "2-phenyl-4,5,6,7-tetrahydro-1,3-oxazepine",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 169.8, 137.3, 129.8, 128.3, 127.1, 49.6, 46.2, 26.4, 24.5.",
+      "captured_assessment_sha256": "5cf810ec5bd182f94112c5638e34ff6b5a7557b1791a79b8305a6d8add68e442",
+      "request": {
+        "compound_id": "17",
+        "smiles": "c1ccc(C2=NCCCCO2)cc1",
+        "carbon_shifts": [
+          169.8,
+          137.3,
+          129.8,
+          128.3,
+          127.1,
+          49.6,
+          46.2,
+          26.4,
+          24.5
+        ],
+        "carbon_groups": [
+          [
+            "C2",
+            "C13"
+          ],
+          [
+            "C3",
+            "C12"
+          ]
+        ],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C12",
+          "C13"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.11, revised",
+      "source_paragraph_1based": 36,
+      "docx_paragraph_1based": 91,
+      "docx_name": "phenyl(pyrrolidin-1-yl)methanone (3.11, revised)",
+      "source_name": "phenyl(pyrrolidin-1-yl)methanone",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 169.8, 137.3, 129.8, 128.3, 127.1, 49.6, 26.4.",
+      "captured_assessment_sha256": "ffd28bcf5c98478f685be499235cf6a9032b4395dba957f892c7b22499bf8bad",
+      "request": {
+        "compound_id": "18",
+        "smiles": "O=C(c1ccccc1)N1CCCC1",
+        "carbon_shifts": [
+          169.8,
+          137.3,
+          129.8,
+          128.3,
+          127.1,
+          49.6,
+          26.4
+        ],
+        "carbon_groups": [
+          [
+            "C4",
+            "C8"
+          ],
+          [
+            "C5",
+            "C7"
+          ],
+          [
+            "C10",
+            "C13"
+          ],
+          [
+            "C11",
+            "C12"
+          ]
+        ],
+        "carbon_labels": [
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C10",
+          "C11",
+          "C12",
+          "C13"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.17",
+      "source_paragraph_1based": 38,
+      "docx_paragraph_1based": 97,
+      "docx_name": "(2R,3S)-3-[(2Z)-3-[(1R,2R)-1,2-dimethylcyclopentyl]but-2-en-1-yl]-4,7-dihydroxy-2,3,8-trimethyl-2,3-dihydronaphtho[1,2-b]furan-6,9-dione (3.17)",
+      "source_name": "(2R,3S)-3-[(2Z)-3-[(1R,2R)-1,2-dimethylcyclopentyl]but-2-en-1-yl]-4,7-dihydroxy-2,3,8-trimethyl-2,3-dihydronaphtho[1,2-b]furan-6,9-dione",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 182.9, 180.4, 159.9, 157.7, 153.6, 138.9, 131.6, 127.3, 123.9, 120.3, 107.9, 107.9, 86.3, 46.0, 39.7, 32.8, 31.0, 30.5, 26.6, 25.1, 20.9, 19.7, 18.8, 15.7, 15.1, 8.6.",
+      "captured_assessment_sha256": "1b901797a4d154e8a05419d8fcbe8d84eed0e55ec97c0f9e01a296a97ca4461e",
+      "request": {
+        "compound_id": "19",
+        "smiles": "CC1=C(O)C(=O)c2cc(O)c3c(c2C1=O)O[C@H](C)[C@@]3(C)C/C=C(/C)[C@]1(C)CCC[C@H]1C",
+        "carbon_shifts": [
+          182.9,
+          180.4,
+          159.9,
+          157.7,
+          153.6,
+          138.9,
+          131.6,
+          127.3,
+          123.9,
+          120.3,
+          107.9,
+          107.9,
+          86.3,
+          46.0,
+          39.7,
+          32.8,
+          31.0,
+          30.5,
+          26.6,
+          25.1,
+          20.9,
+          19.7,
+          18.8,
+          15.7,
+          15.1,
+          8.6
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29",
+          "C30",
+          "C31"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.17, revised",
+      "source_paragraph_1based": 40,
+      "docx_paragraph_1based": 102,
+      "docx_name": "(2R,3S)-4,7-dihydroxy-2,3,8-trimethyl-3-[2-[(1S,6R)-1,2,6-trimethylcyclohex-2-en-1-yl]ethyl]-2,3-dihydronaphtho[1,2-b]furan-6,9-dione (3.17, revised)",
+      "source_name": "(2R,3S)-4,7-dihydroxy-2,3,8-trimethyl-3-[2-[(1S,6R)-1,2,6-trimethylcyclohex-2-en-1-yl]ethyl]-2,3-dihydronaphtho[1,2-b]furan-6,9-dione",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 182.9, 180.4, 159.9, 157.7, 153.6, 138.9, 131.6, 127.3, 123.9, 120.3, 107.9, 107.9, 86.3, 46.0, 39.7, 32.8, 31.0, 30.5, 26.6, 25.1, 20.9, 19.7, 18.8, 15.7, 15.1, 8.6.",
+      "captured_assessment_sha256": "98c16b397935732f969bc754e475bc15bc816ec76c33d444f9dd21a76191e820",
+      "request": {
+        "compound_id": "20",
+        "smiles": "CC1=CCC[C@@H](C)[C@]1(C)CC[C@@]1(C)c2c(O)cc3c(c2O[C@@H]1C)C(=O)C(C)=C(O)C3=O",
+        "carbon_shifts": [
+          182.9,
+          180.4,
+          159.9,
+          157.7,
+          153.6,
+          138.9,
+          131.6,
+          127.3,
+          123.9,
+          120.3,
+          107.9,
+          107.9,
+          86.3,
+          46.0,
+          39.7,
+          32.8,
+          31.0,
+          30.5,
+          26.6,
+          25.1,
+          20.9,
+          19.7,
+          18.8,
+          15.7,
+          15.1,
+          8.6
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C22",
+          "C23",
+          "C24",
+          "C26",
+          "C27",
+          "C28",
+          "C30"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.20",
+      "source_paragraph_1based": 42,
+      "docx_paragraph_1based": 107,
+      "docx_name": "N-[1-(3-amino-3-oxopropanoyl)-2-[(2S)-butan-2-yl]-4-oxo-1,4-dihydroazet-3-yl]-N-methoxy-2-methylpropanamide (3.20)",
+      "source_name": "N-[1-(3-amino-3-oxopropanoyl)-2-[(2S)-butan-2-yl]-4-oxo-1,4-dihydroazet-3-yl]-N-methoxy-2-methylpropanamide",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 168.0, 166.0, 161.5, 152.0, 135.0, 134.9, 64.1, 41.1, 33.7, 30.7, 27.5, 19.9 (2C), 18.2, 12.6.",
+      "captured_assessment_sha256": "aeba81941cf2693310d7c962f6341468c4d36feb782cee229f9e2dd83a90c220",
+      "request": {
+        "compound_id": "21",
+        "smiles": "CC[C@H](C)C1=C(N(OC)C(=O)C(C)C)C(=O)N1C(=O)CC(N)=O",
+        "carbon_shifts": [
+          168.0,
+          166.0,
+          161.5,
+          152.0,
+          135.0,
+          134.9,
+          64.1,
+          41.1,
+          33.7,
+          30.7,
+          27.5,
+          19.9,
+          18.2,
+          12.6
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C9",
+          "C10",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C18",
+          "C20",
+          "C21"
+        ],
+        "observation_atom_counts": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [
+          [
+            9,
+            10
+          ]
+        ],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.20, revised",
+      "source_paragraph_1based": 44,
+      "docx_paragraph_1based": 112,
+      "docx_name": "3-[(2R)-butan-2-yl]-4-methoxy-5-oxo-6-(propan-2-yl)-4,5-dihydropyrazin-2-yl 3-amino-3-oxopropanoate (3.20, revised)",
+      "source_name": "3-[(2R)-butan-2-yl]-4-methoxy-5-oxo-6-(propan-2-yl)-4,5-dihydropyrazin-2-yl 3-amino-3-oxopropanoate",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ not reported; 13C NMR (100 MHz, CDCl3) δ 168.0, 166.0, 161.5, 152.0, 135.0, 134.9, 64.1, 41.1, 33.7, 30.7, 27.5, 19.9 (2C), 18.2, 12.6.",
+      "captured_assessment_sha256": "f3810d689b5ec6268b11762eb70e20946ec9f8d95bdfd41d9309080faf041a0f",
+      "request": {
+        "compound_id": "22",
+        "smiles": "CC[C@@H](C)c1c(OC(=O)CC(N)=O)nc(C(C)C)c(=O)n1OC",
+        "carbon_shifts": [
+          168.0,
+          166.0,
+          161.5,
+          152.0,
+          135.0,
+          134.9,
+          64.1,
+          41.1,
+          33.7,
+          30.7,
+          27.5,
+          19.9,
+          18.2,
+          12.6
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C8",
+          "C10",
+          "C11",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C23"
+        ],
+        "observation_atom_counts": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [
+          [
+            11,
+            12
+          ]
+        ],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.22",
+      "source_paragraph_1based": 46,
+      "docx_paragraph_1based": 117,
+      "docx_name": "(2R)-2,6-dihydroxy-5-[(E)-prop-1-en-1-yl]-1,2-dihydropyrano[3,2-b]pyrrole-3,7-dione (3.22)",
+      "source_name": "(2R)-2,6-dihydroxy-5-[(E)-prop-1-en-1-yl]-1,2-dihydropyrano[3,2-b]pyrrole-3,7-dione",
+      "source_observations": "1H NMR (500 MHz, DMSO-d6) δ not reported; 13C NMR (125 MHz, DMSO-d6) δ 174.2, 169.1, 165.0, 146.0, 142.2, 131.7, 118.9, 111.7, 75.2, 18.7.",
+      "captured_assessment_sha256": "0788a88b05751b55e77bb19e70ec8899eae8b1dc6c9b731ee5ae7ad7c1f8c306",
+      "request": {
+        "compound_id": "23",
+        "smiles": "C/C=C/c1oc2c(c(=O)c1O)N[C@H](O)C2=O",
+        "carbon_shifts": [
+          174.2,
+          169.1,
+          165.0,
+          146.0,
+          142.2,
+          131.7,
+          118.9,
+          111.7,
+          75.2,
+          18.7
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C7",
+          "C8",
+          "C10",
+          "C13",
+          "C15"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.22, revised",
+      "source_paragraph_1based": 48,
+      "docx_paragraph_1based": 122,
+      "docx_name": "(7R)-3,7-dihydroxy-2-[(E)-prop-1-en-1-yl]-6,7-dihydropyrano[2,3-c]pyrrole-4,5-dione (3.22, revised)",
+      "source_name": "(7R)-3,7-dihydroxy-2-[(E)-prop-1-en-1-yl]-6,7-dihydropyrano[2,3-c]pyrrole-4,5-dione",
+      "source_observations": "1H NMR (500 MHz, DMSO-d6) δ not reported; 13C NMR (125 MHz, DMSO-d6) δ 174.2, 169.1, 165.0, 146.0, 142.2, 131.7, 118.9, 111.7, 75.2, 18.7.",
+      "captured_assessment_sha256": "5af58eaa868108bb816cabc63e8438d5f9abeb32ce2a3b1971c82552462271cf",
+      "request": {
+        "compound_id": "24",
+        "smiles": "C/C=C/c1oc2c(c(=O)c1O)C(=O)N[C@@H]2O",
+        "carbon_shifts": [
+          174.2,
+          169.1,
+          165.0,
+          146.0,
+          142.2,
+          131.7,
+          118.9,
+          111.7,
+          75.2,
+          18.7
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C7",
+          "C8",
+          "C10",
+          "C12",
+          "C15"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.23",
+      "source_paragraph_1based": 50,
+      "docx_paragraph_1based": 127,
+      "docx_name": "4-benzyl-6-oxo-1,6-dihydropyridine-3-carboxamide (3.23)",
+      "source_name": "4-benzyl-6-oxo-1,6-dihydropyridine-3-carboxamide",
+      "source_observations": "1H NMR (500 MHz, DMSO-d6) δ not reported; 13C NMR (125 MHz, DMSO-d6) δ 178.1, 165.9, 151.2, 142.2, 137.4, 129.3, 129.2, 127.5, 118.9, 118.0, 38.2.",
+      "captured_assessment_sha256": "ca385790a4ca9e8f78039c4f1802258388607e9af121c8aa5db9831f2d2a4974",
+      "request": {
+        "compound_id": "25",
+        "smiles": "NC(=O)c1c[nH]c(=O)cc1Cc1ccccc1",
+        "carbon_shifts": [
+          178.1,
+          165.9,
+          151.2,
+          142.2,
+          137.4,
+          129.3,
+          129.2,
+          127.5,
+          118.9,
+          118.0,
+          38.2
+        ],
+        "carbon_groups": [
+          [
+            "C13",
+            "C17"
+          ],
+          [
+            "C14",
+            "C16"
+          ]
+        ],
+        "carbon_labels": [
+          "C2",
+          "C4",
+          "C5",
+          "C7",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.23, revised",
+      "source_paragraph_1based": 52,
+      "docx_paragraph_1based": 132,
+      "docx_name": "6-benzyl-4-oxo-1,4-dihydropyridine-3-carboxamide (3.23, revised)",
+      "source_name": "6-benzyl-4-oxo-1,4-dihydropyridine-3-carboxamide",
+      "source_observations": "1H NMR (500 MHz, DMSO-d6) δ not reported; 13C NMR (125 MHz, DMSO-d6) δ 178.1, 165.9, 151.2, 142.2, 137.4, 129.3, 129.2, 127.5, 118.9, 118.0, 38.2.",
+      "captured_assessment_sha256": "56ad4e9d4e5b81d2678c8daa4901c1218cbfaa7df36a6845a2d1a6422b682bce",
+      "request": {
+        "compound_id": "26",
+        "smiles": "NC(=O)c1c[nH]c(Cc2ccccc2)cc1=O",
+        "carbon_shifts": [
+          178.1,
+          165.9,
+          151.2,
+          142.2,
+          137.4,
+          129.3,
+          129.2,
+          127.5,
+          118.9,
+          118.0,
+          38.2
+        ],
+        "carbon_groups": [
+          [
+            "C10",
+            "C14"
+          ],
+          [
+            "C11",
+            "C13"
+          ]
+        ],
+        "carbon_labels": [
+          "C2",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.24",
+      "source_paragraph_1based": 54,
+      "docx_paragraph_1based": 137,
+      "docx_name": "3,4-dihydrobenzo[h]quinazolin-4-one (3.24)",
+      "source_name": "3,4-dihydrobenzo[h]quinazolin-4-one",
+      "source_observations": "1H NMR (500 MHz, CDCl3) δ not reported; 13C NMR (125 MHz, CDCl3) δ 164.0, 150.5, 148.5, 144.3, 136.0, 132.8, 130.4, 128.7, 125.0, 123.6, 118.7, 101.6.",
+      "captured_assessment_sha256": "e19da8317f2e6c2fb3568566c969e8dbeb22ef9612d21b1cdf4764a656adb896",
+      "request": {
+        "compound_id": "27",
+        "smiles": "O=c1[nH]cnc2c1ccc1ccccc12",
+        "carbon_shifts": [
+          164.0,
+          150.5,
+          148.5,
+          144.3,
+          136.0,
+          132.8,
+          130.4,
+          128.7,
+          125.0,
+          123.6,
+          118.7,
+          101.6
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C2",
+          "C4",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "3.24, revised",
+      "source_paragraph_1based": 56,
+      "docx_paragraph_1based": 142,
+      "docx_name": "benzo[f][2,7]naphthyridin-4(3H)-one (3.24, revised)",
+      "source_name": "benzo[f][2,7]naphthyridin-4(3H)-one",
+      "source_observations": "1H NMR (500 MHz, CDCl3) δ not reported; 13C NMR (125 MHz, CDCl3) δ 164.0, 150.5, 148.5, 144.3, 136.0, 132.8, 130.4, 128.7, 125.0, 123.6, 118.7, 101.6.",
+      "captured_assessment_sha256": "433fc77b6ce19a98f984e6a28729496440a3792f77fba48f53b6181bd1035249",
+      "request": {
+        "compound_id": "28",
+        "smiles": "O=c1[nH]ccc2c1cnc1ccccc12",
+        "carbon_shifts": [
+          164.0,
+          150.5,
+          148.5,
+          144.3,
+          136.0,
+          132.8,
+          130.4,
+          128.7,
+          125.0,
+          123.6,
+          118.7,
+          101.6
+        ],
+        "carbon_groups": [],
+        "carbon_labels": [
+          "C2",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "1.1",
+      "source_paragraph_1based": 58,
+      "docx_paragraph_1based": 150,
+      "docx_name": "N,N'-(((1R,3S)-cyclopentane-1,3-diyl)bis(methylene))bis(4-methylaniline) (1.1)",
+      "source_name": "N,N'-(((1R,3S)-cyclopentane-1,3-diyl)bis(methylene))bis(4-methylaniline)",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ 7.01 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 140.1, 129.7, 126.7, 113.1, 50.1, 39.5, 36.3, 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302.",
+      "captured_assessment_sha256": "eb04a1b41d87e484a7ad7ad8d427589bdc2309afde2942dd3ced647e9f59c6a2",
+      "request": {
+        "compound_id": "29",
+        "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+        "carbon_shifts": [
+          140.1,
+          129.7,
+          126.7,
+          113.1,
+          50.1,
+          39.5,
+          36.3,
+          29.6,
+          20.3
+        ],
+        "carbon_groups": [
+          [
+            "C1",
+            "C18"
+          ],
+          [
+            "C2",
+            "C17"
+          ],
+          [
+            "C3",
+            "C16",
+            "C19",
+            "C23"
+          ],
+          [
+            "C4",
+            "C15",
+            "C20",
+            "C22"
+          ],
+          [
+            "C5",
+            "C14"
+          ],
+          [
+            "C7",
+            "C12"
+          ],
+          [
+            "C8",
+            "C11"
+          ],
+          [
+            "C9",
+            "C10"
+          ]
+        ],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "1.2",
+      "source_paragraph_1based": 60,
+      "docx_paragraph_1based": 154,
+      "docx_name": "N,N'-(((1R,3S)-cyclopentane-1,3-diyl)bis(methylene))bis(4-methylaniline) (1.2)",
+      "source_name": "N,N'-(((1R,3S)-cyclopentane-1,3-diyl)bis(methylene))bis(4-methylaniline)",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ 7.01 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 140.1, 129.7, 113.1, 50.1, 46.7, 39.5, 36.3, 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302.",
+      "captured_assessment_sha256": "eba2bb2f07fdebcff9d44010273b13f26ab7cc5136920f1ba3fdf45e7599af14",
+      "request": {
+        "compound_id": "30",
+        "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+        "carbon_shifts": [
+          140.1,
+          129.7,
+          113.1,
+          50.1,
+          46.7,
+          39.5,
+          36.3,
+          29.6,
+          20.3
+        ],
+        "carbon_groups": [
+          [
+            "C1",
+            "C18"
+          ],
+          [
+            "C2",
+            "C17"
+          ],
+          [
+            "C3",
+            "C16",
+            "C19",
+            "C23"
+          ],
+          [
+            "C4",
+            "C15",
+            "C20",
+            "C22"
+          ],
+          [
+            "C5",
+            "C14"
+          ],
+          [
+            "C7",
+            "C12"
+          ],
+          [
+            "C8",
+            "C11"
+          ],
+          [
+            "C9",
+            "C10"
+          ]
+        ],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "1.3",
+      "source_paragraph_1based": 62,
+      "docx_paragraph_1based": 158,
+      "docx_name": "N,N'-(((1R,3S)-cyclopentane-1,3-diyl)bis(methylene))bis(4-methylaniline) (1.3)",
+      "source_name": "N,N'-(((1R,3S)-cyclopentane-1,3-diyl)bis(methylene))bis(4-methylaniline)",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ 7.01 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 140.1, 129.7, 126.7, 116.1, 50.1, 39.5, 36.3, 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302.",
+      "captured_assessment_sha256": "6ae610c7bb4a70e89186813cc4e7abe6fb5d8c06ab654ec095cd6f52195b88a8",
+      "request": {
+        "compound_id": "31",
+        "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+        "carbon_shifts": [
+          140.1,
+          129.7,
+          126.7,
+          116.1,
+          50.1,
+          39.5,
+          36.3,
+          29.6,
+          20.3
+        ],
+        "carbon_groups": [
+          [
+            "C1",
+            "C18"
+          ],
+          [
+            "C2",
+            "C17"
+          ],
+          [
+            "C3",
+            "C16",
+            "C19",
+            "C23"
+          ],
+          [
+            "C4",
+            "C15",
+            "C20",
+            "C22"
+          ],
+          [
+            "C5",
+            "C14"
+          ],
+          [
+            "C7",
+            "C12"
+          ],
+          [
+            "C8",
+            "C11"
+          ],
+          [
+            "C9",
+            "C10"
+          ]
+        ],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    },
+    {
+      "case_id": "1.4",
+      "source_paragraph_1based": 64,
+      "docx_paragraph_1based": 162,
+      "docx_name": "N,N'-(((1R,3S)-cyclopentane-1,3-diyl)bis(methylene))bis(4-methylaniline) (1.4)",
+      "source_name": "N,N'-(((1R,3S)-cyclopentane-1,3-diyl)bis(methylene))bis(4-methylaniline)",
+      "source_observations": "1H NMR (400 MHz, CDCl3) δ 7.01 (d, J = 8.0 Hz, 4H), 6.59 (d, J = 8.4 Hz, 4H), 3.44 (br. s, 2H), 3.12–3.04 (m, 4H), 2.28–2.22 (m, 8H), 2.17–2.11 (m, 1H), 1.91–1.84 (m, 2H), 1.47–1.38 (m, 2H), 1.03–0.95 (m, 1H); 13C NMR (101 MHz, CDCl3) δ 140.1, 129.7, 126.7, 119.1, 50.1, 39.5, 36.3, 29.6, 20.3. APCI [M+H]+ calcd for C21H29N2+ 309.2325; found 309.2302.",
+      "captured_assessment_sha256": "cb2ebee900bb582970919999994278a69b4362670c1eb50a50342af35ffd1ce2",
+      "request": {
+        "compound_id": "32",
+        "smiles": "Cc1ccc(NC[C@H]2CC[C@@H](CNc3ccc(C)cc3)C2)cc1",
+        "carbon_shifts": [
+          140.1,
+          129.7,
+          126.7,
+          119.1,
+          50.1,
+          39.5,
+          36.3,
+          29.6,
+          20.3
+        ],
+        "carbon_groups": [
+          [
+            "C1",
+            "C18"
+          ],
+          [
+            "C2",
+            "C17"
+          ],
+          [
+            "C3",
+            "C16",
+            "C19",
+            "C23"
+          ],
+          [
+            "C4",
+            "C15",
+            "C20",
+            "C22"
+          ],
+          [
+            "C5",
+            "C14"
+          ],
+          [
+            "C7",
+            "C12"
+          ],
+          [
+            "C8",
+            "C11"
+          ],
+          [
+            "C9",
+            "C10"
+          ]
+        ],
+        "carbon_labels": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23"
+        ],
+        "fixed_assignments": {},
+        "coincident_environments": [],
+        "include_geometry": true
+      }
+    }
+  ]
+}

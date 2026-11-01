@@ -1,0 +1,79 @@
+# This file configures the build system and project metadata for 'checksi' package.
+
+[build-system]
+# Build-time requirements for creating the package.
+requires = ["setuptools>=77.0,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# Core project metadata
+name = "checksi"
+version = "0.4.0"
+description = "Computer-assisted pre-submission checking of characterization data for organic compounds."
+authors = [
+    {name = "Pavel Sakharov"},
+    {name = "Andrew Elashkin"},
+    {name = "Mark Gandelman"},
+]
+readme = "README.md"
+license = "MIT AND LicenseRef-NFP AND LicenseRef-NMRShiftDB2 AND OFL-1.1"
+license-files = ["LICENSE", "src/checksi/dp5q/data/LICENSE*.txt", "src/checksi/dp5q/data/NOTICE*.txt", "src/checksi/resources/fonts/LICENSE.txt"]
+requires-python = ">=3.12"
+
+# List of all dependencies required for the project to run.
+# uv will automatically install these when the package is installed.
+dependencies = [
+    "python-docx>=1.1.2,<2",
+    "PyMuPDF>=1.25.3,<2",
+    "molmass>=2024.10.25,<2027",
+    "openpyxl>=3.1.5,<4",
+    "requests>=2.32.3,<3",
+    "certifi>=2026.10.19", # Minimum trust-store remediation, including unlocked installs
+    "urllib3>=2.8.0,<3", # Bounded chunk processing and Deflate response fixes
+    "regex>=2024.11.6,<2027",
+    "periodictable>=2.0.2,<3",
+    "pyopsin==0.2.4",
+    "rdkit==2025.9.3", # Latest version of that supports Intel Macs
+    "setuptools<81", # pyopsin needs the legacy pkg_resources module
+    "pandas<3", # This dependency is required for molmass to work properly
+    "pydantic>=2.12.0,<3",
+    "tomlkit>=0.13.3,<1",
+    "numpy>=2.4.2,<3",
+    "scipy>=1.18.1,<2",
+]
+
+[project.optional-dependencies]
+gui = [
+    "PySide6>=6.6,<7",
+    "qt-material>=2.14,<3",
+]
+
+[project.scripts]
+checksi = "checksi.main:entrypoint"
+checksi-gui = "checksi.gui_main:main_gui"
+
+[tool.setuptools]
+# This section tells setuptools that the actual package code is inside the 'src' directory.
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"checksi" = ["defaults.toml", "resources/fonts/*"]
+"checksi.gui" = ["assets/*.png"]
+"checksi.dp5q" = ["data/*.npz", "data/*.json", "data/LICENSE*.txt", "data/NOTICE*.txt"]
+
+[dependency-groups]
+dev = [
+    "packaging==26.0",
+    "ruff==0.17.2",
+]
+graphify = [
+    "graphifyy==0.9.93",
+]
+
+[tool.ruff]
+required-version = "==0.17.2"
+target-version = "py312"
+
+[tool.ruff.lint]
+# Keep the initial gate focused on syntax and common correctness errors.
+select = ["E4", "E7", "E9", "F"]

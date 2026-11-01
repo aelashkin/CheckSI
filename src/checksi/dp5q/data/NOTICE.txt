@@ -1,0 +1,33 @@
+DP5q numerical assets
+
+These float32 parameters were exported without training from the DP5 models
+at revision 8f8e22364654bbce71dcb6abb414eee793b00d92. Duplicate encoder tensors
+were stored once; two distinct prediction heads are retained. The NumPy
+implementation, safe numeric container and JSON metadata are modifications.
+The original Goodman Lab MIT license is included in LICENSE.dp5.txt.
+No training dataset, optimizer state, executable model, pickle or NFP code is
+included in these numeric assets.
+
+Source: https://github.com/aelashkin/DP5/tree/8f8e22364654bbce71dcb6abb414eee793b00d92
+Original project: https://github.com/Goodman-lab/DP5
+The source identifies CASCADE/NMRShiftDB-derived shift-prediction models and
+vendors NFP graph layers. Retain this provenance when redistributing parameters.
+CASCADE: Guan et al., Chemical Science 2021, https://doi.org/10.1039/D1SC03343C
+NFP: https://github.com/NatLabRockies/nfp (BSD-style 3-clause)
+NMRShiftDB2: https://nmrshiftdb.nmr.uni-koeln.de/
+Contains information from nmrshiftdb2 (www.nmrshiftdb.org), which is made available
+here under the nmrshiftdb2 Database License:
+https://nmrshiftdb.nmr.uni-koeln.de/nmrshiftdbhtml/nmrshiftdb2datalicense.txt
+Public derived dataset and preparation method:
+https://github.com/aelashkin/DP5/tree/8f8e22364654bbce71dcb6abb414eee793b00d92/nmrdb-dataset
+DP5q method: https://doi.org/10.1039/D5SC06988B
+
+CheckSI project code is licensed under the MIT license.
+The distribution also records LicenseRef-NFP for the exact NFP notice in
+LICENSE.nfp.txt and LicenseRef-NMRShiftDB2 for LICENSE.nmrshiftdb2.txt. These
+identifiers retain the supplied terms; they do not relicense upstream assets.
+Retain the attribution, license files and public dataset/preparation links when
+redistributing these assets.
+
+The model is an advisory
+compatibility score component, not a calibrated structure-correctness probability.

@@ -1,0 +1,21 @@
+# Development oracle only. Never install into the product environment.
+tensorflow==2.14.0
+keras==2.14.0
+numpy==1.26.4
+ml-dtypes==0.2.0
+h5py==3.10.0
+scipy==1.15.3
+rdkit==2025.9.3
+pandas==2.3.3
+tqdm==4.67.1
+setuptools==80.10.2
+scikit-learn==1.7.2
+dill==0.4.0
+joblib==1.5.2
+networkx==3.4.2
+# Keep the oracle on reviewed Intel-compatible binary wheels.
+google-auth==2.41.1
+grpcio==1.74.0
+pillow==11.3.0
+gast==0.4.0
+requests==2.32.5

@@ -1,0 +1,289 @@
+# Tokens are whitespace-separated visible text containing letters, digits or underscores.
+# Rendered words include headings, prose, visible link labels, inline code and tables.
+# Link destinations, images, HTML comments and fenced code are excluded.
+# H2 anchors lowercase visible text, remove punctuation except hyphens/underscores, and replace spaces with hyphens.
+# Duplicate anchors append -1, -2, etc. Each H2 owns nested content; __intro__ includes H1.
+# Nonblank fenced lines are counted separately.
+version = 1
+
+[totals]
+entry_pages = ["README.md", "docs/installation.md", "docs/usage.md", "docs/configuration.md", "docs/reports.md", "docs/analysis.md", "docs/development.md", "docs/agent-usage.md"]
+max_words = 7400
+
+[pages."README.md"]
+max_words = 800
+max_fenced_lines = 24
+max_images = 1
+max_commands = 6
+max_fences = 2
+[pages."README.md".sections]
+"__intro__" = 50
+"why" = 60
+"what-it-checks" = 140
+"message-guide" = 70
+"output" = 100
+"quick-start" = 100
+"settings" = 80
+"privacy-and-limitations" = 110
+"authors" = 100
+"citation" = 70
+"references" = 50
+"license" = 50
+"further-reading" = 40
+
+[pages."README.md".section_constraints.__intro__]
+max_paragraphs = 1
+[pages."README.md".section_constraints.why]
+max_paragraphs = 2
+[pages."README.md".section_constraints.settings]
+max_paragraphs = 1
+[pages."README.md".section_constraints.privacy-and-limitations]
+max_paragraphs = 2
+[pages."README.md".section_constraints.further-reading]
+max_links = 5
+
+[pages."README.md".table_row_limits]
+"what-it-checks" = 7
+"output" = 5
+
+[pages."docs/installation.md"]
+max_words = 900
+max_fenced_lines = 45
+max_table_row_words = 35
+[pages."docs/installation.md".sections]
+"__intro__" = 40
+"source-checkout" = 130
+"distribution-bundle" = 200
+"prerequisites" = 150
+"platform-evidence" = 60
+"rename-and-upgrade" = 200
+"troubleshooting" = 120
+
+[pages."docs/usage.md"]
+max_words = 900
+max_fenced_lines = 45
+max_table_row_words = 35
+[pages."docs/usage.md".sections]
+"__intro__" = 30
+"cli-run-and-cancellation" = 180
+"gui-analyze" = 130
+"settings-and-diagnostic-search" = 240
+"dp5q-and-doctor" = 220
+"recovery" = 100
+
+[pages."docs/configuration.md"]
+max_words = 1100
+max_fenced_lines = 50
+max_table_row_words = 35
+[pages."docs/configuration.md".sections]
+"__intro__" = 30
+"precedence" = 150
+"schema-and-defaults" = 360
+"paths" = 160
+"persistence-and-import" = 160
+"diagnostics-and-solvents" = 150
+"legacy-keys" = 90
+
+[pages."docs/reports.md"]
+max_words = 1600
+max_fenced_lines = 50
+max_table_row_words = 35
+[pages."docs/reports.md".sections]
+"__intro__" = 40
+"artifacts-and-ownership" = 180
+"assessment-findings-and-export" = 240
+"cli-summary-and-exits" = 220
+"json-v2" = 450
+"source-annotations" = 170
+"xlsx" = 140
+"python-api-references" = 160
+
+[pages."docs/analysis.md"]
+max_words = 900
+max_fenced_lines = 20
+max_table_row_words = 35
+[pages."docs/analysis.md".sections]
+"__intro__" = 30
+"recognition-and-formula" = 105
+"acceptance-criteria-and-notation" = 320
+"nmr" = 120
+"stereochemistry" = 95
+"dp5q-eligibility" = 160
+"scientific-limits" = 70
+
+[pages."docs/development.md"]
+max_words = 1200
+max_fenced_lines = 80
+max_table_row_words = 35
+[pages."docs/development.md".sections]
+"__intro__" = 30
+"architecture" = 180
+"lint-and-tests" = 190
+"build-and-installed-verification" = 220
+"codebase-graph-for-agents" = 220
+"native-checks" = 220
+"python-namespace-and-api-migration" = 140
+
+[pages."docs/agent-usage.md"]
+max_words = 550
+max_fenced_lines = 16
+max_fences = 2
+max_commands = 12
+max_table_row_words = 35
+[pages."docs/agent-usage.md".sections]
+"__intro__" = 35
+"install" = 85
+"verify-and-run" = 120
+"read-results" = 130
+"limits-and-escalation" = 120
+
+[pages."docs/agent-usage.md".table_row_limits]
+"read-results" = 5
+
+[pages."docs/licensing.md"]
+max_words = 650
+max_fenced_lines = 0
+max_table_row_words = 40
+[pages."docs/licensing.md".sections]
+"__intro__" = 50
+"package-contents" = 220
+"model-parameters" = 140
+"fonts" = 40
+"dependencies-and-external-tools" = 70
+
+[pages."docs/references.md"]
+max_words = 1600
+max_fenced_lines = 0
+[pages."docs/references.md".sections]
+"__intro__" = 60
+"dp5q-scoring-and-models" = 380
+"spectral-and-atomic-data" = 300
+"structure-and-conformer-methods" = 420
+"numerical-methods" = 220
+"software" = 160
+
+[pages."docs/dp5q-architecture.md"]
+max_words = 1800
+max_fenced_lines = 45
+[pages."docs/dp5q-architecture.md".sections]
+"__intro__" = 60
+"runtime-boundary" = 450
+"calculation-and-applicability" = 430
+"structural-inventory-and-observation-contract" = 450
+"configuration-and-retained-files" = 110
+"packaging-and-installed-verification" = 300
+
+[pages."docs/dp5q-reference.md"]
+max_words = 1100
+max_fenced_lines = 95
+[pages."docs/dp5q-reference.md".sections]
+"__intro__" = 70
+"isolated-environment" = 380
+"export-and-compare" = 330
+"provenance-and-notices" = 110
+"complete-legacy-cli-benchmark-profile" = 210
+
+[pages."docs/dp5q-evaluation.md"]
+max_words = 3080
+max_fenced_lines = 100
+[pages."docs/dp5q-evaluation.md".sections]
+"__intro__" = 10
+"document-derived-acceptance-regression" = 120
+"historical-development-campaign" = 120
+"controlled-arms" = 320
+"execute-explicitly" = 650
+"decision-rules-and-limits" = 140
+"resource-boundary" = 110
+"external-applicability-and-mapping-cases" = 240
+"derived-report-and-isolated-fitter-comparison" = 220
+"completed-development-study" = 1150
+
+[pages."docs/chemistry-verification.md"]
+max_words = 2750
+max_fenced_lines = 20
+[pages."docs/chemistry-verification.md".sections]
+"__intro__" = 60
+"historical-implementation-acceptance" = 110
+"carbon-observations-and-structural-status--2026-10-2627" = 230
+"boron-policy--2026-10-27" = 210
+"verification-reference" = 210
+"historical-repaired-upstream-software-comparison" = 600
+"structural-partitions-adjudicated--2026-10-2627" = 600
+"source-specific-diagnostic-decisions--2026-10-27" = 170
+"future-expert-checklist" = 120
+"adjudicated-policy-and-pending-conventions" = 440
+
+[pages."docs/current-product-study-design.md"]
+max_words = 820
+max_fenced_lines = 0
+[pages."docs/current-product-study-design.md".sections]
+"__intro__" = 40
+"questions-and-product-freeze" = 70
+"cases-and-independent-labels" = 190
+"execution-and-denominators" = 300
+"expert-decisions-required-before-execution" = 220
+
+[pages."docs/platform-compatibility.md"]
+max_words = 1970
+max_fenced_lines = 80
+[pages."docs/platform-compatibility.md".sections]
+"__intro__" = 60
+"python-315-dependency-assessment" = 340
+"complete-locked-wheel-inventory" = 600
+"native-installed-artifact-verification" = 550
+"local-macos-verification" = 130
+"updated-extraction-boundary" = 150
+"numerical-comparison-boundaries" = 140
+
+[pages."docs/security-audit.md"]
+max_words = 620
+max_fenced_lines = 20
+[pages."docs/security-audit.md".sections]
+"__intro__" = 60
+"remediated-http-dependencies" = 170
+"remaining-dispositions" = 390
+
+[pages."AGENTS.md"]
+max_words = 1310
+max_fenced_lines = 24
+[pages."AGENTS.md".sections]
+"__intro__" = 70
+"commands" = 170
+"ci-authority" = 150
+"codebase-graph" = 120
+"architecture-and-interface-parity" = 200
+"testing-and-scientific-behavior" = 200
+"compatibility-and-documentation" = 140
+"scope-and-delivery" = 260
+
+[pages."CLAUDE.md"]
+max_words = 40
+max_fenced_lines = 0
+[pages."CLAUDE.md".sections]
+"__intro__" = 40
+
+[pages."tests/fixtures/dp5q/README.md"]
+max_words = 160
+max_fenced_lines = 0
+[pages."tests/fixtures/dp5q/README.md".sections]
+"__intro__" = 160
+
+[[legacy_references]]
+path = "docs/installation.md"
+section = "rename-and-upgrade"
+reason = "Names the former distribution, commands and namespace so users can migrate explicitly."
+
+[[legacy_references]]
+path = "docs/reports.md"
+section = "json-v2"
+reason = "Documents replacement of the schema-v1 provenance.data_checker key by schema-v2 provenance.checksi."
+
+[[legacy_references]]
+path = "docs/development.md"
+section = "python-namespace-and-api-migration"
+reason = "Names the removed import namespace for Python integrators."
+
+[[legacy_references]]
+path = "docs/dp5q-architecture.md"
+section = "packaging-and-installed-verification"
+reason = "Retains the historical product name attached to the 0.3.0 introduction."

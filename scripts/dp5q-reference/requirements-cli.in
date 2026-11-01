@@ -1,0 +1,8 @@
+# Optional full frozen CLI benchmark profile; never a product dependency.
+-r requirements.lock
+# Versions selected by the frozen DP5 uv.lock for its supported interpreters.
+lmfit==1.3.4
+matplotlib==3.10.9
+nmrglue==0.11
+statsmodels==0.14.6
+tomli==2.4.1

@@ -1,0 +1,1264 @@
+{
+  "schema": "chemistry-structure-oracle-v2",
+  "expected_authority": "Pavel named replies 2026-10-26/27 and confirmed report Appendices A-C",
+  "atom_index_convention": "zero-based original atom indices from parsing the exact SMILES; labels are hand-bound chemical labels, not DP5 one-based labels",
+  "conditions": "achiral medium, fast permitted conformational exchange, achiral R in prochiral series; nonrotating C=C distinctions retained",
+  "independence": "All expected groups, atom-label maps, physical bridge states and reference frame coordinates were entered by hand from source chemistry and connectivity. No production structure helper or generated conformer supplied expected groups. Generic H coordinates in the probe are only a geometry boundary fixture.",
+  "reference_frames": {
+    "tartrate_C2": {
+      "operation": "(x,y,z)->(-x,-y,z), proper rotation",
+      "heavy_coordinates": {
+        "0": [
+          -4,
+          2,
+          2
+        ],
+        "1": [
+          -4,
+          1,
+          1
+        ],
+        "2": [
+          -4,
+          0,
+          2
+        ],
+        "3": [
+          -3,
+          1,
+          1
+        ],
+        "4": [
+          -2,
+          1,
+          0
+        ],
+        "5": [
+          -2,
+          2,
+          -1
+        ],
+        "6": [
+          -1,
+          0,
+          0
+        ],
+        "7": [
+          -1,
+          -1,
+          1
+        ],
+        "8": [
+          1,
+          0,
+          0
+        ],
+        "9": [
+          1,
+          1,
+          1
+        ],
+        "10": [
+          2,
+          -1,
+          0
+        ],
+        "11": [
+          2,
+          -2,
+          -1
+        ],
+        "12": [
+          3,
+          -1,
+          1
+        ],
+        "13": [
+          4,
+          -1,
+          1
+        ],
+        "14": [
+          4,
+          0,
+          2
+        ],
+        "15": [
+          4,
+          -2,
+          2
+        ]
+      },
+      "stereo_hydrogen_coordinates": {
+        "1": [
+          -4,
+          1,
+          0
+        ],
+        "6": [
+          -1,
+          -1,
+          -1
+        ],
+        "8": [
+          1,
+          1,
+          -1
+        ],
+        "13": [
+          4,
+          -1,
+          0
+        ]
+      },
+      "scope": "An independently chosen stereo frame for binding methyl identities, not an optimized conformer or a prediction geometry."
+    },
+    "prochiral_OH": {
+      "operation": "(x,y,z)->(-x,y,z), mirror in yz plane",
+      "heavy_coordinates": {
+        "0": [
+          -1.5,
+          0.8,
+          0.8
+        ],
+        "1": [
+          -1,
+          0,
+          0
+        ],
+        "2": [
+          -1.5,
+          -0.8,
+          0.8
+        ],
+        "3": [
+          0,
+          0,
+          0
+        ],
+        "4": [
+          0,
+          1,
+          1
+        ],
+        "5": [
+          1,
+          0,
+          0
+        ],
+        "6": [
+          1.5,
+          -0.8,
+          0.8
+        ],
+        "7": [
+          1.5,
+          0.8,
+          0.8
+        ]
+      },
+      "stereo_hydrogen_coordinates": {
+        "1": [
+          -1.5,
+          0,
+          -1
+        ],
+        "3": [
+          0,
+          -1,
+          1
+        ],
+        "5": [
+          1.5,
+          0,
+          -1
+        ]
+      },
+      "scope": "Hand tetrahedral stereo frame; achiral R atoms lie in mirror plane. Not an optimized prediction geometry."
+    },
+    "prochiral_OEt": {
+      "operation": "(x,y,z)->(-x,y,z), mirror in yz plane",
+      "heavy_coordinates": {
+        "0": [
+          -1.5,
+          0.8,
+          0.8
+        ],
+        "1": [
+          -1,
+          0,
+          0
+        ],
+        "2": [
+          -1.5,
+          -0.8,
+          0.8
+        ],
+        "3": [
+          0,
+          0,
+          0
+        ],
+        "4": [
+          0,
+          1,
+          1
+        ],
+        "7": [
+          1,
+          0,
+          0
+        ],
+        "8": [
+          1.5,
+          -0.8,
+          0.8
+        ],
+        "9": [
+          1.5,
+          0.8,
+          0.8
+        ],
+        "5": [
+          0,
+          2,
+          1
+        ],
+        "6": [
+          0,
+          3,
+          2
+        ]
+      },
+      "stereo_hydrogen_coordinates": {
+        "1": [
+          -1.5,
+          0,
+          -1
+        ],
+        "3": [
+          0,
+          -1,
+          1
+        ],
+        "7": [
+          1.5,
+          0,
+          -1
+        ]
+      },
+      "scope": "Hand tetrahedral stereo frame; achiral R atoms lie in mirror plane. Not an optimized prediction geometry."
+    },
+    "prochiral_OAc": {
+      "operation": "(x,y,z)->(-x,y,z), mirror in yz plane",
+      "heavy_coordinates": {
+        "0": [
+          -1.5,
+          0.8,
+          0.8
+        ],
+        "1": [
+          -1,
+          0,
+          0
+        ],
+        "2": [
+          -1.5,
+          -0.8,
+          0.8
+        ],
+        "3": [
+          0,
+          0,
+          0
+        ],
+        "4": [
+          0,
+          1,
+          1
+        ],
+        "8": [
+          1,
+          0,
+          0
+        ],
+        "9": [
+          1.5,
+          -0.8,
+          0.8
+        ],
+        "10": [
+          1.5,
+          0.8,
+          0.8
+        ],
+        "5": [
+          0,
+          2,
+          1
+        ],
+        "6": [
+          0,
+          3,
+          2
+        ],
+        "7": [
+          0,
+          2,
+          2
+        ]
+      },
+      "stereo_hydrogen_coordinates": {
+        "1": [
+          -1.5,
+          0,
+          -1
+        ],
+        "3": [
+          0,
+          -1,
+          1
+        ],
+        "8": [
+          1.5,
+          0,
+          -1
+        ]
+      },
+      "scope": "Hand tetrahedral stereo frame; achiral R atoms lie in mirror plane. Not an optimized prediction geometry."
+    },
+    "prochiral_Oallyl": {
+      "operation": "(x,y,z)->(-x,y,z), mirror in yz plane",
+      "heavy_coordinates": {
+        "0": [
+          -1.5,
+          0.8,
+          0.8
+        ],
+        "1": [
+          -1,
+          0,
+          0
+        ],
+        "2": [
+          -1.5,
+          -0.8,
+          0.8
+        ],
+        "3": [
+          0,
+          0,
+          0
+        ],
+        "4": [
+          0,
+          1,
+          1
+        ],
+        "8": [
+          1,
+          0,
+          0
+        ],
+        "9": [
+          1.5,
+          -0.8,
+          0.8
+        ],
+        "10": [
+          1.5,
+          0.8,
+          0.8
+        ],
+        "5": [
+          0,
+          2,
+          1
+        ],
+        "6": [
+          0,
+          3,
+          2
+        ],
+        "7": [
+          0,
+          4,
+          2
+        ]
+      },
+      "stereo_hydrogen_coordinates": {
+        "1": [
+          -1.5,
+          0,
+          -1
+        ],
+        "3": [
+          0,
+          -1,
+          1
+        ],
+        "8": [
+          1.5,
+          0,
+          -1
+        ]
+      },
+      "scope": "Hand tetrahedral stereo frame; achiral R atoms lie in mirror plane. Not an optimized prediction geometry."
+    }
+  },
+  "cases": [
+    {
+      "id": "ribitol",
+      "smiles": "OC[C@H](O)[C@H](O)[C@H](O)CO",
+      "count": 3,
+      "labels": {
+        "C1": 1,
+        "C2": 2,
+        "C3": 4,
+        "C4": 6,
+        "C5": 8
+      },
+      "groups": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4
+        ]
+      ],
+      "reason": "Mirror plane through C3 pairs C1/C5 and C2/C4."
+    },
+    {
+      "id": "myo_inositol",
+      "smiles": "O[C@H]1[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H]1O",
+      "count": 4,
+      "labels": {
+        "C1": 2,
+        "C2": 4,
+        "C3": 6,
+        "C4": 8,
+        "C5": 10,
+        "C6": 1
+      },
+      "groups": [
+        [
+          2,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          4
+        ],
+        [
+          10
+        ]
+      ],
+      "reason": "Number clockwise starting at atom2. Reflection through C2(atom4)/C5(atom10) pairs C1/C3 and C4/C6; opposite ring numbering gives the same sets."
+    },
+    {
+      "id": "diisopropyl_L_tartrate",
+      "smiles": "CC(C)OC(=O)[C@H](O)[C@@H](O)C(=O)OC(C)C",
+      "count": 5,
+      "labels": {
+        "carbonyl_left": 4,
+        "carbonyl_right": 10,
+        "CHOH_left": 6,
+        "CHOH_right": 8,
+        "iPr_CH_left": 1,
+        "iPr_CH_right": 13,
+        "Me_a_left": 0,
+        "Me_a_right": 15,
+        "Me_b_left": 2,
+        "Me_b_right": 14
+      },
+      "groups": [
+        [
+          4,
+          10
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          2,
+          14
+        ]
+      ],
+      "reason": "Proper C2 frame rotation maps left to right, including methyl a/a and b/b. Interchanging indistinguishable methyl labels changes the frame-to-index correspondence, not the count.",
+      "frame": "tartrate_C2",
+      "coincidence_groups": [
+        [
+          0,
+          2,
+          14,
+          15
+        ]
+      ],
+      "manual_count": 4
+    },
+    {
+      "id": "S_isopropyl_methyl_sulfoxide",
+      "smiles": "C[S@](=O)C(C)C",
+      "count": 4,
+      "labels": {
+        "S_methyl": 0,
+        "iPr_CH": 3,
+        "iPr_Me_a": 4,
+        "iPr_Me_b": 5
+      },
+      "groups": [
+        [
+          0
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "reason": "S stereocentre makes the iPr methyls diastereotopic.",
+      "coincidence_groups": [
+        [
+          4,
+          5
+        ]
+      ],
+      "manual_count": 3
+    },
+    {
+      "id": "L_valine",
+      "smiles": "CC(C)[C@H](N)C(=O)O",
+      "count": 5,
+      "labels": {
+        "Me_a": 0,
+        "beta_CH": 1,
+        "Me_b": 2,
+        "alpha_CH": 3,
+        "carboxyl": 5
+      },
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "reason": "Alpha stereocentre makes the beta methyls diastereotopic.",
+      "coincidence_groups": [
+        [
+          0,
+          2
+        ]
+      ],
+      "manual_count": 4
+    },
+    {
+      "id": "1.142",
+      "smiles": "CCC1(C)CC(=Cc2ccc(C)cc2)CC1(C)CC",
+      "count": 17,
+      "labels": {
+        "ethyl_C3_CH3": 0,
+        "ethyl_C3_CH2": 1,
+        "ring_C3": 2,
+        "ring_C3_Me": 3,
+        "ring_C2": 4,
+        "ring_C1": 5,
+        "aryl_CH_alkene": 6,
+        "tolyl_ipso": 7,
+        "tolyl_ortho_a": 8,
+        "tolyl_meta_a": 9,
+        "tolyl_para": 10,
+        "tolyl_Me": 11,
+        "tolyl_meta_b": 12,
+        "tolyl_ortho_b": 13,
+        "ring_C5": 14,
+        "ring_C4": 15,
+        "ring_C4_Me": 16,
+        "ethyl_C4_CH2": 17,
+        "ethyl_C4_CH3": 18
+      },
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ],
+        [
+          14
+        ],
+        [
+          15
+        ],
+        [
+          16
+        ],
+        [
+          17
+        ],
+        [
+          18
+        ]
+      ],
+      "reason": "Only tolyl ortho/meta pairs. Nonrotating exocyclic C=C preserves the two ring sides.",
+      "manual_count": 13,
+      "admissible_tetrahedral_tags": [
+        {
+          "2": "CW",
+          "15": "CW"
+        },
+        {
+          "2": "CW",
+          "15": "CCW"
+        },
+        {
+          "2": "CCW",
+          "15": "CW"
+        },
+        {
+          "2": "CCW",
+          "15": "CCW"
+        }
+      ]
+    },
+    {
+      "id": "1.145",
+      "smiles": "Cc1ccc(C=C2CC(C)(C)C(C)(C)C2)cc1",
+      "count": 13,
+      "labels": {
+        "tolyl_Me": 0,
+        "tolyl_para": 1,
+        "tolyl_meta_a": 2,
+        "tolyl_ortho_a": 3,
+        "tolyl_ipso": 4,
+        "aryl_CH_alkene": 5,
+        "ring_C1": 6,
+        "ring_C2": 7,
+        "ring_C3": 8,
+        "C3_Me_a": 9,
+        "C3_Me_b": 10,
+        "ring_C4": 11,
+        "C4_Me_a": 12,
+        "C4_Me_b": 13,
+        "ring_C5": 14,
+        "tolyl_ortho_b": 15,
+        "tolyl_meta_b": 16
+      },
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          16
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          11
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          14
+        ]
+      ],
+      "reason": "Tolyl pairs and each gem-dimethyl pair only; ring C2/C5 and C3/C4 remain distinct.",
+      "manual_count": 10
+    },
+    {
+      "id": "1.147",
+      "smiles": "CC1(C)OB(C(=C2CCCC2)c2ccc3ccccc3c2)OC1(C)C",
+      "count": 18,
+      "labels": {
+        "pinacol_Me_a": 0,
+        "pinacol_CO_a": 1,
+        "pinacol_Me_b": 2,
+        "direct_CB": 5,
+        "ring_C1": 6,
+        "ring_C2": 7,
+        "ring_C3": 8,
+        "ring_C4": 9,
+        "ring_C5": 10,
+        "naphthyl_attachment": 11,
+        "naphthyl_next_a": 12,
+        "naphthyl_next_b": 13,
+        "naphthyl_fused_a": 14,
+        "naphthyl_CH_a": 15,
+        "naphthyl_CH_b": 16,
+        "naphthyl_CH_c": 17,
+        "naphthyl_CH_d": 18,
+        "naphthyl_fused_b": 19,
+        "naphthyl_adjacent_attachment": 20,
+        "pinacol_CO_b": 22,
+        "pinacol_Me_c": 23,
+        "pinacol_Me_d": 24
+      },
+      "groups": [
+        [
+          0,
+          2,
+          23,
+          24
+        ],
+        [
+          1,
+          22
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ],
+        [
+          12
+        ],
+        [
+          13
+        ],
+        [
+          14
+        ],
+        [
+          15
+        ],
+        [
+          16
+        ],
+        [
+          17
+        ],
+        [
+          18
+        ],
+        [
+          19
+        ],
+        [
+          20
+        ]
+      ],
+      "reason": "Pinacol methyls and C\u2013O pairs only. All four ring CH2 sites are distinct.",
+      "manual_count": 16,
+      "accepted_observation_count": 17,
+      "direct_CB_indices": [
+        5
+      ]
+    },
+    {
+      "id": "prochiral_OH",
+      "smiles": "CC(C)C(O)C(C)C",
+      "count": 4,
+      "labels": {
+        "left_Me_a": 0,
+        "left_iPr_CH": 1,
+        "left_Me_b": 2,
+        "central_CH": 3,
+        "right_iPr_CH": 5,
+        "right_Me_b": 6,
+        "right_Me_a": 7
+      },
+      "groups": [
+        [
+          0,
+          7
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "reason": "Hand yz-plane mirror maps methyl a/a, b/b and the iPr methines; methyls within one iPr remain distinct.",
+      "frame": "prochiral_OH"
+    },
+    {
+      "id": "prochiral_OEt",
+      "smiles": "CC(C)C(OCC)C(C)C",
+      "count": 6,
+      "labels": {
+        "left_Me_a": 0,
+        "left_iPr_CH": 1,
+        "left_Me_b": 2,
+        "central_CH": 3,
+        "OEt_CH2": 5,
+        "OEt_CH3": 6,
+        "right_iPr_CH": 7,
+        "right_Me_b": 8,
+        "right_Me_a": 9
+      },
+      "groups": [
+        [
+          0,
+          9
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ],
+      "reason": "Same hand mirror frame with achiral ethyl R; two added singleton carbons.",
+      "frame": "prochiral_OEt"
+    },
+    {
+      "id": "prochiral_OAc",
+      "smiles": "CC(C)C(OC(C)=O)C(C)C",
+      "count": 6,
+      "labels": {
+        "left_Me_a": 0,
+        "left_iPr_CH": 1,
+        "left_Me_b": 2,
+        "central_CH": 3,
+        "OAc_CO": 5,
+        "OAc_Me": 6,
+        "right_iPr_CH": 8,
+        "right_Me_b": 9,
+        "right_Me_a": 10
+      },
+      "groups": [
+        [
+          0,
+          10
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ],
+      "reason": "Same hand mirror frame with achiral acetyl R; carbonyl does not activate the core distinction.",
+      "frame": "prochiral_OAc"
+    },
+    {
+      "id": "prochiral_Oallyl",
+      "smiles": "CC(C)C(OCC=C)C(C)C",
+      "count": 7,
+      "labels": {
+        "left_Me_a": 0,
+        "left_iPr_CH": 1,
+        "left_Me_b": 2,
+        "central_CH": 3,
+        "allyl_OCH2": 5,
+        "allyl_CH": 6,
+        "allyl_CH2": 7,
+        "right_iPr_CH": 8,
+        "right_Me_b": 9,
+        "right_Me_a": 10
+      },
+      "groups": [
+        [
+          0,
+          10
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "reason": "Same hand mirror frame with achiral allyl R; remote C=C does not create the core distinction.",
+      "frame": "prochiral_Oallyl"
+    },
+    {
+      "id": "alpha_pinene",
+      "smiles": "CC=1C2C(C(CC1)C2)(C)C",
+      "count": 10,
+      "labels": {
+        "alkene_Me": 0,
+        "alkene_C": 1,
+        "bridgehead_a": 2,
+        "gem_C": 3,
+        "bridgehead_b": 4,
+        "long_bridge_CH2": 5,
+        "alkene_CH": 6,
+        "short_bridge_CH2": 7,
+        "gem_Me_a": 8,
+        "gem_Me_b": 9
+      },
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ]
+      ],
+      "reason": "The two admissible bridgehead states are enantiomers. Gem methyls remain diastereotopic; opposite ordered-neighbor tags invert one bridge.",
+      "manual_count": 9,
+      "admissible_tetrahedral_tags": [
+        {
+          "2": "CW",
+          "4": "CW"
+        },
+        {
+          "2": "CCW",
+          "4": "CCW"
+        }
+      ],
+      "inadmissible_tetrahedral_tags": [
+        {
+          "2": "CW",
+          "4": "CCW"
+        },
+        {
+          "2": "CCW",
+          "4": "CW"
+        }
+      ],
+      "physical_basis": "Both bridgehead long-bridge bonds point to the same side of the four-membered bridge ring. The hand frame has bridgehead2=(-1,0,0),4=(1,0,0),gem3=(0,-1,0),bridge7=(0,1,0),long1=(-1,0,1),long5=(1,0,1),H2=(-1,0,-1),H4=(1,0,-1). Ordered-neighbor tetrahedral determinants have equal signs. This topological bridge constraint, not an embedding failure, excludes the other two formal tag combinations.",
+      "expected_admissible_isomers": 2,
+      "inadmissible_expected_disposition": "refused_or_excluded_as_physically_inadmissible",
+      "inadmissible_expected_meso_status": "unassessed",
+      "admissible_expected_meso_status": "confirmed_non_meso"
+    }
+  ],
+  "baseline_scope": {
+    "hand_frame": "A passing mocked geometry-boundary test establishes the exact partition only in the explicit hand stereo frame. It does not establish native conformer correspondence.",
+    "native_frame": "Native tartrate and prochiral OAc have different cross-arm methyl atom sets from the hand frame and are RED correspondence evidence, even though their counts match. Native groups may not be transferred without actual atom correspondence."
+  },
+  "meso_cases": [
+    {
+      "id": "specified_ribitol_meso",
+      "smiles": "OC[C@H](O)[C@H](O)[C@H](O)CO",
+      "expected_status": "confirmed_meso",
+      "expected_enumeration_complete": true,
+      "reason": "Specified meso structure from Pavel; mirror is identical."
+    },
+    {
+      "id": "specified_L_tartrate_non_meso",
+      "smiles": "CC(C)OC(=O)[C@H](O)[C@@H](O)C(=O)OC(C)C",
+      "expected_status": "confirmed_non_meso",
+      "expected_enumeration_complete": true,
+      "reason": "Specified L-tartrate is chiral; the mirror is its distinct enantiomer."
+    },
+    {
+      "id": "achiral_no_centres",
+      "smiles": "CCO",
+      "expected_status": "achiral_no_centres",
+      "expected_enumeration_complete": true,
+      "reason": "Zero stereocentres; achirality alone is not meso."
+    },
+    {
+      "id": "unspecified_meso_possible",
+      "smiles": "CC(O)C(O)C",
+      "expected_status": "meso_possible",
+      "expected_enumeration_complete": true,
+      "expected_distinct_isomers": 3,
+      "reason": "2,3-Butanediol has a meso form plus an enantiomer pair; unspecified sample identity is not proven meso."
+    },
+    {
+      "id": "partial_meso_possible",
+      "smiles": "C[C@H](O)C(O)C",
+      "expected_status": "meso_possible",
+      "expected_enumeration_complete": true,
+      "expected_distinct_isomers": 2,
+      "reason": "Fixing one centre leaves a meso completion and a non-meso completion; the sample remains unspecified."
+    },
+    {
+      "id": "unspecified_no_meso_form",
+      "smiles": "CC(C)C(N)C(=O)O",
+      "expected_status": "no_meso_form",
+      "expected_enumeration_complete": true,
+      "expected_distinct_isomers": 2,
+      "reason": "One tetrahedral centre has an enantiomer pair and cannot be meso."
+    },
+    {
+      "id": "enumeration_exceeds_budget",
+      "smiles": "CC(O)C(F)C(Cl)C(Br)C",
+      "expected_status": "unassessed",
+      "expected_enumeration_complete": false,
+      "expected_reason": "enumeration_budget",
+      "configured_max_isomers": 8,
+      "expected_formal_isomers": 16,
+      "reason": "Four constitutionally distinct unassigned centres exceed the retained eight-isomer budget; an incomplete result must not be certified non-meso."
+    },
+    {
+      "id": "unsupported_enhanced_relative_group",
+      "smiles": "C[C@H](O)[C@H](O)C |&1:1,3|",
+      "expected_status": "unassessed",
+      "expected_enumeration_complete": false,
+      "expected_reason": "unsupported_representation",
+      "reason": "Enhanced relative stereo groups need their own equivalence policy and must not be collapsed to a plain canonical identity."
+    },
+    {
+      "id": "unsupported_square_planar",
+      "smiles": "F[Pt@SP1](Cl)(Br)I",
+      "expected_status": "unassessed",
+      "expected_enumeration_complete": false,
+      "expected_reason": "unsupported_representation",
+      "reason": "A square-planar element is not a supported tetrahedral meso/RS centre; retaining the representation is required."
+    }
+  ],
+  "stereo_inventory_cases": [
+    {
+      "id": "sulfoxide_S",
+      "smiles": "C[S@](=O)C(C)C",
+      "expected_elements": [
+        {
+          "type": "Atom_Tetrahedral",
+          "centered_on": 1,
+          "element": "S",
+          "specified": "Specified",
+          "descriptor_role": "R/S"
+        }
+      ],
+      "expected_relevant_center_count": 1,
+      "expected_RS_center_count": 1,
+      "reason": "Configured sulfoxide sulfur is a tetrahedral stereocentre despite only three explicit heavy neighbors."
+    },
+    {
+      "id": "phosphine_oxide_P",
+      "smiles": "C[P@](=O)(c1ccccc1)C(C)C",
+      "expected_elements": [
+        {
+          "type": "Atom_Tetrahedral",
+          "centered_on": 1,
+          "element": "P",
+          "specified": "Specified",
+          "descriptor_role": "R/S"
+        }
+      ],
+      "expected_relevant_center_count": 1,
+      "expected_RS_center_count": 1,
+      "reason": "P has methyl, phenyl, isopropyl and oxygen substituents and supports an R/S descriptor."
+    },
+    {
+      "id": "tetraalkylammonium_N",
+      "smiles": "C[N@+](CC)(CCC)CCCC",
+      "expected_elements": [
+        {
+          "type": "Atom_Tetrahedral",
+          "centered_on": 1,
+          "element": "N",
+          "specified": "Specified",
+          "descriptor_role": "R/S"
+        }
+      ],
+      "expected_relevant_center_count": 1,
+      "expected_RS_center_count": 1,
+      "reason": "Stable quaternary N bears four distinct alkyl groups; inversion of neutral amines is not assumed here."
+    },
+    {
+      "id": "neutral_inverting_amine",
+      "smiles": "CN(CC)CCC",
+      "expected_elements": [],
+      "expected_relevant_center_count": 0,
+      "expected_RS_center_count": 0,
+      "reason": "Ordinary neutral tertiary amine is not a configurationally stable supported N centre."
+    },
+    {
+      "id": "ring_cis_trans",
+      "smiles": "CC1CCC(C)CC1",
+      "expected_elements": [
+        {
+          "type": "Atom_Tetrahedral",
+          "centered_on": 1,
+          "element": "C",
+          "specified": "Unspecified",
+          "descriptor_role": "relative_ring"
+        },
+        {
+          "type": "Atom_Tetrahedral",
+          "centered_on": 4,
+          "element": "C",
+          "specified": "Unspecified",
+          "descriptor_role": "relative_ring"
+        }
+      ],
+      "expected_relevant_center_count": 2,
+      "expected_RS_center_count": 0,
+      "reason": "The two ring substitution sites determine cis/trans stereochemistry. They are relevant stereo elements, not two independently assigned atom R/S descriptors."
+    },
+    {
+      "id": "E_but_2_ene",
+      "smiles": "C/C=C/C",
+      "expected_elements": [
+        {
+          "type": "Bond_Double",
+          "centered_on": 1,
+          "element": null,
+          "specified": "Specified",
+          "descriptor_role": "E/Z"
+        }
+      ],
+      "expected_relevant_center_count": 0,
+      "expected_RS_center_count": 0,
+      "reason": "An E/Z bond is an inventory element but is not an atom R/S centre."
+    }
+  ]
+}

@@ -1,0 +1,896 @@
+{
+  "baseline_commit": "f3238eb2fbbc1dc0704adf925eba1427d811fdbc",
+  "method": "For each fully completed baseline isomer, freeze one approved deterministic ETKDGv3 frame (seed42,100 attempts,1thread,random-coordinate retry only on no conformer). Compare independent isotope-labelled products by full bidirectional chirality-aware substructure isomorphism against direct/mirror products. Corroborate against unchanged f323 canonical mirror-key kernel on identical frozen coordinates; do not consult the new aggregator.",
+  "limits": [
+    "Groups computed by independent full chirality-aware isotope-product direct/mirror graph matching on frozen frames; corroboration uses the old approved per-isomer kernel, never the new aggregator.",
+    "Coordinates are bounded representative structural frames, not an ensemble or rate/temperature model. Native cross-arm pairings may change with frame; never relabel original atoms merely to match a hand partition.",
+    "All boron-containing compounds remain ineligible for DP5 scoring. Boron fixtures exercise diagnostic structural topicity only. No UFF/MMFF/model/JVM/GUI work was done.",
+    "The eight-form budget remains valid; this work makes no claim for unsupported/enhanced/non-tetrahedral/over-budget cases.",
+    "The star example is a valence-valid structural constitution and graph proof, not a literature-verified measured NMR standard. Familiar count-changing methylpentanediol/pentitol fixtures independently cover the requested real-molecule count behavior."
+  ],
+  "cases": [
+    {
+      "id": "methylpentanediol",
+      "scope": "configuration_counts",
+      "source_smiles": "CC(O)C(C)C(C)O",
+      "symmetry_reason": "Original C0-C1-C3-C5-C6 backbone, with C4 methyl on C3. The symmetric forms allow end exchange (0 6)(1 5) and fix C3/C4: four carbon groups. Other accepted forms have six singletons.",
+      "forms": [
+        {
+          "smiles": "CC([C@H](C)O)[C@H](C)O",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ],
+              [
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "C[C@H]([C@H](C)O)[C@@H](C)O",
+          "groups": {
+            "C": [
+              [
+                0,
+                6
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "C[C@@H]([C@H](C)O)[C@@H](C)O",
+          "groups": {
+            "C": [
+              [
+                0,
+                6
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "CC([C@@H](C)O)[C@@H](C)O",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ],
+              [
+                6
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pentitol",
+      "scope": "configuration_counts",
+      "source_smiles": "OCC(O)C(O)C(O)CO",
+      "symmetry_reason": "Original chain carbons1,2,4,6,8. Meso forms admit end exchange (1 8)(2 6), fixing4: three groups. The chiral pair gives five singletons.",
+      "forms": [
+        {
+          "smiles": "OC[C@@H](O)[C@@H](O)[C@@H](O)CO",
+          "groups": {
+            "C": [
+              [
+                1,
+                8
+              ],
+              [
+                2,
+                6
+              ],
+              [
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "OC[C@@H](O)C(O)[C@H](O)CO",
+          "groups": {
+            "C": [
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                4
+              ],
+              [
+                6
+              ],
+              [
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "OC[C@@H](O)[C@H](O)[C@@H](O)CO",
+          "groups": {
+            "C": [
+              [
+                1,
+                8
+              ],
+              [
+                2,
+                6
+              ],
+              [
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "OC[C@H](O)C(O)[C@@H](O)CO",
+          "groups": {
+            "C": [
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                4
+              ],
+              [
+                6
+              ],
+              [
+                8
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "F_positive",
+      "scope": "nucleus_pair_near_R",
+      "source_smiles": "C[C@H](O)C(F)F",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "C[C@H](O)C(F)F",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ]
+            ],
+            "F": [
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Si_positive",
+      "scope": "nucleus_pair_near_R",
+      "source_smiles": "C[C@H](O)C([Si](C)(C)C)[Si](C)(C)C",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "C[C@H](O)C([Si](C)(C)C)[Si](C)(C)C",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                5,
+                6,
+                7
+              ],
+              [
+                9,
+                10,
+                11
+              ]
+            ],
+            "Si": [
+              [
+                4
+              ],
+              [
+                8
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "B_positive",
+      "scope": "nucleus_pair_near_R",
+      "source_smiles": "C[C@H](O)C(B(O)O)B(O)O",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "C[C@H](O)C(B(O)O)B(O)O",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ]
+            ],
+            "B": [
+              [
+                4
+              ],
+              [
+                7
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "P_positive",
+      "scope": "nucleus_pair_near_R",
+      "source_smiles": "C[C@H](O)C(P(=O)(O)O)P(=O)(O)O",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "C[C@H](O)C(P(=O)(O)O)P(=O)(O)O",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ]
+            ],
+            "P": [
+              [
+                4
+              ],
+              [
+                8
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "F_coupled",
+      "scope": "no_initial_stereo_coupled",
+      "source_smiles": "OC(C(F)F)C(F)F",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "OC(C(F)F)C(F)F",
+          "groups": {
+            "C": [
+              [
+                1
+              ],
+              [
+                2,
+                5
+              ]
+            ],
+            "F": [
+              [
+                3,
+                6
+              ],
+              [
+                4,
+                7
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Si_coupled",
+      "scope": "no_initial_stereo_coupled",
+      "source_smiles": "OC(C([Si](C)(C)C)[Si](C)(C)C)C([Si](C)(C)C)[Si](C)(C)C",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "C[Si](C)(C)C(C(O)C([Si](C)(C)C)[Si](C)(C)C)[Si](C)(C)C",
+          "groups": {
+            "C": [
+              [
+                1
+              ],
+              [
+                2,
+                11
+              ],
+              [
+                4,
+                5,
+                6,
+                17,
+                18,
+                19
+              ],
+              [
+                8,
+                9,
+                10,
+                13,
+                14,
+                15
+              ]
+            ],
+            "Si": [
+              [
+                3,
+                16
+              ],
+              [
+                7,
+                12
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "B_coupled",
+      "scope": "no_initial_stereo_coupled",
+      "source_smiles": "OC(C(B(O)O)B(O)O)C(B(O)O)B(O)O",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "OB(O)C(B(O)O)C(O)C(B(O)O)B(O)O",
+          "groups": {
+            "C": [
+              [
+                1
+              ],
+              [
+                2,
+                9
+              ]
+            ],
+            "B": [
+              [
+                3,
+                13
+              ],
+              [
+                6,
+                10
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "P_coupled",
+      "scope": "no_initial_stereo_coupled",
+      "source_smiles": "OC(C(P(=O)(O)O)P(=O)(O)O)C(P(=O)(O)O)P(=O)(O)O",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "O=P(O)(O)C(C(O)C(P(=O)(O)O)P(=O)(O)O)P(=O)(O)O",
+          "groups": {
+            "C": [
+              [
+                1
+              ],
+              [
+                2,
+                11
+              ]
+            ],
+            "P": [
+              [
+                3,
+                12
+              ],
+              [
+                7,
+                16
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "F_negative",
+      "scope": "unique_nucleus_unrelated_carbon_pair",
+      "source_smiles": "FCCC[C@H](O)C(C)C",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "CC(C)[C@@H](O)CCCF",
+          "groups": {
+            "F": [
+              [
+                0
+              ]
+            ],
+            "C": [
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                6
+              ],
+              [
+                7
+              ],
+              [
+                8
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Si_negative",
+      "scope": "unique_nucleus_unrelated_carbon_pair",
+      "source_smiles": "C[Si](C)(C)CC[C@H](O)C(C)C",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "CC(C)[C@@H](O)CC[Si](C)(C)C",
+          "groups": {
+            "C": [
+              [
+                0,
+                2,
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ],
+              [
+                6
+              ],
+              [
+                8
+              ],
+              [
+                9
+              ],
+              [
+                10
+              ]
+            ],
+            "Si": [
+              [
+                1
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "B_negative",
+      "scope": "unique_nucleus_unrelated_carbon_pair",
+      "source_smiles": "OB(O)CC[C@H](O)C(C)C",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "CC(C)[C@@H](O)CCB(O)O",
+          "groups": {
+            "B": [
+              [
+                1
+              ]
+            ],
+            "C": [
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ],
+              [
+                7
+              ],
+              [
+                8
+              ],
+              [
+                9
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "P_negative",
+      "scope": "unique_nucleus_unrelated_carbon_pair",
+      "source_smiles": "OP(=O)(O)CC[C@H](O)C(C)C",
+      "symmetry_reason": "Full original atom groups on these saved frames; counts and nucleus-specific base-class refinement. Native other-conformer cross-arm correspondence requires its own coordinate proof.",
+      "forms": [
+        {
+          "smiles": "CC(C)[C@@H](O)CCP(=O)(O)O",
+          "groups": {
+            "P": [
+              [
+                1
+              ]
+            ],
+            "C": [
+              [
+                4
+              ],
+              [
+                5
+              ],
+              [
+                6
+              ],
+              [
+                8
+              ],
+              [
+                9
+              ],
+              [
+                10
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "four_chlorofluoromethyl",
+      "scope": "same_count_different_original_memberships",
+      "source_smiles": "C([C@H](F)Cl)([C@@H](F)Cl)(C(F)Cl)C(F)Cl",
+      "symmetry_reason": "Four constitutionally identical C(H)(F)(Cl) arms meet central C0. Arms of the same absolute configuration permute. The 2:2 form admits mirror exchange of all arms; the 3:1 and 1:3 forms each have a three-arm orbit plus a distinct one-arm orbit, but the singled original arm differs. Thus outer groups have equal counts and different memberships.",
+      "forms": [
+        {
+          "smiles": "F[C@H](Cl)C([C@H](F)Cl)([C@H](F)Cl)[C@@H](F)Cl",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1,
+                7,
+                10
+              ],
+              [
+                4
+              ]
+            ],
+            "F": [
+              [
+                2,
+                8,
+                11
+              ],
+              [
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "F[C@H](Cl)C([C@H](F)Cl)([C@@H](F)Cl)[C@@H](F)Cl",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1,
+                4,
+                7,
+                10
+              ]
+            ],
+            "F": [
+              [
+                2,
+                5,
+                8,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "F[C@H](Cl)C([C@@H](F)Cl)([C@@H](F)Cl)[C@@H](F)Cl",
+          "groups": {
+            "C": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                4,
+                7,
+                10
+              ]
+            ],
+            "F": [
+              [
+                2
+              ],
+              [
+                5,
+                8,
+                11
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "F_central_pair",
+      "scope": "constant_carbon_variable_fluorine_count",
+      "source_smiles": "CC(O)C(F)(F)C(O)C",
+      "symmetry_reason": "The end methyls0/8 and carbinol carbons1/6 remain equivalent, central CF2 carbon3 is fixed: C3 in every form. In the enantiomorphic-end form, fluorine substitution differentiates the central tetrahedral arrangement into distinct products (F4 and F5). Homomorphic-end forms retain one F environment. Frozen graph proofs determine the form identities, rather than inferring from report wording.",
+      "forms": [
+        {
+          "smiles": "C[C@H](O)C(F)(F)[C@@H](C)O",
+          "groups": {
+            "C": [
+              [
+                0,
+                8
+              ],
+              [
+                1,
+                6
+              ],
+              [
+                3
+              ]
+            ],
+            "F": [
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "C[C@@H](O)C(F)(F)[C@@H](C)O",
+          "groups": {
+            "C": [
+              [
+                0,
+                8
+              ],
+              [
+                1,
+                6
+              ],
+              [
+                3
+              ]
+            ],
+            "F": [
+              [
+                4,
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "C[C@H](O)C(F)(F)[C@H](C)O",
+          "groups": {
+            "C": [
+              [
+                0,
+                8
+              ],
+              [
+                1,
+                6
+              ],
+              [
+                3
+              ]
+            ],
+            "F": [
+              [
+                4,
+                5
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "F_terminal_pairs",
+      "scope": "constant_carbon_same_fluorine_count_different_memberships",
+      "source_smiles": "FC(F)C(O)C(O)C(F)F",
+      "symmetry_reason": "Chain carbon groups remain [[1,7],[3,5]], giving C2. Four terminal fluorines always form two groups, but source-frame partners change from [[0,9],[2,8]] to [[0,8],[2,9]]. Same counts therefore do not prove full atom-group agreement.",
+      "forms": [
+        {
+          "smiles": "O[C@H](C(F)F)[C@@H](O)C(F)F",
+          "groups": {
+            "F": [
+              [
+                0,
+                9
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "C": [
+              [
+                1,
+                7
+              ],
+              [
+                3,
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "O[C@H](C(F)F)[C@H](O)C(F)F",
+          "groups": {
+            "F": [
+              [
+                0,
+                8
+              ],
+              [
+                2,
+                9
+              ]
+            ],
+            "C": [
+              [
+                1,
+                7
+              ],
+              [
+                3,
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "smiles": "O[C@@H](C(F)F)[C@@H](O)C(F)F",
+          "groups": {
+            "F": [
+              [
+                0,
+                8
+              ],
+              [
+                2,
+                9
+              ]
+            ],
+            "C": [
+              [
+                1,
+                7
+              ],
+              [
+                3,
+                5
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

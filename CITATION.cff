@@ -1,0 +1,60 @@
+cff-version: 1.2.0
+message: >-
+  If you use checkSI, please cite the ChemRxiv preprint in preferred-citation.
+  Cite the methods, models, data and software it relies on separately
+  (docs/references.md). Pavel Sakharov is the corresponding author.
+type: software
+title: "checkSI: Computer-Assisted Pre-Submission Checking of Characterization Data for Organic Compounds"
+version: "0.4.0"
+authors:
+  - family-names: Sakharov
+    given-names: Pavel
+    orcid: "https://orcid.org/0000-0001-7746-7387"
+    affiliation: "Schulich Faculty of Chemistry, Technion – Israel Institute of Technology, Haifa 3200009, Israel"
+  - family-names: Elashkin
+    given-names: Andrew
+    orcid: "https://orcid.org/0009-0002-5617-8927"
+    affiliation: "Taub Faculty of Computer Science, Technion – Israel Institute of Technology, Haifa 3200009, Israel"
+  - family-names: Gandelman
+    given-names: Mark
+    orcid: "https://orcid.org/0000-0002-9651-2902"
+    affiliation: >-
+      Schulich Faculty of Chemistry, Technion – Israel Institute of Technology, Haifa 3200009, Israel;
+      The Resnick Sustainability Center for Catalysis, Technion – Israel Institute of Technology, Haifa 3200009, Israel
+contact:
+  - family-names: Sakharov
+    given-names: Pavel
+    email: "pavelpas@campus.technion.ac.il"
+    affiliation: "Schulich Faculty of Chemistry, Technion – Israel Institute of Technology, Haifa 3200009, Israel"
+repository-code: "https://github.com/aelashkin/CheckSI"
+url: "https://github.com/aelashkin/CheckSI"
+license: MIT
+keywords:
+  - NMR
+  - HRMS
+  - elemental analysis
+  - supporting information
+  - cheminformatics
+preferred-citation:
+  type: article
+  title: "checkSI: Computer-Assisted Pre-Submission Checking of Characterization Data for Organic Compounds"
+  authors:
+    - family-names: Sakharov
+      given-names: Pavel
+      orcid: "https://orcid.org/0000-0001-7746-7387"
+      affiliation: "Schulich Faculty of Chemistry, Technion – Israel Institute of Technology, Haifa 3200009, Israel"
+    - family-names: Elashkin
+      given-names: Andrew
+      orcid: "https://orcid.org/0009-0002-5617-8927"
+      affiliation: "Taub Faculty of Computer Science, Technion – Israel Institute of Technology, Haifa 3200009, Israel"
+    - family-names: Gandelman
+      given-names: Mark
+      orcid: "https://orcid.org/0000-0002-9651-2902"
+      affiliation: >-
+        Schulich Faculty of Chemistry, Technion – Israel Institute of Technology, Haifa 3200009, Israel;
+        The Resnick Sustainability Center for Catalysis, Technion – Israel Institute of Technology, Haifa 3200009, Israel
+  journal: ChemRxiv
+  year: 2026
+  date-published: 2026-11-02
+  doi: "10.26434/chemrxiv.15011545/v1"
+  url: "https://doi.org/10.26434/chemrxiv.15011545/v1"

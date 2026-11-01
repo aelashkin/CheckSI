@@ -1,0 +1,13 @@
+{
+  "purpose": "Synthetic shifts for engineering execution only; these are not independent experimental labels or accuracy evidence.",
+  "cases": [
+    {"compound_id": "ethanol", "smiles": "CCO", "carbon_shifts": [18.2, 58.1]},
+    {"compound_id": "propanol", "smiles": "CCCO", "carbon_shifts": [10.0, 25.0, 60.0]},
+    {"compound_id": "methanol", "smiles": "CO", "carbon_shifts": [50.0]},
+    {"compound_id": "acetic-acid", "smiles": "CC(=O)O", "carbon_shifts": [20.0, 175.0]},
+    {"compound_id": "acetone", "smiles": "CC(=O)C", "carbon_shifts": [30.0, 205.0], "carbon_groups": [["C1", "C4"]]},
+    {"compound_id": "dimethyl-ether", "smiles": "COC", "carbon_shifts": [60.0], "carbon_groups": [["C1", "C3"]]},
+    {"compound_id": "benzene", "smiles": "c1ccccc1", "carbon_shifts": [128.0], "carbon_groups": [["C1", "C2", "C3", "C4", "C5", "C6"]]},
+    {"compound_id": "isopropanol", "smiles": "CC(C)O", "carbon_shifts": [25.0, 65.0], "carbon_groups": [["C1", "C3"]]}
+  ]
+}

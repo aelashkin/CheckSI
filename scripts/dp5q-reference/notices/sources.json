@@ -1,0 +1,26 @@
+{
+  "LICENSE.nfp.txt": {
+    "url": "https://raw.githubusercontent.com/NatLabRockies/nfp/master/LICENSE",
+    "bytes": 1744,
+    "sha256": "c58461b51282ee3c9f7434e114d0572c6133fa3ff48ff856c9ded7d0337e0647",
+    "source_sha256": "c58461b51282ee3c9f7434e114d0572c6133fa3ff48ff856c9ded7d0337e0647",
+    "source_bytes": 1744,
+    "transformation": "UTF-8 text with trailing line whitespace and extra terminal blank lines removed; license wording unchanged."
+  },
+  "LICENSE.cascade.txt": {
+    "url": "https://raw.githubusercontent.com/patonlab/CASCADE/master/LICENSE",
+    "bytes": 1095,
+    "sha256": "2b75877d5cb3855d75597d74b4aeaa3fb18098b23d23117327be9ecfd0f3827a",
+    "source_sha256": "2b75877d5cb3855d75597d74b4aeaa3fb18098b23d23117327be9ecfd0f3827a",
+    "source_bytes": 1095,
+    "transformation": "UTF-8 text with trailing line whitespace and extra terminal blank lines removed; license wording unchanged."
+  },
+  "LICENSE.nmrshiftdb2.txt": {
+    "url": "https://nmrshiftdb.nmr.uni-koeln.de/nmrshiftdbhtml/nmrshiftdb2datalicense.txt",
+    "bytes": 26529,
+    "sha256": "ad0ea9f3c2806d657f1d630ece6aa6dba4c1f07ff7c0cc222b816e27baf6cc03",
+    "source_sha256": "00322cc450c2e53e305c082e1ab7454f108b7df51c0dbee0a07932666b245516",
+    "source_bytes": 26584,
+    "transformation": "UTF-8 text with trailing line whitespace and extra terminal blank lines removed; license wording unchanged."
+  }
+}

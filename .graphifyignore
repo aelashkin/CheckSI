@@ -1,0 +1,37 @@
+# Keep indexing within the reviewed source/tooling corpus.
+*
+!src/
+!src/**
+!tests/
+!tests/**
+!gui_tests/
+!gui_tests/**
+!scripts/
+!scripts/**
+!packaging/
+!packaging/**
+!pyproject.toml
+!.github/
+!.github/**
+
+# Never index local state, generated files, credentials, or binary fixtures.
+.git/
+.local/
+.worktrees/
+.venv/
+.runtime/
+__pycache__/
+graphify-out/
+build/
+dist/
+*.egg-info/
+.env
+.env.*
+*.pem
+*.key
+*.pdf
+*.docx
+*.xlsx
+*.png
+*.jpg
+*.svg

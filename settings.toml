@@ -1,0 +1,105 @@
+# CheckSI configuration
+# Schema-first settings used by both CLI and GUI.
+
+[paths]
+input_path = "."
+output_dir = "checksi-output"
+
+[conversion]
+# Set libreoffice_path to an explicit executable path when it is not on PATH.
+timeout_seconds = 60
+
+[modes]
+deep_name_analysis = "off"
+output_mode = "essential"
+open_reports_on_success = false
+header_margin = 0.05
+footer_margin = 0.05
+
+[dp5]
+enabled = false
+score_threshold_percent = 20.0
+timeout_seconds = 600
+keep_artifacts = false
+
+[solvents]
+# Each entry defines one solvent with expected 1H and 13C residual peaks.
+[[solvents.entries]]
+name = "CDCl3"
+aliases = ["chloroform"]
+proton_shifts = [7.28]
+carbon_shifts = [77.0]
+
+[[solvents.entries]]
+name = "DMSO"
+aliases = ["(CD3)2SO"]
+proton_shifts = [2.5]
+carbon_shifts = [40.0]
+
+[[solvents.entries]]
+name = "C6D6"
+aliases = ["benzene"]
+proton_shifts = [7.16]
+carbon_shifts = [128.0]
+
+[[solvents.entries]]
+name = "acetone"
+aliases = ["(CD3)2CO"]
+proton_shifts = [2.0]
+carbon_shifts = [29.8, 206.3]
+
+[[solvents.entries]]
+name = "MeOD"
+aliases = ["CD3OD"]
+proton_shifts = [3.3]
+carbon_shifts = [49.0]
+
+[[solvents.entries]]
+name = "CD2Cl2"
+aliases = ["dichloromethane"]
+proton_shifts = [5.32]
+carbon_shifts = [53.8]
+
+[[solvents.entries]]
+name = "THF"
+aliases = ["tetrahydrofuran"]
+proton_shifts = [3.58, 1.72]
+carbon_shifts = [25.3, 67.2]
+
+[[solvents.entries]]
+name = "C6D5CD3"
+aliases = ["toluene"]
+proton_shifts = [2.08, 6.97, 7.01, 7.09]
+carbon_shifts = [20.4, 125.1, 128.0, 128.9, 137.5]
+
+[[solvents.entries]]
+name = "C6D5Cl"
+aliases = ["chlorobenzene"]
+proton_shifts = [6.96, 6.99, 7.14]
+carbon_shifts = [126.0, 128.3, 129.3, 134.2]
+
+[[solvents.entries]]
+name = "CD3CN"
+aliases = ["acetonitrile"]
+proton_shifts = [1.94]
+carbon_shifts = [1.3, 118.3]
+
+[[solvents.entries]]
+name = "TFE"
+aliases = ["trifluoroacetic"]
+proton_shifts = [3.88, 5.02]
+carbon_shifts = [61.5, 126.3]
+[errors]
+# Allowed levels: disabled, info, warning, critical
+default_severity = "critical"
+
+[errors.overrides]
+stereo_check_required = "info"
+dp5_analysis_failed = "warning"
+dp5_not_applicable = "info"
+formula_source_review_required = "info"
+ea_isotope_calcd_mismatch = "warning"
+dp5_boron_not_supported = "warning"
+c13_boron_signal_not_observed = "info"
+nmr_configuration_dependent = "warning"
+dp5_configuration_dependent = "warning"

@@ -1,0 +1,119 @@
+{
+  "implementation": "stdlib scalar independent reference, no production imports",
+  "shared_identity": {
+    "predictions": [
+      19.0,
+      21.0
+    ],
+    "observations": [
+      20.0
+    ],
+    "indices": [
+      0,
+      0
+    ],
+    "residuals": [
+      -1.0,
+      1.0
+    ],
+    "evidence_weights": [
+      0.5,
+      0.5
+    ],
+    "score": 0.3173105078629141,
+    "averaged_mutant_score": 1.0
+  },
+  "shared_with_anchor": {
+    "predictions": [
+      19.0,
+      21.0,
+      100.0
+    ],
+    "observations": [
+      20.0,
+      100.0
+    ],
+    "indices": [
+      0,
+      0,
+      1
+    ],
+    "weights": [
+      0.5,
+      0.5,
+      1.0
+    ],
+    "score": 0.5633032113017945,
+    "naive_duplication_mutant_score": 0.4652177781304793
+  },
+  "anchored_weighted_fit": {
+    "x_observed": [
+      20.0,
+      20.0,
+      50.0,
+      100.0
+    ],
+    "y_predicted": [
+      19.0,
+      21.0,
+      51.0,
+      103.0
+    ],
+    "weights": [
+      0.5,
+      0.5,
+      1.0,
+      1.0
+    ],
+    "slope": 1.0377551020408162,
+    "intercept": -0.8061224489795862,
+    "scaled_residuals": [
+      -0.9144542772861399,
+      1.01278269419862,
+      -0.07866273352998832,
+      0.029498525073748283
+    ],
+    "weighted_mae": 0.35725991478203883
+  },
+  "omission": {
+    "full_environment_count": 4,
+    "observations": [
+      20.0,
+      50.0,
+      100.0
+    ],
+    "predictions": [
+      19.0,
+      49.0,
+      99.0,
+      999.0
+    ],
+    "eligible_group_indices": [
+      3
+    ],
+    "assigned_indices": [
+      0,
+      1,
+      2,
+      null
+    ],
+    "weights": [
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "expected_score": 0.3173105078629141,
+    "wrong_mask_group": 2,
+    "wrong_mask_rejected": true
+  },
+  "fixed_assignments": {
+    "valid_shared": {
+      "0": 0,
+      "1": 0,
+      "2": 1
+    },
+    "requires_explicit_capacity": true,
+    "boolean_indices_rejected": true
+  }
+}

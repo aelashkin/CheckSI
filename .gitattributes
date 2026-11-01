@@ -1,0 +1,10 @@
+# Frozen reference captures are byte-hashed; preserve their exact stored bytes.
+tests/fixtures/dp5q/reference-network/*.sdf -text
+tests/fixtures/dp5q/manifest.json -text
+tests/fixtures/dp5q/historical-sdf-results.json -text
+
+# Hash-pinned model provenance and export inputs must not undergo CRLF conversion.
+src/checksi/dp5q/data/* -text
+scripts/dp5q-reference/notices/* -text
+scripts/dp5q-reference/source-lock.json -text
+scripts/dp5q-reference/tensor-map.json -text

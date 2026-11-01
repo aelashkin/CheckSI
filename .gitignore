@@ -1,0 +1,45 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ruff_cache/
+
+# Build and distribution artifacts
+build/
+dist/
+dist-*/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+.runtime/
+venv/
+env/
+
+# IDE and editor configuration files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# LLM specific files
+repomix-output.xml
+
+# Local agent state and generated knowledge graphs
+.local/
+.worktrees/
+graphify-out/
+
+# Logs and temporary files
+*.toml.lock
+
+#output files
+data/output/
+data-checker-output/
+checksi-output/
