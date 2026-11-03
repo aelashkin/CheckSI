@@ -33,6 +33,12 @@ uv run --locked checksi-gui
 
 The Qt suite is separate from default discovery. Minimal Linux needs `libegl1 libopengl0`. Run focused interactive checks when practical. Repository-wide Ruff must pass without weakening selection/exclusions. Documentation budgets/links are checked through the existing unittest suite against [the manifest](_budgets.toml); new Markdown needs bounded ownership, not an unbounded appendix.
 
+## README media
+
+`docs/assets/readme/` contains real GUI/report captures from `data/checkSI_test_file.docx`, using packaged defaults with deep name analysis and DP5q off. The source application revision is `15cb9fecf2d5c064236ea67f9e3d8455f57bbe3b`; [sample provenance](publication-assets.tsv) records the input hash.
+
+To regenerate, prepare a locked Python 3.13 GUI environment. Use disposable config, input/output paths and INI-backed Qt appearance settings. Drive the actual GUI with Qt test events; save widget grabs before/after **Run Analysis**. Capture that run's `findings.html` in isolated Chromium. Keep actual findings, coverage and export warnings; inspect full-size images and avoid private paths. Assemble genuine frames with Pillow, shorten waits explicitly, omit looping and stop within five seconds. Verify playback and readable first/final states. Record revision, effective config, dimensions, timing and artifact status with the PR; update these references when recapturing.
+
 ## Build and installed verification
 
 ```sh
