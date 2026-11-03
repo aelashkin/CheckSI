@@ -13,38 +13,27 @@ max_words = 7400
 [pages."README.md"]
 max_words = 800
 max_fenced_lines = 24
-max_images = 1
+# Three standard metadata badges and one workflow GIF.
+max_images = 4
 max_commands = 6
 max_fences = 2
 [pages."README.md".sections]
 "__intro__" = 50
-"why" = 60
+"at-a-glance" = 40
 "what-it-checks" = 140
-"message-guide" = 70
-"output" = 100
-"quick-start" = 100
-"settings" = 80
+"get-started" = 80
 "privacy-and-limitations" = 110
 "authors" = 100
 "citation" = 70
-"references" = 50
-"license" = 50
+"license-and-references" = 60
 "further-reading" = 40
 
 [pages."README.md".section_constraints.__intro__]
-max_paragraphs = 1
-[pages."README.md".section_constraints.why]
-max_paragraphs = 2
-[pages."README.md".section_constraints.settings]
 max_paragraphs = 1
 [pages."README.md".section_constraints.privacy-and-limitations]
 max_paragraphs = 2
 [pages."README.md".section_constraints.further-reading]
 max_links = 5
-
-[pages."README.md".table_row_limits]
-"what-it-checks" = 7
-"output" = 5
 
 [pages."docs/installation.md"]
 max_words = 900
@@ -62,11 +51,13 @@ max_table_row_words = 35
 [pages."docs/usage.md"]
 max_words = 900
 max_fenced_lines = 45
+max_images = 2
 max_table_row_words = 35
 [pages."docs/usage.md".sections]
 "__intro__" = 30
 "cli-run-and-cancellation" = 180
-"gui-analyze" = 130
+"gui-analyze" = 160
+"message-guide" = 110
 "settings-and-diagnostic-search" = 240
 "dp5q-and-doctor" = 220
 "recovery" = 100
@@ -119,6 +110,7 @@ max_table_row_words = 35
 "__intro__" = 30
 "architecture" = 180
 "lint-and-tests" = 190
+"readme-media" = 160
 "build-and-installed-verification" = 220
 "codebase-graph-for-agents" = 220
 "native-checks" = 220

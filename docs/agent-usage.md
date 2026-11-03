@@ -1,6 +1,6 @@
 # Agent and automation use
 
-This page is for AI agents and scripts that install and run CheckSI headlessly. Contributors changing CheckSI follow [AGENTS.md](../AGENTS.md). Linked guides own each contract.
+For AI agents and scripts running CheckSI headlessly. For a walkthrough, see the [GUI/CLI guide](usage.md). Contributors follow [AGENTS.md](../AGENTS.md); linked guides own each contract.
 
 ## Install
 

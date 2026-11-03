@@ -1,15 +1,19 @@
 # Usage
 
-CLI and GUI use the same analysis/reporting runner. [Configuration](configuration.md) owns defaults and overrides; [reports](reports.md) owns artifacts, statuses and exit codes.
+Start with [installation](installation.md); source-checkout commands below run from the repository root. CLI and GUI share one analysis/reporting runner. [Configuration](configuration.md) owns settings; [reports](reports.md) owns artifacts, statuses and exit codes.
 
 ## CLI run and cancellation
 
-```sh
-uv run --locked checksi run article.pdf --output-dir results
-uv run --locked checksi run article.docx --override modes.output_mode=detailed
-```
+1. Choose a PDF/DOCX, or try the bundled demonstration input:
 
-Use `--config-file FILE` before the subcommand to select TOML. Run flags include `--output-dir`, `--deep-name-analysis on|off`, `--output-mode essential|detailed`, `--dp5`/`--no-dp5` and repeatable `--override KEY=VALUE`; consult `checksi run --help`. Overrides affect one run without saving.
+   ```sh
+   uv run --locked checksi --config-file settings.toml run data/checkSI_test_file.docx --output-dir results
+   ```
+
+2. Read `assessment_status`, finding counts and `export_status` separately in the run summary. The sample intentionally demonstrates issues; incomplete assessment exits **3**.
+3. Open the `report_html` path. Each run has its own folder containing `findings.html`, `results.json` and optional exports. See [output meanings](reports.md#artifacts-and-ownership).
+
+The example uses repository settings without saving defaults. `--config-file FILE` selects TOML before the subcommand. `checksi run --help` lists run flags, including repeatable `--override KEY=VALUE`; overrides affect one run without saving.
 
 Ctrl+C requests cancellation; POSIX `SIGTERM`/`SIGHUP` do likewise, preserving previously ignored signals. Further signals repeat the cooperative request. Only completed compounds contribute findings. Cancellation before export suppresses reports; during export, completed artifacts remain and automatic opening is suppressed. Extraction/rendering may finish their current operation. DOCX conversion and model workers have bounded termination/cleanup; abrupt OS or supervisor death and filesystem failures can leave private temporary files.
 
@@ -17,19 +21,45 @@ Both streams use UTF-8. Progress/phase counts go to stderr; logs/summary go to s
 
 ## GUI Analyze
 
-Launch `checksi-gui` after installing the GUI extra. Choose PDF/DOCX and an output parent, adjust **Run options**, then select **Run Analysis**. Compact options apply immediately; the runner copies confirmed settings at start. A prior result remains identified while another input is selected or run.
+1. Install the [GUI extra](installation.md#source-checkout), then launch:
 
-**Open Findings** opens HTML; **Other formats** contains available exports. The result shows input, assessment, findings and export warnings. Progress, elapsed time and **Cancel** remain visible in Settings. Activity details preserve manual scrolling and offer **Jump to latest**/**Copy details**. Ctrl+O (Command+O on macOS) selects a document; Tab/Space operate controls. Closing during work requests cancellation and waits for the worker; status checks also finish before close.
+   ```sh
+   uv run --locked checksi-gui --config-file settings.toml
+   ```
+
+2. Select **Browse File** and choose a PDF/DOCX; try `data/checkSI_test_file.docx` for the demonstration shown here. Choose an output parent.
+3. Review **Run options**, then select **Run Analysis**. Compact options apply immediately; the runner copies confirmed settings at start.
+
+[![Analyze view with a selected demonstration document, output parent and Run Analysis button.](assets/readme/analyze.png)](assets/readme/analyze.png)
+
+4. Read the summary's assessment, findings and export warnings separately. A prior result stays identified while another input is selected or run.
+5. Select **Open Findings** for HTML or **Other formats** for available exports. Inspect each description beside its messages.
+
+[![Findings report showing extracted characterization data beside the diagnostic messages requiring review.](assets/readme/findings.png)](assets/readme/findings.png)
+
+Demonstration data; deep name analysis and DP5q are off.
+
+Progress, elapsed time and **Cancel** remain visible in Settings. Activity details preserve manual scrolling and offer **Jump to latest**/**Copy details**. Ctrl+O (Command+O on macOS) selects a document; Tab/Space operate controls. Closing requests cancellation and waits for analysis/status work.
+
+## Message guide
+
+The guide explains diagnostic codes through demonstration descriptions and selected output.
+
+1. In a source checkout, open `docs/checkSI_message_guide.html` directly in a browser.
+2. Without a checkout, open the [guide file on GitHub](https://github.com/aelashkin/CheckSI/blob/main/docs/checkSI_message_guide.html), select **Download raw file**, then open the saved HTML in a browser. GitHub's source view does not render the guide.
+3. Filter by message code, select a section and expand an example to compare its description and findings.
+
+The records are demonstrations, not experimental data. Optional web fonts have local fallbacks; the guide's examples are embedded.
 
 ## Settings and diagnostic search
 
-Settings edits remain a draft. **Confirm Changes** validates and applies the draft to subsequent runs without writing a file. Leaving for Analyze with unconfirmed edits offers **Confirm Changes**, **Discard Changes** or **Keep Editing**. Discard restores the last confirmed session, including after invalid edits. An active check always retains its starting settings.
+Settings edits are drafts. **Confirm Changes** validates and applies them to future runs without writing a file. Leaving for Analyze with unconfirmed edits offers **Confirm Changes**, **Discard Changes** or **Keep Editing**. Discard restores the confirmed session, including after invalid edits. Active checks retain their starting settings.
 
-**Save User Defaults** confirms and saves settings for normal startup. **Export Config** confirms/writes a chosen TOML; **Import Config** loads a draft for review. Neither changes normal-startup defaults. **Restore Factory Settings** replaces the draft. Import/restore protects existing edits; closing with unsaved changes offers save defaults, close without saving or keep editing. File conflicts preserve edits and require explicit recovery. See [persistence](configuration.md#persistence-and-import).
+**Save User Defaults** confirms/saves settings for startup. **Export Config** confirms/writes a chosen TOML; **Import Config** loads a draft. Neither changes startup defaults. **Restore Factory Settings** replaces the draft. Import/restore protects edits; closing with unsaved changes offers save defaults, close without saving or keep editing. File conflicts preserve edits and require recovery. See [persistence](configuration.md#persistence-and-import).
 
-Under **Diagnostic Settings → Show Per-Error Overrides**, search matches codes and all message templates, ignoring case (`13C` also finds `c13`). **Show only changed** combines with search and compares per-code choices with factory settings, including removed factory overrides. Hidden rows retain their values; clear both filters to see all diagnostics. Hover over codes for templates. Edit choices with one click or Enter; Escape cancels. Dropdowns open screen-bounded and never move afterwards.
+Under **Diagnostic Settings → Show Per-Error Overrides**, search matches codes/templates, ignoring case (`13C` finds `c13`). **Show only changed** combines with search, comparing choices with factory settings, including removed factory overrides. Hidden rows retain values; clear both filters for all diagnostics. Hover codes for templates. Click or Enter edits; Escape cancels. Dropdowns stay screen-bounded without moving.
 
-**Advanced Configuration** shows editable validated JSON and a read-only factory tab. **Update Settings** updates the draft; confirmation applies it. **Copy JSON** copies the selected tab. Untouched values beyond a compact control's range/precision remain exact until that control changes. Blank Default Input retains its confirmed value. Appearance choices apply immediately and save automatically, separately from analytical drafts.
+**Advanced Configuration** provides validated JSON and a read-only factory tab. **Update Settings** updates the draft; confirmation applies it. **Copy JSON** copies the selected tab. Untouched values beyond compact controls' range/precision stay exact until edited. Blank Default Input retains its confirmed value. Appearance changes apply/save immediately, separately from analytical drafts.
 
 ## DP5q and doctor
 
