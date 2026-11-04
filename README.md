@@ -1,7 +1,5 @@
 # checkSI
 
----
-
 [![Code license: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](https://github.com/aelashkin/CheckSI/blob/main/LICENSE)
 [![Python 3.12 or newer](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/)
 [![ChemRxiv preprint](https://img.shields.io/badge/Preprint-ChemRxiv-red.svg)](https://doi.org/10.26434/chemrxiv.15011545/v1)
@@ -10,9 +8,7 @@
 
 ## At a glance
 
-[![checkSI moves from a selected document in Analyze to its run summary and a report showing extracted descriptions beside diagnostic messages.](docs/assets/readme/workflow.gif)](https://github.com/aelashkin/CheckSI/blob/main/docs/usage.md)
-
-Demonstration input; edited with waits shortened. Open the [GUI/CLI guide](https://github.com/aelashkin/CheckSI/blob/main/docs/usage.md) for readable screenshots and step-by-step instructions.
+[![Looping checkSI demo using test data, with waits shortened: select a document, run analysis, and inspect findings and a highlighted error. Follow the image link for GUI/CLI screenshots and instructions.](docs/assets/readme/workflow.gif)](https://github.com/aelashkin/CheckSI/blob/main/docs/usage.md)
 
 ## What it checks
 
