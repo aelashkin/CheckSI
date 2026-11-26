@@ -153,7 +153,7 @@ class DP5Settings(StrictConfigModel):
     """Optional bundled DP5q scoring settings, with load-only legacy migration."""
 
     enabled: bool = False
-    score_threshold_percent: float = Field(default=20.0, ge=0.0, le=100.0)
+    score_threshold_percent: float = Field(default=17.0, ge=0.0, le=100.0)
     timeout_seconds: int = Field(default=600, ge=1)
     keep_artifacts: bool = False
 
@@ -194,6 +194,14 @@ class DP5Settings(StrictConfigModel):
         return migrated
 
 
+class H1ShiftSettings(StrictConfigModel):
+    """Advisory 1H shift comparison with the bundled CASCADE proton model (on by default)."""
+
+    enabled: bool = True
+    mean_error_threshold_ppm: float = Field(default=0.35, gt=0.0, le=5.0)
+    signal_error_threshold_ppm: float = Field(default=1.5, gt=0.0, le=10.0)
+
+
 class AppConfig(StrictConfigModel):
     """Root application configuration."""
 
@@ -202,4 +210,5 @@ class AppConfig(StrictConfigModel):
     solvents: SolventSettings
     errors: ErrorSettings
     dp5: DP5Settings = Field(default_factory=DP5Settings)
+    h1_shift: H1ShiftSettings = Field(default_factory=H1ShiftSettings)
     conversion: ConversionSettings = Field(default_factory=ConversionSettings)

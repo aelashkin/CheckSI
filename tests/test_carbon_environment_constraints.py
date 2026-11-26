@@ -103,7 +103,7 @@ class CarbonEnvironmentEngineTests(unittest.TestCase):
         self.assertEqual(result.status, 'assessed', result)
         ready = {'capabilities': ['coincident-observations-v1'], 'model_id': models.metadata['model_id'], 'preprocessing_id': models.metadata['preprocessing_id'],
                  'score_version': models.metadata['score_id'], 'weights_sha256': models.metadata['files']['weights.npz']['sha256'],
-                 'geometry_policy': 'converged-single-v2'}
+                 'geometry_policy': models.metadata['geometry_policy']}
         validate_result_for_request(request, result, ready)
         self.assertEqual(len(result.assignments), 11)
         for row in result.assignments:

@@ -18,9 +18,14 @@ footer_margin = 0.05
 
 [dp5]
 enabled = false
-score_threshold_percent = 20.0
+score_threshold_percent = 17.0
 timeout_seconds = 600
 keep_artifacts = false
+
+[h1_shift]
+enabled = true
+mean_error_threshold_ppm = 0.35
+signal_error_threshold_ppm = 1.5
 
 [solvents]
 # Each entry defines one solvent with expected 1H and 13C residual peaks.
@@ -103,3 +108,21 @@ dp5_boron_not_supported = "warning"
 c13_boron_signal_not_observed = "info"
 nmr_configuration_dependent = "warning"
 dp5_configuration_dependent = "warning"
+h1_shift_structure_mismatch = "warning"
+h1_shift_signal_outlier = "info"
+h1_shift_not_applicable = "info"
+h1_multiplicity_structure_mismatch = "warning"
+h1_protons_unaccounted = "warning"
+hnmr_j_partner_missing = "warning"
+hnmr_j_value_implausible = "warning"
+hnmr_heteronuclear_coupling_missing = "warning"
+c13_cf_j_value_implausible = "warning"
+c13_cf_multiplicity_mismatch = "warning"
+c13_cf_coupling_incomplete = "warning"
+hnmr_j_partner_mismatch = "info"
+fnmr_decoupling_not_stated = "info"
+c13_cf_long_range_coupling_missing = "info"
+dp5_signal_outlier = "info"
+dp5_series_deviation = "info"
+name_data_mismatch = "info"
+dp5_referencing_offset = "info"

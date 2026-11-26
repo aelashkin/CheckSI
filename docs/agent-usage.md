@@ -40,7 +40,7 @@ Logs and the final `=== Run Summary ===` block of `key: value` lines use UTF-8 s
 
 - `analysis.assessment.status` (`complete`, `partial`, `none`) and `unassessed` reasons;
 - `export.status` (`complete`, `partial`, `cancelled`; `failed` or `incomplete` means required export failed or was interrupted) and `export.artifact_warnings`;
-- `analysis.compounds`, `analysis.error_stats` and, with DP5q, `analysis.dp5_summary`;
+- `analysis.compounds`, `analysis.error_stats` and, with DP5q, `analysis.dp5_summary` (unless `h1_shift.enabled=false`, `analysis.h1_shift_summary`);
 - `configuration` and `provenance.checksi` for reproducibility.
 
 Assessment coverage and export completeness are [independent](reports.md#assessment-findings-and-export).

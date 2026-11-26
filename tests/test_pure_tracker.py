@@ -33,10 +33,16 @@ class PureTrackerTests(unittest.TestCase):
             copied['name_not_found'] = 99
             assert first.get_count('name_not_found') == 2
             assert list(first.to_dict()) == ERROR_NAMES
-            assert len(ERROR_NAMES) == 80
-            assert ERROR_NAMES[-7:] == ['formula_source_mismatch', 'formula_source_review_required',
-                                        'ea_isotope_calcd_mismatch', 'dp5_boron_not_supported', 'c13_boron_signal_not_observed',
-                                        'nmr_configuration_dependent', 'dp5_configuration_dependent']
+            assert len(ERROR_NAMES) == 98
+            assert ERROR_NAMES[-25:] == ['formula_source_mismatch', 'formula_source_review_required',
+                                         'ea_isotope_calcd_mismatch', 'dp5_boron_not_supported', 'c13_boron_signal_not_observed',
+                                         'nmr_configuration_dependent', 'dp5_configuration_dependent',
+                                         'h1_shift_structure_mismatch', 'h1_shift_signal_outlier', 'h1_shift_not_applicable',
+                                         'h1_multiplicity_structure_mismatch', 'h1_protons_unaccounted', 'hnmr_j_partner_missing', 'hnmr_j_value_implausible',
+                    'hnmr_heteronuclear_coupling_missing', 'c13_cf_j_value_implausible', 'c13_cf_multiplicity_mismatch',
+                    'c13_cf_coupling_incomplete', 'hnmr_j_partner_mismatch', 'fnmr_decoupling_not_stated',
+                                         'c13_cf_long_range_coupling_missing', 'dp5_signal_outlier', 'dp5_series_deviation', 'name_data_mismatch',
+                                         'dp5_referencing_offset']
             for name in forbidden:
                 assert name not in sys.modules, name
         ''')

@@ -39,12 +39,14 @@ class ScopedEngineTests(unittest.TestCase):
 
     def assert_independent_reference(self, result):
         self.assertEqual(result.status, 'assessed', result)
-        self.assertEqual([row['calculated_shift'] for row in result.assignments], [19., 21., 100.])
+        # The ensemble average is a weighted sum: equal up to rounding, which differs between platforms.
+        for row, expected in zip(result.assignments, (19., 21., 100.), strict=True):
+            self.assertAlmostEqual(row['calculated_shift'], expected, places=9)
         self.assertEqual([row['observation_index'] for row in result.assignments], [0, 0, 1])
         self.assertEqual([row['evidence_weight'] for row in result.assignments], [.5, .5, 1.])
         self.assertAlmostEqual(result.score_raw, REFERENCE['shared_with_anchor']['score'], delta=1e-6)
-        self.assertEqual(result.diagnostics['assignment_objective'], 1.)
-        self.assertEqual(result.diagnostics['raw_mae'], .5)
+        self.assertAlmostEqual(result.diagnostics['assignment_objective'], 1., places=9)
+        self.assertAlmostEqual(result.diagnostics['raw_mae'], .5, places=9)
         self.assertNotEqual(result.diagnostics['fit_locations'][0][0], result.diagnostics['fit_locations'][0][1])
 
     def test_engine_keeps_separate_predictions_fits_and_one_measurement_weight(self):

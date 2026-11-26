@@ -37,7 +37,7 @@ class DP5qEngineTests(unittest.TestCase):
         self.assertEqual(len(result.assignments), 2)
         self.assertIn("geometry", stages)
         self.assertIn("geometry_sdf", result.diagnostics)
-        self.assertEqual(result.provenance["geometry_policy"], "converged-single-v2")
+        self.assertEqual(result.provenance["geometry_policy"], "bounded-ensemble-v3")
 
     def test_repeated_requests_do_not_contaminate_loaded_models(self):
         first = check_compound(self.request(), self.models)
@@ -87,7 +87,7 @@ class DP5qEngineTests(unittest.TestCase):
         self.assertIn("geometry", stages)
         self.assertFalse(result.provenance['coordinate_partition_verified'])
         self.assertEqual(result.provenance['coordinate_partition_reason'], 'coordinate_partition_mismatch')
-        self.assertEqual(result.diagnostics['energies_kj'], prepare_geometry(smiles).energies_kj.tolist())
+        self.assertEqual(result.diagnostics['energies_kj'], prepare_geometry(smiles, ensemble=True).energies_kj.tolist())
         validate_result_for_request(request, result, self.ready())
 
     def test_formal_partitions_reach_geometry_and_manual_counts_require_sharing(self):
@@ -190,7 +190,7 @@ class DP5qEngineTests(unittest.TestCase):
             carbon_labels=("C1","C3"), carbon_groups=(("C1","C3"),))
         self.assertEqual(check_compound(valid, self.models).status, "assessed")
 
-    def ready(self, policy="converged-single-v2"):
+    def ready(self, policy="bounded-ensemble-v3"):
         """Construct expected parent identity independently of a result."""
         metadata = self.models.metadata
         return {"capabilities": ["coincident-observations-v1"], "model_id": metadata["model_id"], "preprocessing_id": metadata["preprocessing_id"],

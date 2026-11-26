@@ -27,11 +27,15 @@ EA dot/folded solvates (`C21H28N2·2HCl`/`C10H13O2.5`) retain full percentage in
 
 ## NMR
 
-Checks cover solvent/frequency, residual peaks, shift order/precision/rounding, duplicates, multiplicity/J/integrals and proton totals. Multiplicity precedes assignment tails; misplaced valid fields receive order findings without invented missing fields. Assignment labels cannot supply multiplicities. Required-spectrum conventions remain configurable. Compensating integral errors can go unnoticed.
+Checks cover solvent/frequency, residual peaks, shift order/precision/rounding, duplicates, multiplicity/J/integrals and proton totals. Multiplicity precedes assignment tails; misplaced valid fields receive order findings without invented missing fields. Assignment labels cannot supply multiplicities. `quint`/`sext`/`sept`, `app` prefixes and labelled J (`3JH-H`, `JC-F`) are accepted. Required-spectrum conventions remain configurable. Compensating integral errors can go unnoticed.
 
 Supported nuclei: ¹H/¹³C/¹⁹F/¹¹B/³¹P/²⁹Si/²H/¹⁵N; structure counts cover C/F/Si/B/P where supported, not equivalent ²H/¹⁵N coverage. `(nC)` denotes overlapping non-equivalent signals, not duplicated observations/equivalent atoms. [Structural rules](dp5q-architecture.md#structural-inventory-and-observation-contract) retain equivalence, justified sharing and direct-C–B absence separately.
 
 The **10,000 represented-carbon-shift** limit includes validated repetitions and excludes coupling labels. Oversized counts, including malformed/nested annotations, are refused before allocation. Refusal persists with `nmr_signal_format` or DP5q disabled; requested DP5q uses `carbon_signal_limit` without an additional finding.
+
+## Coupling constants
+
+¹H: `hnmr_j_partner_missing` (an H–H coupling ≥ 3 Hz with no partner within 0.5 Hz or the reporting step; silent when F, P or a multiplet can hide it), `hnmr_j_partner_mismatch` (info: two unpaired constants within 1 Hz), `hnmr_j_value_implausible` (above 20.5 Hz or the structure's limit) and `hnmr_heteronuclear_coupling_missing` (no ²J H–F or ¹J P–H; undecoupled ¹⁹F singlet). ¹³C with fluorine: `c13_cf_j_value_implausible` (60–150 or above 400 Hz, or no F/P), `c13_cf_multiplicity_mismatch` (C–F d, CF2 t, CF3 q) and `c13_cf_coupling_incomplete` (carbons one or two bonds from F, aromatic ones three, must be split).
 
 ## Stereochemistry
 
@@ -46,6 +50,10 @@ DP5q needs a structure, compatible original carbon observations/capacities and c
 Every boron structure skips before readiness/geometry, with `boron_not_supported`/`dp5_boron_not_supported` and no assignments/score. Carbon diagnostics independently permit justified absent direct-C–B sites.
 
 For disconnected non-boron sources, exactly one carbon-bearing component is scored with original charge/protonation/observations; the warning explains ignored counter-ion/solvate and possible salt shifts. Multiple carbon-bearing components remain unscored; no peak allocation occurs. [Architecture](dp5q-architecture.md) owns deterministic ETKDGv3/MMFF94s, bundled CPU prediction and protocol limits. There is no DFT, runtime model download, external DP5 install or user-facing backend selector. Thresholds change findings/table visibility, not scores.
+
+## ¹H shift comparison
+
+`h1_shift.enabled` (default on) compares integrated ¹H signals with CASCADE predictions on DP5q `bounded-ensemble-v3` conformers, averaged over equivalent protons, optimally matched. Findings: `h1_shift_structure_mismatch` (mean error), `h1_shift_signal_outlier` (a far signal; info), `h1_multiplicity_structure_mismatch` (a multiplicity the protons within 1 ppm cannot show or fill, or a singlet methyl on CH) and `h1_protons_unaccounted` (C–H protons without a signal, fewer H listed). Mispredicted classes (CH–SO₂, N–CH–N, N–CH=CF, cyclopropane cages) get a 1.5–3 ppm tolerance and leave the mean; NH/OH take unfitted signals; aromatic solvents raise thresholds. Br counts as Cl; elements beyond C/H/N/O/S/F/Cl/P give `h1_shift_not_applicable`.
 
 ## Scientific limits
 

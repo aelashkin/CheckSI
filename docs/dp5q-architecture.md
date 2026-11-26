@@ -14,15 +14,23 @@ Installed verification binds actual Windows interpreter/launcher identity and ch
 
 ## Calculation and applicability
 
-Manifest identities are model `dp5q-cascade-owned-v1`, preprocessing `dp5q-spatial-v1`, score `dp5q-logtail-v1`, geometry `converged-single-v2`. Generate 30 deterministic ETKDGv3 candidates; if none embed, retry random starting coordinates with the same seed. MMFF94s uses 500 initial plus up to 1,500 continuation iterations. Only finite converged candidates preserving supported specified tetrahedral/double-bond stereo qualify; retain the lowest-energy compatible candidate.
+Manifest identities are model `dp5q-cascade-owned-v1`, preprocessing `dp5q-spatial-v1`, score `dp5q-logtail-v1`, geometry `bounded-ensemble-v3`. Generate 30 deterministic ETKDGv3 candidates; if none embed, retry random starting coordinates with the same seed. MMFF94s uses 500 initial plus up to 1,500 continuation iterations. Only finite converged candidates preserving supported specified tetrahedral/double-bond stereo qualify; keep the lowest-energy one and same-stereoisomer candidates within 10 kJ/mol and 0.5 Å heavy-atom RMSD of all kept ones, at most ten, weighted by Boltzmann populations at 298.15 K (arm C).
 
 Carbon-coordinate partition verification then compares original atom sets on existing coordinates. It is postselection evidence, never a conformer filter/scoring gate. Missing/mismatched proof stays unverified without re-embedding, methyl relabelling or arbitrary automorphism. Supported isotope-created ring E/Z beside exocyclic C=C uses those coordinates. Provenance retains coordinate/stereo verification limits and selected isomer; axial/atropisomer identity is unestablished.
 
 Every boron structure is `not_applicable`/`boron_not_supported` before readiness/geometry. Producer, engine and host enforce no score/assignments; `dp5_boron_not_supported` visibility changes nothing. No UFF/xTB fallback, omission mask or boron partial score is supported. Independent carbon diagnostics retain the full inventory and justified absent direct-C–B sites: 1.147 retains 18 environments, 17 observations, absent C6/original atom 5. Remote/duplicate/symmetry-related sites cannot inflate allowance; measured C–B signals remain counted.
 
+When RDKit's 10 s embedding timeout fires for the 30-candidate batch, embedding continues candidate by candidate with the same seeds (identical geometries) for up to 60 s and keeps what finished; `diagnostics.geometry` records `embedding_one_by_one` and `embedding_truncated`.
+
 Exactly one carbon-bearing component in a non-boron disconnected source can be scored alone, preserving charge/protonation/observations; the warning explains ignored counter-ion/solvate and possible salt shifts. Multiple carbon-bearing components remain unscored with an Info note; no peak allocation occurs.
 
 The NumPy network shares an encoder with separate mean/99-quantile heads. Only true-equivalent atom predictions/quantiles are averaged; distinct environments stay separate even with shared observations. Weighted squared-residual assignment retains the first optimum, including ties. Unsupported graph/elements are not applicable; nonidentifiable fits, invalid numbers/diagnostics and unexpected computation failures use `dp5_analysis_failed`, without score. Stable log-tail aggregation has no artificial epsilon floor and can differ substantially from legacy arithmetic. Refusal/failure/cancellation publishes no score. Engineering/reference fixtures prove their stated software comparisons, not independent chemical truth or training independence.
+
+A second pass over passing descriptions leaves one signal and one carbon unmatched and reports `dp5_signal_outlier` when that removes at least 8 ppm of root squared error and the rest fits within 3.5 ppm rms. A candidate is dropped when another compound of the run leaves the same carbon environment (radius two) unmatched by a similar amount: a repeated model error, not a typo.
+
+When the same carbon environment is at least 5 ppm off alike in three or more compounds of a run, each low-score member also gets `dp5_series_deviation` (info): a model error for this fragment or a wrong structure of the whole series, with a question about X-ray proof.
+
+When the median of reported minus predicted shift of one compound stands at least 5 ppm from that of the other compounds of the document and its signals fit within 5 ppm rms once this is removed, the compound gets `dp5_referencing_offset` (info): the spectrum is probably mis-referenced.
 
 ## Structural inventory and observation contract
 
@@ -40,7 +48,7 @@ Incomplete source partitions permit a single embedding-selected form retaining s
 
 ## Configuration and retained files
 
-[Configuration](configuration.md#schema-and-defaults) owns active fields, 20% fresh threshold, saved-value preservation and legacy aliases. Loads/confirmation never save; explicit persistence canonicalizes accepted inputs. External runtime directories remain untouched.
+[Configuration](configuration.md#schema-and-defaults) owns active fields, 17% fresh threshold, saved-value preservation and legacy aliases. Loads/confirmation never save; explicit persistence canonicalizes accepted inputs. External runtime directories remain untouched.
 
 Successful opt-in retained artifacts contain finite `assessment.json` and `candidate.sdf` beneath the unique run directory: request/result, assignments, provenance, diagnostics, timings and geometry. No pickle/HDF5/executable model, external reference checkout, training, GPU or persistent prediction cache is needed. [Reports](reports.md#artifacts-and-ownership) owns filenames/status.
 

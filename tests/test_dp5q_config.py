@@ -39,14 +39,14 @@ class DP5qConfigTests(unittest.TestCase):
 
     def test_defaults_and_serialization_have_only_active_fields(self) -> None:
         self.assertEqual(DP5Settings().model_dump(), {
-            "enabled": False, "score_threshold_percent": 20.0,
+            "enabled": False, "score_threshold_percent": 17.0,
             "timeout_seconds": 600, "keep_artifacts": False,
         })
 
-    def test_factory_and_example_thresholds_are_twenty_and_saved_values_are_preserved(self):
-        self.assertEqual(ConfigManager.load_factory().dp5.score_threshold_percent, 20.)
+    def test_factory_and_example_thresholds_are_seventeen_and_saved_values_are_preserved(self):
+        self.assertEqual(ConfigManager.load_factory().dp5.score_threshold_percent, 17.)
         example = Path(__file__).resolve().parents[1] / 'settings.toml'
-        self.assertEqual(ConfigManager(example).load().dp5.score_threshold_percent, 20.)
+        self.assertEqual(ConfigManager(example).load().dp5.score_threshold_percent, 17.)
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'settings.toml'
             path.write_text(CONFIG + 'score_threshold_percent = 10.0\n', encoding='utf-8')

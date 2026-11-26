@@ -38,14 +38,14 @@ Frozen [DP5 manifest](../tests/fixtures/dp5q/manifest.json), all source files ma
   guarantee convergence. Unsupported trained elements prevent prediction.
   Three-coordinate N/P stereo remains outside complete 3D verification; current
   product scores retain that limitation rather than refusing for it.
-- **C:** the bounded ensemble from the same generated/optimized candidates as B:
+- **C (product):** the bounded ensemble from B's generated/optimized candidates:
   converged finite stereochemistry-preserving geometries, 10 kJ/mol window,
   fixed-heavy-atom 0.5 Å RMSD pruning without reflection, cap ten, 298.15 K.
   `bounded-ensemble-v3` additionally retains only the perceivable tetrahedral
   and double-bond stereoconfiguration of the lowest-energy member. These
   perceived configurations are separated even when the input leaves a centre
   unspecified. Axial atropisomerism is not identified: distinct hindered axis
-  configurations can still be mixed. C is a development-only arm, and this
+  configurations can still be mixed. This
   limitation blocks a general claim that it separates all stereoisomers. It
   does not establish the correct configuration of an unspecified centre.
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from collections import Counter
 from dataclasses import dataclass, field
 from typing import Callable
@@ -21,6 +22,10 @@ GAS_CONSTANT = 8.31446261815324  # J mol^-1 K^-1; energies below are kJ/mol.
 TEMPERATURE_K = 298.15
 EMBEDDING_MAX_ATTEMPTS = 1000
 EMBEDDING_TIMEOUT_SECONDS = 10
+# Wall-clock allowance for one molecule, including the conformer-by-conformer continuation.
+EMBEDDING_TOTAL_SECONDS = 60
+EMBEDDING_SEED = 0xD05               # the randomSeed set in prepare_geometry
+REQUESTED_CONFORMERS = 30
 
 
 class GeometryError(ValueError):
@@ -92,13 +97,70 @@ def _stereoconfiguration(mol: Chem.Mol, conformer_id: int) -> str:
     return Chem.MolToSmiles(Chem.RemoveHs(geometry), isomericSmiles=True)
 
 
+def _embed_one_by_one(mol: Chem.Mol, parameters, deadline: float,
+                      check: Callable[[], None]) -> tuple[tuple[int, ...], bool]:
+    """Embed the requested conformers one at a time and keep those that finish.
+
+    RDKit applies ``timeout`` to a whole ``EmbedMultipleConfs`` call and on expiry
+    returns no conformer at all, so a large molecule lost every geometry whenever
+    the machine was busy. ``EmbedMultipleConfs`` seeds conformer ``i`` with
+    ``(i + 1) * randomSeed``; the same seeds here give the same coordinates, so
+    this continuation changes no geometry, only how much survives a deadline.
+    Returns the conformer ids and whether the deadline cut the set short.
+    """
+    mol.RemoveAllConformers()
+    bare = Chem.Mol(mol)
+    conformer_ids: list[int] = []
+    truncated = False
+    try:
+        for index in range(REQUESTED_CONFORMERS):
+            check()
+            remaining = deadline - perf_counter()
+            if remaining <= 0:
+                truncated = True
+                break
+            single = Chem.Mol(bare)
+            parameters.randomSeed = (index + 1) * EMBEDDING_SEED
+            parameters.timeout = max(1, math.ceil(remaining))
+            if rdDistGeom.EmbedMolecule(single, parameters) < 0:
+                if perf_counter() >= deadline:
+                    truncated = True
+                    break
+                continue
+            conformer_ids.append(mol.AddConformer(single.GetConformer(), assignId=True))
+    finally:
+        parameters.randomSeed = EMBEDDING_SEED
+        parameters.timeout = EMBEDDING_TIMEOUT_SECONDS
+    return tuple(conformer_ids), truncated
+
+
+def _embed(mol: Chem.Mol, parameters, deadline: float,
+           check: Callable[[], None]) -> tuple[tuple[int, ...], bool, bool]:
+    """One batch call, continued conformer by conformer when RDKit reports a timeout.
+
+    Returns the conformer ids, whether the continuation ran and whether the
+    deadline cut the set short.
+    """
+    # A native timeout in RDKit 2025.9.3 returns the sentinel [-1] with no
+    # conformer rather than an empty vector.
+    result = tuple(rdDistGeom.EmbedMultipleConfs(mol, numConfs=REQUESTED_CONFORMERS, params=parameters))
+    if -1 not in result:
+        return result, False, False
+    check()
+    conformer_ids, truncated = _embed_one_by_one(mol, parameters, deadline, check)
+    return conformer_ids, True, truncated
+
+
 def prepare_geometry(structure: str | Chem.Mol, *, ensemble: bool = False,
-                     cancel_check: Callable[[], None] | None = None) -> PreparedGeometry:
+                     cancel_check: Callable[[], None] | None = None,
+                     num_threads: int = 1) -> PreparedGeometry:
     """Generate the common B/C candidate set, preserving all atoms/fragments.
 
     A Mol input is a development-evaluation boundary to retain source SDF atom
     order. Product requests contain SMILES. Neither path canonicalizes or strips
     fragments, substitutes force fields, or keeps unconverged conformers.
+    ``num_threads`` only parallelises RDKit (0 = all cores); seeded embedding and
+    optimisation give identical geometries. The DP5q worker keeps one thread.
     """
     check = cancel_check or (lambda: None)
     check()
@@ -124,20 +186,19 @@ def prepare_geometry(structure: str | Chem.Mol, *, ensemble: bool = False,
                                               Chem.BondStereo.STEREOCIS, Chem.BondStereo.STEREOTRANS)}
     parameters = rdDistGeom.ETKDGv3()
     parameters.randomSeed = 0xD05
-    parameters.numThreads = 1
+    parameters.numThreads = num_threads
     parameters.enforceChirality = True
     # Engineering work bounds, not calibrated chemistry applicability limits.
-    # RDKit defines timeout per conformer/fragment; the parent enforces the
-    # configured total request deadline across all 30 requested conformers.
+    # RDKit applies the timeout to the whole batch call and returns nothing when
+    # it expires; _embed then continues conformer by conformer until
+    # EMBEDDING_TOTAL_SECONDS and keeps what finished.
     parameters.maxIterations = EMBEDDING_MAX_ATTEMPTS
     parameters.timeout = EMBEDDING_TIMEOUT_SECONDS
     check()
     try:
         point = perf_counter()
-        # A native timeout in RDKit 2025.9.3 can return the sentinel [-1]
-        # with no conformer rather than an empty vector.
-        conformer_ids = tuple(index for index in rdDistGeom.EmbedMultipleConfs(mol, numConfs=30, params=parameters)
-                              if index >= 0)
+        deadline = point + EMBEDDING_TOTAL_SECONDS
+        conformer_ids, one_by_one, truncated = _embed(mol, parameters, deadline, check)
         embedding = "deterministic"
         check()
         if not conformer_ids:
@@ -145,8 +206,7 @@ def prepare_geometry(structure: str | Chem.Mol, *, ensemble: bool = False,
             # fail every eigenvalue-based start. Random starting coordinates are
             # RDKit's remedy; molecules that already embed are unaffected.
             parameters.useRandomCoords = True
-            conformer_ids = tuple(index for index in rdDistGeom.EmbedMultipleConfs(mol, numConfs=30, params=parameters)
-                                  if index >= 0)
+            conformer_ids, one_by_one, truncated = _embed(mol, parameters, deadline, check)
             embedding = "random_coordinates"
             check()
         embedding_seconds = perf_counter() - point
@@ -154,9 +214,12 @@ def prepare_geometry(structure: str | Chem.Mol, *, ensemble: bool = False,
             raise GeometryError("embedding_failed", "ETKDGv3 did not produce a geometry within the bounded embedding allowance.",
                                 diagnostics={"geometry": {"requested_count": 30, "generated_count": 0,
                                                           "embedding": embedding,
+                                                          "embedding_one_by_one": one_by_one,
+                                                          "embedding_truncated": truncated,
                                                           "embedding_seconds": embedding_seconds}})
         point = perf_counter()
-        optimized = rdForceFieldHelpers.MMFFOptimizeMoleculeConfs(mol, numThreads=1, maxIters=500, mmffVariant="MMFF94s")
+        optimized = rdForceFieldHelpers.MMFFOptimizeMoleculeConfs(mol, numThreads=num_threads, maxIters=500,
+                                                                  mmffVariant="MMFF94s")
         if len(optimized) != len(conformer_ids):
             raise GeometryError("geometry_failed", "Conformer optimization returned incomplete status data.")
         initial_statuses = [status for status, _ in optimized]
@@ -259,6 +322,9 @@ def prepare_geometry(structure: str | Chem.Mol, *, ensemble: bool = False,
                             {"stereo_verification_complete": stereo_verification_complete,
                              "requested_count": 30, "generated_count": len(conformer_ids),
                              "embedding": embedding,
+                             # True when the batch call timed out and the conformers were embedded
+                             # singly; truncated when the total allowance then cut the set short.
+                             "embedding_one_by_one": one_by_one, "embedding_truncated": truncated,
                              "converged_count": sum(item["optimization_status"] == 0 for item in audit),
                              "eligible_count": len(candidates), "retained_count": len(retained),
                              "candidates": audit,

@@ -42,6 +42,11 @@ class NMRResultContractTests(unittest.TestCase):
                          (result.order, result.rounding, result.duplicate, result.precision)))
         self.assertIs(type(public[5]), list)
 
+    def test_a_range_written_with_to_is_one_signal(self):
+        counts = [nmr._calculate_nmr_number_count(text, 2, 0, context(config(), ErrorTracker(), nmr.FLUORINE)).count
+                  for text in ('-112.4 to -112.9, -118.0', '-112.4 – -112.9, -118.0')]
+        self.assertEqual(counts, [2, 2])
+
     def test_named_signal_and_outer_results_share_preparation_and_public_eight_slots(self):
         groups, details, observations = [], {'stale': True}, ['stale']
         tracker = ErrorTracker()

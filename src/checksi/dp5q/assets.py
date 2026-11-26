@@ -12,7 +12,7 @@ FORMAT_VERSION = 1
 MODEL_ID = 'dp5q-cascade-owned-v1'
 PREPROCESSING_ID = 'dp5q-spatial-v1'
 SCORE_ID = 'dp5q-logtail-v1'
-GEOMETRY_POLICY = 'converged-single-v2'
+GEOMETRY_POLICY = 'bounded-ensemble-v3'
 TRAINED_TOKENS = MappingProxyType({'16':6, '1':4, '17':7, '6':2, '7':5, '8':3,
                                  '9':8, '15':9, '35':10, '14':11, '5':12})
 RAW_WEIGHT_BYTES = 11_625_924

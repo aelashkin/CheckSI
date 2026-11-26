@@ -13,6 +13,9 @@ from checksi.assessment import build_assessment, run_completion_message
 from checksi.config_schema import AppConfig, ErrorSeverity
 from checksi.controller import CheckSIController
 from checksi.dp5_enrichment import enrich_analysis_with_dp5, prepare_dp5_requests
+from checksi.coupling_enrichment import enrich_analysis_with_couplings
+from checksi.h1_enrichment import enrich_analysis_with_h1_shifts
+from checksi.name_consistency import enrich_analysis_with_name_notes
 from checksi.dp5q.client import DP5qAvailabilityError, check_availability
 from checksi.dp5q.contracts import CheckRequest
 from checksi.document_parser import DocumentParser
@@ -148,6 +151,15 @@ class ApplicationRunner:
                 _diagnostics=diagnostics,
             )
 
+        # Part of the analysis phase: cheap text/structure rules, no separate progress phase.
+        if parsed is not None and not is_cancelled():
+            enrich_analysis_with_couplings(
+                cfg,
+                analysis_data,
+                event_dispatcher=self._dispatch,
+                _diagnostics=diagnostics if diagnostics.analysis_recorded else None,
+            )
+
         if cfg.dp5.enabled and start_phase("DP5 enrichment"):
             if cfg.dp5.keep_artifacts:
                 reserve_destination()
@@ -171,6 +183,24 @@ class ApplicationRunner:
                 )
             if availability_error is not None and not is_cancelled():
                 raise availability_error
+
+        if cfg.h1_shift.enabled and start_phase("1H shift comparison"):
+            enrich_analysis_with_h1_shifts(
+                cfg,
+                analysis_data,
+                event_dispatcher=self._dispatch,
+                cancel_token=cancel_token,
+                _diagnostics=diagnostics if diagnostics.analysis_recorded else None,
+            )
+
+        # Last of the analysis: a note where independent checks disagree with the name together.
+        if parsed is not None and not is_cancelled():
+            enrich_analysis_with_name_notes(
+                cfg,
+                analysis_data,
+                event_dispatcher=self._dispatch,
+                _diagnostics=diagnostics if diagnostics.analysis_recorded else None,
+            )
 
         exported = False
         if start_phase("Report export"):

@@ -8,7 +8,7 @@ version = 1
 
 [totals]
 entry_pages = ["README.md", "docs/installation.md", "docs/usage.md", "docs/configuration.md", "docs/reports.md", "docs/analysis.md", "docs/development.md", "docs/agent-usage.md"]
-max_words = 7400
+max_words = 7500
 
 [pages."README.md"]
 max_words = 800
@@ -90,7 +90,7 @@ max_table_row_words = 35
 "python-api-references" = 160
 
 [pages."docs/analysis.md"]
-max_words = 900
+max_words = 1000
 max_fenced_lines = 20
 max_table_row_words = 35
 [pages."docs/analysis.md".sections]
@@ -100,6 +100,8 @@ max_table_row_words = 35
 "nmr" = 120
 "stereochemistry" = 95
 "dp5q-eligibility" = 160
+"coupling-constants" = 110
+"¹h-shift-comparison" = 120
 "scientific-limits" = 70
 
 [pages."docs/development.md"]
@@ -160,7 +162,7 @@ max_fenced_lines = 45
 [pages."docs/dp5q-architecture.md".sections]
 "__intro__" = 60
 "runtime-boundary" = 450
-"calculation-and-applicability" = 430
+"calculation-and-applicability" = 520
 "structural-inventory-and-observation-contract" = 450
 "configuration-and-retained-files" = 110
 "packaging-and-installed-verification" = 300

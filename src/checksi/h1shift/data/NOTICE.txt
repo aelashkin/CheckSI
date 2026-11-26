@@ -1,0 +1,12 @@
+1H shift model numerical assets
+
+weights.npz holds the float32 parameters of the CASCADE proton model
+(DFTNN, best_model.hdf5 in code/predicting_model/H/DFTNN) converted without
+training from the Paton Lab repository at revision
+4e6f5a9e50162c80cf2382397bdfa41334ff2e0d. Layer names are preserved; the
+NumPy evaluation code, conformer handling and comparison are modifications.
+The original MIT license is included in LICENSE.cascade.txt.
+
+Source: https://github.com/patonlab/CASCADE/tree/4e6f5a9e50162c80cf2382397bdfa41334ff2e0d
+Method: Guan et al., Chemical Science 2021, https://doi.org/10.1039/D1SC03343C
+The model was trained on DFT-computed shifts of protons bonded to carbon. Its output is an advisory estimate, not an experimental reference.

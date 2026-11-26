@@ -85,7 +85,7 @@ class ComputableStereoScopeTests(unittest.TestCase):
 
     def test_coordinate_partition_proof_does_not_filter_the_lowest_energy_geometry(self):
         smiles = 'COc1ccc2nccc([C@@H](O)[C@@H]3C[C@@H]4CCN3C[C@@H]4C=C)c2c1'
-        geometry = prepare_geometry(smiles)
+        geometry = prepare_geometry(smiles, ensemble=True)
         _, result = self.assess(smiles)
         self.assertEqual(result.diagnostics['energies_kj'], geometry.energies_kj.tolist())
         self.assertFalse(result.provenance['coordinate_partition_verified'])

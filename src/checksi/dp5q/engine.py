@@ -17,7 +17,7 @@ from .observation_policy import BORON_REASON, BORON_WARNING, derive_observation_
 from checksi.analysis.structure_analysis import carbon_partition_from_coordinates, coordinate_stereo_scope
 from .contracts import CalculationCancelled, CheckRequest, CheckResult
 from .components import ComponentSelectionError, ORGANIC_COMPONENT_WARNING, select_scoring_component
-from .geometry import (GeometryError, PreparedGeometry, frozen_geometry,
+from .geometry import (ENSEMBLE_POLICY, GeometryError, PreparedGeometry, frozen_geometry,
                        prepare_geometry, _preserves_stereochemistry, _stereoconfiguration)
 from .graph import GraphDomainError, validate_elements
 from .network import ModelBundle
@@ -38,12 +38,13 @@ def check_compound(request: CheckRequest, models: ModelBundle, cancel_event=None
                    progress: Callable[[str], None] | None = None, *,
                    frozen_mol: Chem.Mol | None = None,
                    prepared_geometry: PreparedGeometry | None = None,
-                   ensemble: bool = False) -> CheckResult:
+                   ensemble: bool | None = None) -> CheckResult:
     """Assess one complete spectrum without I/O or retained per-request state.
 
     The process worker uses only the SMILES request path. Frozen/prepared Mol
     arguments are development evaluation boundaries preserving source atom
-    order and geometry; they never cross the product protocol.
+    order and geometry; they never cross the product protocol. ``ensemble``
+    defaults to the bundled geometry policy (``bounded-ensemble-v3``).
     """
     started = perf_counter()
     timings: dict[str, float] = {}
@@ -54,6 +55,8 @@ def check_compound(request: CheckRequest, models: ModelBundle, cancel_event=None
     provenance["score_version"] = metadata["score_id"]
     provenance["weights_sha256"] = metadata["files"]["weights.npz"]["sha256"]
     provenance["geometry_policy"] = metadata["geometry_policy"]
+    if ensemble is None:
+        ensemble = metadata["geometry_policy"] == ENSEMBLE_POLICY
 
     def check_cancelled() -> None:
         if cancel_event is not None and cancel_event.is_set():
