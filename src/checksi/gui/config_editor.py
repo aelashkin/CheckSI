@@ -45,6 +45,7 @@ from checksi.config import ConfigConflictError, ConfigError, ConfigManager, reso
 from checksi.config_schema import (
     AppConfig,
     DP5Settings,
+    H1ShiftSettings,
     ErrorSeverity,
     DeepNameAnalysis,
     OutputMode,
@@ -287,6 +288,8 @@ class ConfigEditorPage(QWidget):
         self._dp5_detail_lines: list[str] = []
         self._loading = True
         self._confirmed_config: AppConfig | None = None
+        # No editor controls yet: loaded 1H shift settings are kept unchanged on save.
+        self._h1_preserved: dict[str, float | int] = {}
         self._confirmed_state = None
         self._saved_state = None
         self._run_active = False
@@ -562,6 +565,7 @@ class ConfigEditorPage(QWidget):
         self.dp5_tuning_section.content_layout.addWidget(self.dp5_settings_panel)
         dp5_layout.addWidget(self.dp5_tuning_section)
         content_layout.addWidget(dp5_card)
+        self._build_h1_shift_card(content_layout)
         content_layout.addWidget(self.conversion_section)
 
         errors_card, errors_layout = self._create_card(
@@ -757,6 +761,7 @@ class ConfigEditorPage(QWidget):
             self._show_dp5_value(self.dp5_timeout_spinbox, config.dp5.timeout_seconds)
             self._preserve_unrepresentable_dp5_values(config.dp5)
             self.dp5_keep_artifacts_checkbox.setChecked(config.dp5.keep_artifacts)
+            self._load_h1_shift_settings(config.h1_shift)
             self.default_severity_control.set_value(config.errors.default_severity)
 
             for row_index, error_code in enumerate(AnalysisErrorCode):
@@ -863,6 +868,7 @@ class ConfigEditorPage(QWidget):
                     "timeout_seconds": self.conversion_timeout_spinbox.value(),
                 },
                 "dp5": self.dp5_settings().model_dump(mode="python"),
+                "h1_shift": self.h1_shift_settings().model_dump(mode="python"),
                 "solvents": {"entries": solvent_entries},
                 "errors": {
                     "default_severity": default_severity,
@@ -1037,7 +1043,8 @@ class ConfigEditorPage(QWidget):
             self.default_output_mode_control.current_data(),
             self.open_reports_checkbox.isChecked(),
             self._margin_control_value("header_margin"), self._margin_control_value("footer_margin"),
-            self.dp5_settings().model_dump(), self.default_severity_control.current_data(),
+            self.dp5_settings().model_dump(), self.h1_shift_settings().model_dump(),
+            self.default_severity_control.current_data(),
             tuple(self._error_override_value(row)
                   for row in range(self.errors_table.rowCount())),
             tuple(tuple(self._solvent_state(row, column) for column in range(4))
@@ -1378,6 +1385,89 @@ class ConfigEditorPage(QWidget):
     def set_dp5_self_check_queued(self) -> None:
         """Keep an explicit deferred request visible while another operation runs."""
         self.dp5_status_message_label.setText("Full self-check queued; it will run after the current operation finishes.")
+
+    _H1_CONTROLS = (
+        ("mean_error_threshold_ppm", "h1_mean_spinbox"),
+        ("signal_error_threshold_ppm", "h1_outlier_spinbox"),
+    )
+
+    def _build_h1_shift_card(self, content_layout: QVBoxLayout) -> None:
+        card, layout = self._create_card(
+            "¹H Shift Check",
+            "Configure the optional CASCADE ¹H shift and multiplicity comparison. "
+            "It needs deep name analysis and gives advisory warnings.",
+        )
+        self.h1_shift_card = card
+        self.h1_enabled_checkbox = QCheckBox("Enable ¹H shift and multiplicity check by default")
+        self.h1_enabled_checkbox.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.h1_enabled_checkbox.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
+        layout.addWidget(self.h1_enabled_checkbox)
+        (self.h1_mean_controls, self.h1_mean_slider, self.h1_mean_spinbox) = self._build_numeric_slider_control(
+            minimum=0.05, maximum=1.0, step=0.05, decimals=2, suffix=" ppm", width_sample="1.00 ppm",
+        )
+        (self.h1_outlier_controls, self.h1_outlier_slider, self.h1_outlier_spinbox) = (
+            self._build_numeric_slider_control(
+                minimum=0.5, maximum=3.0, step=0.1, decimals=1, suffix=" ppm", width_sample="3.0 ppm",
+            )
+        )
+        panel = QWidget()
+        panel.setProperty("transparentPanel", "true")
+        panel.setAutoFillBackground(False)
+        form = QFormLayout(panel)
+        form.setContentsMargins(0, 0, 0, 0)
+        form.setSpacing(12)
+        form.setLabelAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
+        form.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.AllNonFixedFieldsGrow)
+        for label, spinbox, controls in (
+            ("Mean Error Threshold", self.h1_mean_spinbox, self.h1_mean_controls),
+            ("Single-signal Threshold", self.h1_outlier_spinbox, self.h1_outlier_controls),
+        ):
+            form.addRow(self._form_label(label, FIELD_HEIGHT, spinbox), controls)
+        for name, attr in self._H1_CONTROLS:
+            spinbox = getattr(self, attr)
+            slider = getattr(self, attr.replace("spinbox", "slider"))
+            spinbox.valueChanged.connect(lambda _value, name=name: self._forget_preserved_h1_value(name))
+            slider.valueChanged.connect(lambda _value, name=name: self._forget_preserved_h1_value(name))
+        self.h1_tuning_section = CollapsibleSection("Detailed ¹H Settings")
+        self.h1_tuning_section.content_layout.addWidget(panel)
+        layout.addWidget(self.h1_tuning_section)
+        content_layout.addWidget(card)
+
+    def _load_h1_shift_settings(self, settings: H1ShiftSettings) -> None:
+        """Show loaded 1H settings and keep values the controls cannot show exactly."""
+        blocker = QSignalBlocker(self.h1_enabled_checkbox)
+        self.h1_enabled_checkbox.setChecked(settings.enabled)
+        del blocker
+        self._h1_preserved = {}
+        for name, attr in self._H1_CONTROLS:
+            spinbox = getattr(self, attr)
+            loaded = getattr(settings, name)
+            self._show_dp5_value(spinbox, loaded)
+            if spinbox.value() == loaded:
+                spinbox.setToolTip("")
+                continue
+            self._h1_preserved[name] = loaded
+            spinbox.setToolTip(
+                f"The settings file value {loaded} cannot be shown by this control. "
+                f"Until this control is changed, runs and saves keep {loaded}."
+            )
+
+    def _forget_preserved_h1_value(self, name: str) -> None:
+        if self._h1_preserved.pop(name, None) is not None:
+            getattr(self, dict(self._H1_CONTROLS)[name]).setToolTip("")
+
+    def h1_shift_settings(self) -> H1ShiftSettings:
+        """Return the current optional 1H shift settings from the editor controls."""
+        values = {
+            name: self._h1_preserved.get(name, getattr(self, attr).value()) for name, attr in self._H1_CONTROLS
+        }
+        return H1ShiftSettings(enabled=self.h1_enabled_checkbox.isChecked(), **values)
+
+    def set_h1_shift_enabled(self, enabled: bool) -> None:
+        """Sync the 1H default checkbox without emitting change signals."""
+        blocker = QSignalBlocker(self.h1_enabled_checkbox)
+        self.h1_enabled_checkbox.setChecked(enabled)
+        del blocker
 
     def set_dp5_enabled(self, enabled: bool) -> None:
         """Sync the DP5 default checkbox without emitting change signals."""

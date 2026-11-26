@@ -34,7 +34,7 @@ SIMPLE_MULTIPLICITIES = [
     's', 'm', 'mc', _broad_multiplicity_pattern('s'), _broad_multiplicity_pattern('m'), 'bs',
 ]
 J_REQUIRED_MULTIPLICITIES = [
-    'd', 't', 'q', 'hep', 'hept', 'p', 'pent', 'h',
+    'd', 't', 'q', 'hep', 'hept', 'p', 'pent', 'h', 'quint', 'quin', 'sext', 'sept',
     'dt', 'dd', 'td', 'dq', 'tt', 'tq', 'qt', 'qd','dhept', 'dp', 'tp',
     'ddd', 'ddt', 'ddq', 'dtd', 'dtt', 'dtq', 'dqd', 'dqt', 'dqq', 'ddp',
     'tdd', 'tdt', 'tdq', 'ttd', 'ttt', 'ttq', 'tqd', 'tqt', 'tqq', 'dddd',
@@ -44,7 +44,18 @@ J_REQUIRED_MULTIPLICITIES = [
 ]
 MULTIPLICITIES = [*SIMPLE_MULTIPLICITIES, *J_REQUIRED_MULTIPLICITIES]
 MULTIPLICITY_PATTERN = "|".join(MULTIPLICITIES)
-J_PATTERN = r'J\s*=\s*\d+(?:\.\d+)?(?:\s*(?:,|and)\s*\d+(?:\.\d+)?)*(?:\s*Hz)?'
+# "app t", "apparent dd", "pseudo-t", "ps. q": an apparent splitting keeps its multiplicity.
+_APPARENT_PREFIX = r'(?:(?:app|apparent|pseudo|ps)\.?[\s-]*)?'
+# Coupling-nucleus labels after J: "JC-F", "3JH-H", "JCF", "J(C,F)", "J_{CF}", "JHP".
+_J_NUCLEUS_LABEL = (
+    r'(?:\s*\(\s*[A-Z][a-z]?\s*[,-]\s*[A-Z][a-z]?\s*\)'
+    r'|_?\{?[A-Z][a-z]?\s*-?\s*[A-Z][a-z]?\}?(?![a-z]))'
+)
+# An optional bond-count prefix ("3J") and nucleus label are accepted before "=".
+J_PATTERN = (
+    r'(?<![A-Za-z])(?:[1-6]\s?)?J(?:' + _J_NUCLEUS_LABEL + r')?'
+    r'\s*=\s*\d+(?:\.\d+)?(?:\s*(?:,|and)\s*\d+(?:\.\d+)?)*(?:\s*Hz)?'
+)
 _CARBON_MULTIPLICITY_PATTERN = r'(?<![\d.])(\d+)C(?![A-Za-z0-9])'
 # General NMR support is intentionally broader than the DP5q atom/group limits.
 _MAX_CARBON_SIGNALS = 10_000
@@ -217,8 +228,9 @@ def _descriptor_fields(text: str) -> list[str]:
 def _has_multiplicity_token(text, tokens):
     """Classify the first whole descriptor field before any assignment tail."""
     for descriptor_field in _descriptor_fields(text):
-        if re.fullmatch(r'\s*(?:' + MULTIPLICITY_PATTERN + r')\s*', descriptor_field):
-            return any(re.fullmatch(r'\s*(?:' + token + r')\s*', descriptor_field) for token in tokens)
+        if re.fullmatch(r'\s*' + _APPARENT_PREFIX + r'(?:' + MULTIPLICITY_PATTERN + r')\s*', descriptor_field):
+            return any(re.fullmatch(r'\s*' + _APPARENT_PREFIX + r'(?:' + token + r')\s*', descriptor_field)
+                       for token in tokens)
     return False
 
 
@@ -234,7 +246,7 @@ def _has_unknown_multiplicity(text: str) -> bool:
 
 def _multiplicity_at_start(text):
     """Return a multiplicity match only when it starts the bracket description."""
-    return re.search(r'^\s*(?:' + MULTIPLICITY_PATTERN + r')\s*,', text)
+    return re.search(r'^\s*' + _APPARENT_PREFIX + r'(?:' + MULTIPLICITY_PATTERN + r')\s*,', text)
 
 
 def _check_presence_nmr_spectra(
@@ -975,10 +987,10 @@ def _calculate_nmr_number_count(nmr_text, n, hnmr_sum, context: CheckContext,
             r'(?<![\w.])\d+(?:\.\d+)?\s*[HН](?!\w)', '', nmr_text_no_brackets
         )
     # create a list of signals
-    raw_numbers = re.findall(r'-?\d+(?:\.\d+)?(?:\s*[\-\–\—]\s*-?\d+(?:\.\d+)?)?', nmr_text_no_brackets)
+    raw_numbers = re.findall(r'-?\d+(?:\.\d+)?(?:\s*(?:[\-\–\—]|\bto\b)\s*-?\d+(?:\.\d+)?)?', nmr_text_no_brackets)
 
     for item in raw_numbers:
-        match = re.match(r'(-?\d+(?:\.\d+)?)\s*[\-\–\—]\s*(-?\d+(?:\.\d+)?)', item)
+        match = re.match(r'(-?\d+(?:\.\d+)?)\s*(?:[\-\–\—]|\bto\b)\s*(-?\d+(?:\.\d+)?)', item)
 
         if match:
             start, end = match.groups()
@@ -1075,12 +1087,12 @@ def _calculate_nmr_number_count(nmr_text, n, hnmr_sum, context: CheckContext,
         count = carbon_evidence.minimum_atoms
     elif atom > 0:
         # Count the number of signals - Search for ranges like 153.0-154.0
-        ranges = re.findall(r'(-?\d+\.\d+)\s*[\-\–\—]\s*(-?\d+\.\d+)', nmr_text)
+        ranges = re.findall(r'(-?\d+\.\d+)\s*(?:[\-\–\—]|\bto\b)\s*(-?\d+\.\d+)', nmr_text)
         for start, end in ranges:
             count += 1
             
         # Remove the ranges
-        nmr_text = re.sub(r'-?\d+\.\d+\s*[\-\–\—]\s*-?\d+\.\d+', '', nmr_text)
+        nmr_text = re.sub(r'-?\d+\.\d+\s*(?:[\-\–\—]|\bto\b)\s*-?\d+\.\d+', '', nmr_text)
 
         #Count the number of signals - Search for (X C) inside parentheses
         # 1C 2F 3B 4P 5Si
@@ -1322,12 +1334,25 @@ def _parse_carbon_signal_evidence(signal_section, context: CheckContext) -> Carb
                                 [item.shift for item in observations if item.shift is not None])
 
 
+_FLUORINE_ENTRY = re.compile(r'(?<![\w.])[-−–]?\s?\d+(?:\.\d+)?(?![\w.])\s*(\((?:[^()]|\([^()]*\))*\))?')
+
+
+def _fluorine_entries_with_integrals(signal_section: str) -> int | None:
+    """Number of 19F signals when every one of them has an integral ("nF"), else None."""
+    body = signal_section.split('δ', 1)[1] if 'δ' in signal_section else signal_section
+    descriptors = [match.group(1) for match in _FLUORINE_ENTRY.finditer(body)]
+    if not descriptors or any(not d or not re.search(r'\d+\s?F\b', d) for d in descriptors):
+        return None
+    return len(descriptors)
+
+
 def _check_proton_integrals(signal_section, context: CheckContext) -> tuple[list[Diagnostic], float]:
     """Check integrals and summarize their total independently of signal counting."""
     cfg, tracker = context.cfg, context.sink
     formula_nmr = context.formula_nmr
     warnings = []
-    hnmr_values = re.findall(r'\([^)]*?\b(\d+(?:\.\d+)?)\s?[HН](?:[,;]|\))', signal_section)
+    # One level of inner brackets is allowed, e.g. "(dd, J(H,H) = 8.9 Hz, J(H,F) = 5.4 Hz, 2H)".
+    hnmr_values = re.findall(r'\((?:[^()]|\([^()]*\))*?\b(\d+(?:\.\d+)?)\s?[HН](?:[,;]|\))', signal_section)
     hnmr_values_f = list(map(float, hnmr_values))
     non_integer_values = [value for value in hnmr_values_f if not value.is_integer()]
     if non_integer_values:
@@ -1729,7 +1754,14 @@ def _analyze_nmr_signals(signal_section, frequency, context: CheckContext) -> Si
         source = context.structure_result
         element = {'19F': 'F', '29Si': 'Si', '11B': 'B', '31P': 'P'}.get(nuclei)
         expected = source.expected_counts(element) if source is not None and element else ()
-        if trees_count is not None and nmr_count not in (expected or (trees_count,)):
+        counts = {nmr_count}
+        if nuclei == '19F':
+            # "(s, 3F)" can be an integral or the number of coinciding fluorine groups. When every
+            # signal carries one, they are integrals and each entry is one signal.
+            entries = _fluorine_entries_with_integrals(signal_section)
+            if entries is not None:
+                counts.add(entries)
+        if trees_count is not None and not counts & set(expected or (trees_count,)):
             warning = emit_finding(
                 cfg,
                 tracker,

@@ -46,6 +46,8 @@ class SettingsParityTests(unittest.TestCase):
         self.config.dp5.score_threshold_percent = 2.25123456789
         self.config.dp5.timeout_seconds = 2**31
         self.config.modes.header_margin = 0.123456789
+        self.config.h1_shift.enabled = True
+        self.config.h1_shift.signal_error_threshold_ppm = 2.2
         self.config.solvents.entries[0].name = ""
         self.config.solvents.entries[0].aliases = ["one,two", "", " spaced "]
         self.editor.load_from_config(self.config)
@@ -53,6 +55,22 @@ class SettingsParityTests(unittest.TestCase):
         expected = self.config.model_copy(deep=True)
         expected.modes.open_reports_on_success = self.editor.open_reports_checkbox.isChecked()
         self.assertEqual(self.editor.build_config(), expected)
+
+    def test_h1_shift_controls_edit_settings_and_keep_unrepresentable_values(self) -> None:
+        self.config.h1_shift.mean_error_threshold_ppm = 0.333
+        self.config.h1_shift.signal_error_threshold_ppm = 7.5
+        self.editor.load_from_config(self.config)
+        self.assertTrue(self.editor.h1_enabled_checkbox.isChecked())
+        self.assertEqual(self.editor.h1_shift_settings().mean_error_threshold_ppm, 0.333)
+        self.assertEqual(self.editor.h1_shift_settings().signal_error_threshold_ppm, 7.5)
+        self.assertIn("7.5", self.editor.h1_outlier_spinbox.toolTip())
+        self.editor.h1_enabled_checkbox.setChecked(False)
+        self.editor.h1_outlier_spinbox.setValue(2.0)
+        built = self.editor.build_config().h1_shift
+        self.assertFalse(built.enabled)
+        self.assertEqual(built.signal_error_threshold_ppm, 2.0)
+        self.assertEqual(built.mean_error_threshold_ppm, 0.333)
+        self.assertTrue(self.editor.has_unconfirmed_changes())
 
     def test_editing_one_solvent_cell_keeps_other_exact_values(self) -> None:
         self.config.solvents.entries[0].aliases = ["one,two", " spaced "]

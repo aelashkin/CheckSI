@@ -15,6 +15,9 @@ from checksi.dp5q.client import (DP5qCancelled, DP5qSession, DP5qWorkerError,
 from checksi.dp5q.contracts import (CheckRequest, CheckResult, MAX_ATOMS,
                                         MAX_GROUPS, MAX_SMILES_LENGTH)
 from checksi.dp5q.components import ComponentSelectionError, ScoringComponent, select_scoring_component
+from checksi.dp5q.referencing import find_offsets
+from checksi.dp5q.series import find_series
+from checksi.dp5q.single_signal import carbon_environment, misplaced_signals, single_signal
 from checksi.dp5q.observation_policy import BORON_REASON, derive_observation_policy, has_boron
 from checksi.dp5q.assignment import AssignmentError
 from checksi.analysis.structure_analysis import analyze_molecular_structure_detailed
@@ -206,6 +209,35 @@ def enrich_analysis_with_dp5(cfg: AppConfig, analysis_data: dict, *,
                          "threshold_percent": cfg.dp5.score_threshold_percent,
                          "score_text": score_text, "threshold_text": threshold_text})
 
+    # Second pass over finished assessments that passed the score: one misplaced signal.
+    passed = {index: compound for index, compound in enumerate(compounds)
+              if (compound.get("dp5") or {}).get("status") == "success"}
+    candidates = {index: single_signal([row["calculated_shift"] for row in compound["dp5"]["atoms"]],
+                                       [row["experimental_shift"] for row in compound["dp5"]["atoms"]],
+                                       _carbon_environments(compound))
+                  for index, compound in passed.items()}
+    for index, item in misplaced_signals(candidates).items():
+        compound = passed[index]
+        compound["dp5"]["single_signal"] = {"experimental_shift": item.experimental, "calculated_shift": item.calculated,
+                                            "gain_ppm": item.gain, "rest_rms_ppm": item.rest_rms}
+        if compound["dp5"]["score_percent"] >= cfg.dp5.score_threshold_percent:
+            finding(compound, ErrorCode.DP5_SIGNAL_OUTLIER,
+                    {"signal": f"{item.experimental:g}", "predicted": f"{item.calculated:.1f}",
+                     "rest": f"{item.rest_rms:.1f}", "others": item.carbons - 1})
+
+    series_summary = _report_series(cfg, passed, finding)
+
+    # A description displaced as a whole, against the other compounds of the document.
+    offsets = find_offsets({index: [row["experimental_shift"] - row["calculated_shift"]
+                                    for row in compound["dp5"]["atoms"]]
+                            for index, compound in passed.items()})
+    for index, item in offsets.items():
+        compound = passed[index]
+        compound["dp5"]["referencing_offset"] = {"offset_ppm": round(item.offset, 2),
+                                                 "residual_rms_ppm": round(item.residual, 2)}
+        finding(compound, ErrorCode.DP5_REFERENCING_OFFSET,
+                {"offset": f"{item.offset:+.1f}", "residual": f"{item.residual:.1f}", "carbons": item.carbons})
+
     if _diagnostics is not None:
         analysis_data['error_stats'] = tracker.to_dict()
     else:
@@ -219,6 +251,8 @@ def enrich_analysis_with_dp5(cfg: AppConfig, analysis_data: dict, *,
                         ("mean", sum(scores) / len(scores) if scores else None)):
         summary[f"{name}_score_percent"] = value
         summary[f"{name}_probability_percent"] = value  # Transitional report-data alias.
+    if series_summary:
+        summary["series"] = series_summary
     analysis_data["dp5_summary"] = summary
     statistics = (f" min={summary['min_score_percent']:.2f}%, max={summary['max_score_percent']:.2f}%, "
                   f"mean={summary['mean_score_percent']:.2f}%." if scores else "")
@@ -233,6 +267,54 @@ def enrich_analysis_with_dp5(cfg: AppConfig, analysis_data: dict, *,
                       "turn deep name analysis on to resolve them with local OPSIN before scoring.",
                       ErrorSeverity.WARNING)
     return analysis_data
+
+
+def _report_series(cfg: AppConfig, assessed: dict, finding) -> list[dict]:
+    """Name, for every low-score compound, the series that shares its deviating carbon.
+
+    Nothing is suppressed: the low-score warning stays, and this finding adds what the
+    analogues show and asks for independent proof of the structure.
+    """
+    environments = {index: _carbon_environments(compound) for index, compound in assessed.items()}
+    # A terminal carbon (OCH3, a tert-butyl methyl, the CH3 of an ethyl group) has the same small
+    # surroundings in unrelated compounds: its repeated deviation says nothing about a scaffold.
+    deviations = {index: [(name, row["error"]) for name, row in zip(names, assessed[index]["dp5"]["atoms"])
+                          if not _is_terminal(name)]
+                  for index, names in environments.items() if names}
+    series = find_series(deviations)
+    label = {index: str(compound.get("identifier") or f"#{compound.get('id')}") for index, compound in assessed.items()}
+    summary = [{"environment": item.environment, "compounds": [label[index] for index in item.members],
+                "mean_error_ppm": round(item.mean_error, 1)} for item in series]
+    largest: dict[int, tuple] = {}
+    for item in series:
+        for index in item.members:
+            if len(item.members) > len(largest.get(index, ())):
+                largest[index] = item.members
+    for index, members in largest.items():
+        compound = assessed[index]
+        if compound["dp5"]["score_percent"] >= cfg.dp5.score_threshold_percent:
+            continue
+        names = [label[member] for member in members]
+        finding(compound, ErrorCode.DP5_SERIES_DEVIATION,
+                {"count": len(names), "compounds": ", ".join(names[:8]) + (", ..." if len(names) > 8 else "")})
+    return summary
+
+
+def _is_terminal(environment: str) -> bool:
+    """Whether a carbon environment is rooted at a carbon with a single heavy-atom neighbour."""
+    mol = Chem.MolFromSmiles(environment, sanitize=False)
+    return mol is not None and mol.GetNumAtoms() > 1 and mol.GetAtomWithIdx(0).GetDegree() == 1
+
+
+def _carbon_environments(compound: dict) -> list[str] | None:
+    """Name the carbon of every assessed row by its surroundings, for the series comparison."""
+    mol = Chem.MolFromSmiles(compound.get("smiles") or "")
+    if mol is None:
+        return None
+    try:
+        return [carbon_environment(mol, int(row["atom_labels"][0][1:]) - 1) for row in compound["dp5"]["atoms"]]
+    except (IndexError, KeyError, ValueError, RuntimeError):
+        return None
 
 
 def _compound_request(cfg: AppConfig, compound: dict, index: int) -> CheckRequest | str:

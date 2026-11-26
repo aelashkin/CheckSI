@@ -402,6 +402,34 @@ ERROR_TEMPLATES = {
             "(threshold {threshold_text}%). Verify the assigned structure and 13C NMR data."
         ),
     },
+    AnalysisErrorCode.DP5_SIGNAL_OUTLIER: {
+        "default": (
+            "13C NMR signal {signal} ppm does not fit the structure: without it the other {others} signals "
+            "match the DP5q predictions (rms {rest} ppm), and the carbon left without a signal is predicted "
+            "near {predicted} ppm. Check this shift for a typo."
+        ),
+    },
+    AnalysisErrorCode.DP5_SERIES_DEVIATION: {
+        "default": (
+            "The same carbon deviates from the DP5q prediction in {count} compounds of this series "
+            "({compounds}). Either the model mispredicts this fragment or the structure of the whole series "
+            "needs checking. Is there an X-ray structure for at least one compound of the series?"
+        ),
+    },
+    AnalysisErrorCode.NAME_DATA_MISMATCH: {
+        "default": (
+            "{checks} all disagree with the structure taken from the name. Independent checks rarely fail "
+            "together by chance: check the name first (locants, substituents, how the name is parsed), then "
+            "the data."
+        ),
+    },
+    AnalysisErrorCode.DP5_REFERENCING_OFFSET: {
+        "default": (
+            "All 13C NMR signals are displaced by about {offset} ppm from the predictions, unlike the other "
+            "compounds of this document ({carbons} signals; they fit within {residual} ppm once the "
+            "displacement is removed). Check the referencing of this spectrum."
+        ),
+    },
     AnalysisErrorCode.DP5_ANALYSIS_FAILED: {
         "default": "DP5q analysis failed for this compound: {details}",
     },
@@ -453,6 +481,128 @@ ERROR_TEMPLATES = {
         "organic_component": (
             "DP5q calculated for the organic component only; the counter-ion/solvate was ignored, "
             "and protonation or salt formation may shift some 13C signals."
+        ),
+    },
+    AnalysisErrorCode.H1_SHIFT_STRUCTURE_MISMATCH: {
+        "default": (
+            "1H NMR shifts deviate from CASCADE predictions for this structure by {mean_error} ppm on average "
+            "(threshold {threshold} ppm). Verify the structure and the 1H NMR data."
+        ),
+    },
+    AnalysisErrorCode.H1_SHIFT_SIGNAL_OUTLIER: {
+        "default": (
+            "1H NMR signal {signal} is far from the CASCADE-predicted {predicted} ppm "
+            "(threshold {threshold} ppm). The prediction can be wrong for an unusual group; if the shift is "
+            "typical for this group, no change is needed. Otherwise check the name and the data."
+        ),
+    },
+    AnalysisErrorCode.H1_SHIFT_NOT_APPLICABLE: {
+        "default": "1H shift comparison not applicable: {details}",
+    },
+    AnalysisErrorCode.H1_MULTIPLICITY_STRUCTURE_MISMATCH: {
+        "default": (
+            "1H NMR signal {signal} needs more coupling partners than any proton of the structure predicted "
+            "near this shift has (at most {available}). Verify the multiplicity, J values and structure."
+        ),
+        "partly_possible": (
+            "1H NMR signal {signal}: a first-order signal of {protons} protons needs one group of {protons} "
+            "equivalent protons with this multiplicity, and this structure has none near this shift "
+            "(largest such group: {available}). The signal probably combines several signals under one "
+            "label; report them separately or as a multiplet."
+        ),
+        "must_split": (
+            "1H NMR signal {signal} is reported as a singlet, but the protons predicted near this shift have "
+            "neighbouring protons and cannot give a singlet of this size. Check the multiplicity and the integral."
+        ),
+    },
+    AnalysisErrorCode.HNMR_J_PARTNER_MISSING: {
+        "default": (
+            "1H NMR signal {signal}: no other signal shows the coupling J = {value} Hz (tolerance {tolerance} Hz). "
+            "Every H-H coupling must appear in both partners. Check the J values."
+        ),
+    },
+    AnalysisErrorCode.HNMR_J_PARTNER_MISMATCH: {
+        "default": (
+            "1H NMR signals {signal} and {other} look like coupling partners, but their constants differ: "
+            "J = {value} and {other_value} Hz (difference {difference} Hz, tolerance {tolerance} Hz). "
+            "Coupled protons share one constant; re-measure both signals."
+        ),
+    },
+    AnalysisErrorCode.HNMR_J_VALUE_IMPLAUSIBLE: {
+        "absolute": (
+            "1H NMR signal {signal}: J = {value} Hz is larger than any H-H coupling (up to {limit} Hz) and the "
+            "structure has no F or P. The multiplet is probably two overlapping signals or mislabelled."
+        ),
+        "no_structure": (
+            "1H NMR signal {signal}: J = {value} Hz is larger than any H-H coupling (up to {limit} Hz). Unless "
+            "it is a coupling to F or P, the multiplet is probably two overlapping signals or mislabelled."
+        ),
+        "structure": (
+            "1H NMR signal {signal}: J = {value} Hz is larger than any H-H coupling this structure can show "
+            "(up to about {limit} Hz). Check the J value, the multiplicity and the structure."
+        ),
+    },
+    AnalysisErrorCode.HNMR_HETERONUCLEAR_COUPLING_MISSING: {
+        "geminal_hf": (
+            "The structure has a proton on a carbon bearing fluorine, but the 1H NMR description has no coupling "
+            "of {limit} Hz or more (2J H-F is 44-85 Hz). The H-F coupling is missing or hidden in a multiplet."
+        ),
+        "direct_ph": (
+            "The structure has a P-H bond, but the 1H NMR description has no coupling of {limit} Hz or more "
+            "(1J P-H). The P-H coupling is missing."
+        ),
+    },
+    AnalysisErrorCode.C13_CF_J_VALUE_IMPLAUSIBLE: {
+        "no_partner": (
+            "13C NMR signal {signal} is reported with a coupling constant, but the structure has no F or P."
+        ),
+        "no_cf_bond": (
+            "13C NMR signal {signal}: J = {value} Hz is a one-bond C-F coupling, but the structure has no fluorine."
+        ),
+        "range": (
+            "13C NMR signal {signal}: J = {value} Hz is outside the ranges of C-F couplings "
+            "(1J 150-400, 2J 12-60, longer range below 12 Hz). Check the value."
+        ),
+    },
+    AnalysisErrorCode.C13_CF_MULTIPLICITY_MISMATCH: {
+        "default": (
+            "13C NMR signal {signal}: for a carbon {bonds} bond(s) from fluorine this structure requires the "
+            "multiplicity {expected} (C-F d, CF2 t, CF3 q). Check the multiplicity."
+        ),
+    },
+    AnalysisErrorCode.FNMR_DECOUPLING_NOT_STATED: {
+        "default": (
+            "The structure has protons two or three bonds from fluorine, but the 19F NMR signal {signal} is "
+            "reported as a singlet. If the 19F spectra were recorded with 1H decoupling, say so; otherwise "
+            "check that the signal is a singlet."
+        ),
+    },
+    AnalysisErrorCode.C13_CF_LONG_RANGE_COUPLING_MISSING: {
+        "default": (
+            "13C NMR: the one- and two-bond C-F couplings are reported, but {expected_three} aromatic carbon "
+            "environment(s) three bonds from fluorine should also be split (3J of 3-9 Hz) and the description "
+            "has {found_three} signal(s) with such a coupling. Check that these signals are really singlets."
+        ),
+    },
+    AnalysisErrorCode.C13_CF_COUPLING_INCOMPLETE: {
+        "default": (
+            "13C NMR: not all C-F couplings are reported. The structure has {expected_one} carbon environment(s) "
+            "bonded to F, {expected_two} two bonds away and {expected_three} aromatic three bonds away; the "
+            "description has {found_one} signal(s) with 1J, {found_two} with 2J and {found_three} with smaller "
+            "couplings."
+        ),
+        "separate_lines": (
+            "13C NMR: no one-bond C-F coupling is reported for the carbon bonded to fluorine, and the plain "
+            "signals at {low}-{high} ppm are spaced like the lines of a C-F doublet. The doublet seems to be "
+            "listed as separate signals: report one signal with its multiplicity and coupling constant."
+        ),
+    },
+    AnalysisErrorCode.H1_PROTONS_UNACCOUNTED: {
+        "default": (
+            "{count} C-H proton(s) of the structure (predicted near {shifts} ppm) have no 1H NMR signal within "
+            "{threshold} ppm, and the description lists {reported} H against {total} in the structure "
+            "({carbon_bound} C-H + {exchangeable} exchangeable). The missing protons are not only exchangeable "
+            "ones: a signal may be absent or under-integrated, or the name may describe another structure."
         ),
     },
 }

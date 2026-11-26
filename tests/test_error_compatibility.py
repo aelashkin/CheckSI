@@ -117,7 +117,13 @@ class ErrorCompatibilityReviewTests(unittest.TestCase):
         self.assertEqual(ERROR_NAMES[:len(LEGACY_REPORT_ROWS)], list(LEGACY_REPORT_ROWS))
         appended = ['dp5_not_applicable', 'formula_source_mismatch', 'formula_source_review_required',
                     'ea_isotope_calcd_mismatch', 'dp5_boron_not_supported', 'c13_boron_signal_not_observed',
-                    'nmr_configuration_dependent', 'dp5_configuration_dependent']
+                    'nmr_configuration_dependent', 'dp5_configuration_dependent',
+                    'h1_shift_structure_mismatch', 'h1_shift_signal_outlier', 'h1_shift_not_applicable',
+                    'h1_multiplicity_structure_mismatch', 'h1_protons_unaccounted', 'hnmr_j_partner_missing', 'hnmr_j_value_implausible',
+                    'hnmr_heteronuclear_coupling_missing', 'c13_cf_j_value_implausible', 'c13_cf_multiplicity_mismatch',
+                    'c13_cf_coupling_incomplete', 'hnmr_j_partner_mismatch', 'fnmr_decoupling_not_stated',
+                    'c13_cf_long_range_coupling_missing', 'dp5_signal_outlier', 'dp5_series_deviation', 'name_data_mismatch',
+                    'dp5_referencing_offset']
         self.assertEqual(ERROR_NAMES[len(LEGACY_REPORT_ROWS):], appended)
         with TemporaryDirectory() as temporary:
             path = export_error_stats(ErrorTracker().to_dict(), 'input.pdf', str(Path(temporary) / 'stats.xlsx'), open_file=False)
@@ -133,7 +139,7 @@ class ErrorCompatibilityReviewTests(unittest.TestCase):
         self.assertIs(AnalysisErrorCode.NMR_SOLVENT_AND_FREQUENCY_MISSING, legacy)
         self.assertIs(AnalysisErrorCode('nmr_solvent_and_frequency_missing'), legacy)
         self.assertNotIn('nmr_solvent_and_frequency_missing', ERROR_NAMES)
-        self.assertEqual(len(AnalysisErrorCode), 80)
+        self.assertEqual(len(AnalysisErrorCode), 98)
         # This existing member controls EA policy and intentionally emits no text.
         self.assertEqual(set(ERROR_TEMPLATES), set(AnalysisErrorCode) - {AnalysisErrorCode.EA_INCLUDE_OXYGEN})
 
@@ -160,6 +166,16 @@ class ErrorCompatibilityReviewTests(unittest.TestCase):
                         AnalysisErrorCode.NMR_CONFIGURATION_DEPENDENT: ErrorSeverity.WARNING,
                         AnalysisErrorCode.DP5_CONFIGURATION_DEPENDENT: ErrorSeverity.WARNING,
                     })
+
+    def test_example_settings_match_factory_defaults(self):
+        # The repository's settings.toml is the example passed to --config-file. A config file replaces whole
+        # sections, so an example that lags behind gives new codes the default severity and stale switches.
+        root = Path(__file__).resolve().parents[1]
+        example = ConfigManager(root / 'settings.toml').load()
+        factory = ConfigManager.load_factory()
+        self.assertEqual(example.model_dump(), factory.model_dump())
+        for code in example.errors.overrides:
+            self.assertIn(code, ERROR_TEMPLATES)
 
     def test_shipped_mmff_limitation_is_informational_and_overridable(self):
         settings_path = Path(__file__).resolve().parents[1] / 'settings.toml'

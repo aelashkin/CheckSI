@@ -206,7 +206,8 @@ class RunLifecycleTests(unittest.TestCase):
         typed = [(event.current, event.total, event.message) for event in self.events if isinstance(event, ProgressEvent)]
         self.assertEqual(legacy_progress, typed)
         phases = [message for current, total, message in typed if total == 0]
-        self.assertEqual(phases, ["Preflight", "Document extraction", "Analysis", "Report export", "Run completed"])
+        self.assertEqual(phases, ["Preflight", "Document extraction", "Analysis", "1H shift comparison",
+                                  "Report export", "Run completed"])
         self.assertIn((1, 1, "Scanning paragraph 1/1"), typed)
 
 

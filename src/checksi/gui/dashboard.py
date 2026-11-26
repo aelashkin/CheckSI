@@ -58,6 +58,7 @@ class DashboardPage(QWidget):
     deep_name_analysis_changed = Signal(object)
     output_mode_changed = Signal(object)
     dp5_enabled_changed = Signal(object)
+    h1_shift_enabled_changed = Signal(object)
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent)
@@ -171,6 +172,16 @@ class DashboardPage(QWidget):
         )
         self.dp5_checkbox.stateChanged.connect(self._emit_dp5_enabled)
         session_form.addRow(self._form_label("DP5q", FIELD_HEIGHT, self.dp5_checkbox), self.dp5_checkbox)
+        self.h1_shift_checkbox = QCheckBox("Run ¹H shift and multiplicity check")
+        self.h1_shift_checkbox.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.h1_shift_checkbox.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
+        self.h1_shift_checkbox.setToolTip(
+            "Compare reported ¹H shifts and multiplicities with CASCADE predictions. Needs deep name analysis."
+        )
+        self.h1_shift_checkbox.stateChanged.connect(self._emit_h1_shift_enabled)
+        session_form.addRow(
+            self._form_label("¹H check", FIELD_HEIGHT, self.h1_shift_checkbox), self.h1_shift_checkbox
+        )
         session_layout.addLayout(session_form)
         self.options_help = QLabel()
         self.options_help.setWordWrap(True)
@@ -372,6 +383,7 @@ class DashboardPage(QWidget):
         self.deep_name_analysis_control.set_value(config.modes.deep_name_analysis)
         self.output_mode_control.set_value(config.modes.output_mode)
         self.set_dp5_enabled(config.dp5.enabled)
+        self.set_h1_shift_enabled(config.h1_shift.enabled)
         self._refresh_option_help()
 
     def set_dp5_enabled(self, enabled: bool) -> None:
@@ -380,6 +392,17 @@ class DashboardPage(QWidget):
         self.dp5_checkbox.setChecked(enabled)
         self.dp5_checkbox.blockSignals(blocked)
         self._refresh_option_help()
+
+    def set_h1_shift_enabled(self, enabled: bool) -> None:
+        """Sync the session ¹H check toggle without emitting change signals."""
+        blocked = self.h1_shift_checkbox.blockSignals(True)
+        self.h1_shift_checkbox.setChecked(enabled)
+        self.h1_shift_checkbox.blockSignals(blocked)
+        self._refresh_option_help()
+
+    def h1_shift_enabled(self) -> bool:
+        """Return the current dashboard ¹H check session toggle state."""
+        return self.h1_shift_checkbox.isChecked()
 
     def dp5_enabled(self) -> bool:
         """Return the current dashboard DP5 session toggle state."""
@@ -626,6 +649,10 @@ class DashboardPage(QWidget):
         self._refresh_option_help()
         self.dp5_enabled_changed.emit(self.dp5_enabled())
 
+    def _emit_h1_shift_enabled(self, _state: int) -> None:
+        self._refresh_option_help()
+        self.h1_shift_enabled_changed.emit(self.h1_shift_enabled())
+
     def _refresh_option_help(self) -> None:
         deep_analysis = self.deep_name_analysis_control.current_data()
         output = self.output_mode_control.current_data()
@@ -633,13 +660,16 @@ class DashboardPage(QWidget):
         label = f"{scope} · Deep name analysis: {deep_analysis.value.title()} · {output.value.title()}"
         if self.dp5_enabled():
             label += " · DP5q on"
+        if self.h1_shift_enabled():
+            label += " · ¹H check on"
         self.options_section.toggle_button.setText(label)
         self.options_section.toggle_button.setAccessibleName(label)
         mode_help = ("Deep name analysis is off; checks use reported text without resolving names. "
             if deep_analysis is DeepNameAnalysis.OFF
             else "Deep name analysis resolves names with local OPSIN. ")
         output_help = "Detailed includes verbose diagnostics. " if output is OutputMode.DETAILED else "Essential keeps output concise. "
-        self.options_help.setText(mode_help + output_help + "DP5q adds advisory scoring for eligible structures.")
+        self.options_help.setText(mode_help + output_help + "DP5q adds advisory scoring for eligible structures. "
+            "The ¹H check compares shifts and multiplicities with CASCADE predictions.")
 
     def _render_dp5_summary(self, summary: dict | None) -> None:
         if not summary:

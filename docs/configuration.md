@@ -12,14 +12,14 @@ Precedence is selected settings, dedicated run flags, then `--override KEY=VALUE
 checksi config view
 checksi config view --factory
 checksi --config-file settings.toml run article.pdf --override dp5.enabled=false
-checksi config set dp5.score_threshold_percent 20.0
+checksi config set dp5.score_threshold_percent 17.0
 ```
 
 `config view` prints JSON; factory view does not reset a session. Validation names dotted field locations. Unknown keys fail except the documented legacy inputs below.
 
 ## Schema and defaults
 
-The [schema](../src/checksi/config_schema.py) defines types/constraints; [packaged defaults](../src/checksi/defaults.toml) owns initial values. This table lists all active fields. `paths`, `modes`, `solvents` and `errors` are required sections; `modes.output_mode` is required. Factory loading supplies them; `dp5`/`conversion` have schema defaults.
+The [schema](../src/checksi/config_schema.py) defines types/constraints; [packaged defaults](../src/checksi/defaults.toml) owns initial values. This table lists all active fields. `paths`, `modes`, `solvents` and `errors` are required sections; `modes.output_mode` is required. Factory loading supplies them; `dp5`/`h1_shift`/`conversion` have schema defaults.
 
 | Field | Packaged default; constraint/meaning |
 |---|---|
@@ -32,16 +32,19 @@ The [schema](../src/checksi/config_schema.py) defines types/constraints; [packag
 | `modes.open_reports_on_success` | `false`; explicitly enable desktop artifact opening |
 | `modes.header_margin`, `modes.footer_margin` | Each `0.05`; page-height fractions 0–0.45 ignored during PDF extraction |
 | `dp5.enabled` | `false`; optional bundled scoring |
-| `dp5.score_threshold_percent` | `20.0`; 0–100; low-score finding/table threshold, not a score calculation parameter |
+| `dp5.score_threshold_percent` | `17.0`; 0–100; low-score finding/table threshold, not a score calculation parameter |
 | `dp5.timeout_seconds` | `600`; positive integer deadline per assessment |
 | `dp5.keep_artifacts` | `false`; retain successful request/result JSON and SDF |
+| `h1_shift.enabled` | `true`; advisory ¹H shift comparison |
+| `h1_shift.mean_error_threshold_ppm` | `0.35`; mean-error mismatch threshold |
+| `h1_shift.signal_error_threshold_ppm` | `1.5`; per-signal outlier threshold |
 | `errors.default_severity` | `critical`; fallback for codes without overrides |
 | `errors.overrides` | Per-code `disabled`, `info`, `warning` or `critical`; initial exceptions are in packaged defaults |
 | `solvents.entries` | Packaged residual-peak catalogue; each entry has name, aliases, proton shifts and carbon shifts |
 
 Essential mode retains visible findings and necessary scope/refusal information; it does not mean “critical only.” Detailed mode adds successful comparisons and explanatory output. All structured results remain available regardless of display threshold.
 
-Saved **10%** thresholds remain 10%. To adopt 20%, explicitly `config set dp5.score_threshold_percent 20.0`, use a run override, or edit/confirm/save in Settings. For an explicit file, put `--config-file FILE` before `config`. Reading does not change saved thresholds.
+Saved **10%** thresholds remain 10%. To adopt 17%, explicitly `config set dp5.score_threshold_percent 17.0`, use a run override, or edit/confirm/save in Settings. For an explicit file, put `--config-file FILE` before `config`. Reading does not change saved thresholds.
 
 ## Paths
 

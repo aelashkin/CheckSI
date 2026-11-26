@@ -215,6 +215,28 @@ class GuiLifecycleTests(unittest.TestCase):
         self.assertFalse(captured[1].dp5.enabled)
         gate.set()
 
+    def test_dashboard_h1_shift_toggle_reaches_runner_and_settings(self) -> None:
+        captured = []
+
+        def execute(_runner, config, _input_path, *, cancel_token):
+            captured.append(config.model_copy(deep=True))
+            return self._result()
+
+        # the check is on by default; the dashboard toggle switches it off and on again
+        self.assertTrue(self.window.dashboard_page.h1_shift_enabled())
+        self.assertIn("¹H check on", self.window.dashboard_page.options_section.toggle_button.text())
+        self.window.dashboard_page.h1_shift_checkbox.click()
+        self.assertFalse(self.window.config_editor_page.h1_shift_settings().enabled)
+        with patch("checksi.gui.worker.ApplicationRunner.execute", execute):
+            self.window._start_analysis()
+            self._wait_for(lambda: self.window._worker_thread is None)
+        self.window.dashboard_page.h1_shift_checkbox.click()
+        self.assertTrue(self.window.config_editor_page.h1_shift_settings().enabled)
+        with patch("checksi.gui.worker.ApplicationRunner.execute", execute):
+            self.window._start_analysis()
+            self._wait_for(lambda: self.window._worker_thread is None)
+        self.assertEqual([config.h1_shift.enabled for config in captured], [False, True])
+
     def test_start_before_readiness_completes_preserves_requested_dp5(self) -> None:
         self._assert_requested_dp5_reaches_runner("pending")
 
@@ -340,7 +362,7 @@ class GuiLifecycleTests(unittest.TestCase):
         self._wait_for(lambda: self.window._dp5_status_thread is None)
         text = self.window.dashboard_page.log_output.toPlainText()
         self.assertNotIn("Configuration notice:", text)
-        self.assertEqual(self.window.config_editor_page.build_config().dp5.score_threshold_percent, 20.0)
+        self.assertEqual(self.window.config_editor_page.build_config().dp5.score_threshold_percent, 17.0)
         self.assertEqual(path.read_bytes(), original)
 
     def test_application_bootstrap_delivers_real_load_notices_to_the_new_window(self) -> None:

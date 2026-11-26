@@ -48,12 +48,47 @@ class DP5qGeometryTests(unittest.TestCase):
 
     def test_native_embedding_timeout_sentinel_never_reaches_mmff(self):
         with patch("checksi.dp5q.geometry.rdDistGeom.EmbedMultipleConfs", return_value=(-1,)), \
+             patch("checksi.dp5q.geometry.rdDistGeom.EmbedMolecule", return_value=-1) as single, \
              patch("checksi.dp5q.geometry.rdForceFieldHelpers.MMFFOptimizeMoleculeConfs") as optimize:
             with self.assertRaises(GeometryError) as caught:
                 prepare_geometry("C" * 50)
         self.assertEqual(caught.exception.reason, "embedding_failed")
         self.assertEqual(caught.exception.diagnostics["geometry"]["generated_count"], 0)
+        self.assertTrue(caught.exception.diagnostics["geometry"]["embedding_one_by_one"])
+        self.assertEqual(single.call_count, 60)       # 30 seeds, then 30 with random coordinates
         optimize.assert_not_called()
+
+    def test_conformers_embedded_singly_after_a_batch_timeout_are_the_same_geometries(self):
+        # RDKit seeds conformer i of a batch with (i + 1) * randomSeed, so the continuation that
+        # follows a batch timeout must reproduce the batch result exactly.
+        for smiles in ("CCCCO", "C[C@H](O)CC(=O)OCC"):
+            with self.subTest(smiles=smiles):
+                batch = prepare_geometry(smiles, ensemble=True)
+                with patch("checksi.dp5q.geometry.rdDistGeom.EmbedMultipleConfs", return_value=(-1,)) as timed_out:
+                    singly = prepare_geometry(smiles, ensemble=True)
+                self.assertEqual(timed_out.call_count, 1)
+                self.assertEqual(batch.conformer_ids, singly.conformer_ids)
+                np.testing.assert_allclose(batch.energies_kj, singly.energies_kj, rtol=0, atol=1e-9)
+                for conformer_id in batch.conformer_ids:
+                    np.testing.assert_allclose(batch.mol.GetConformer(conformer_id).GetPositions(),
+                                               singly.mol.GetConformer(conformer_id).GetPositions(), atol=1e-9)
+                self.assertFalse(batch.diagnostics["embedding_one_by_one"])
+                self.assertTrue(singly.diagnostics["embedding_one_by_one"])
+                self.assertFalse(singly.diagnostics["embedding_truncated"])
+                self.assertEqual(singly.diagnostics["generated_count"], batch.diagnostics["generated_count"])
+
+    def test_deadline_keeps_the_conformers_that_finished(self):
+        # A clock that advances one second per reading: the allowance ends after a few conformers.
+        ticks = iter(range(10_000))
+        with patch("checksi.dp5q.geometry.rdDistGeom.EmbedMultipleConfs", return_value=(-1,)), \
+             patch("checksi.dp5q.geometry.perf_counter", side_effect=lambda: float(next(ticks))), \
+             patch("checksi.dp5q.geometry.EMBEDDING_TOTAL_SECONDS", 12):
+            geometry = prepare_geometry("CCCCO", ensemble=True)
+        generated = geometry.diagnostics["generated_count"]
+        self.assertTrue(0 < generated < 30)
+        self.assertTrue(geometry.diagnostics["embedding_truncated"])
+        self.assertEqual(geometry.diagnostics["embedding"], "deterministic")
+        self.assertEqual(len(geometry.diagnostics["candidates"]), generated)
 
     def test_native_large_chain_has_audited_finite_converged_geometry(self):
         # A real 50-heavy-atom geometry/optimizer regression with one candidate

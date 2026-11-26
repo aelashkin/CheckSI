@@ -17,7 +17,7 @@ authors = [
 ]
 readme = "README.md"
 license = "MIT AND LicenseRef-NFP AND LicenseRef-NMRShiftDB2 AND OFL-1.1"
-license-files = ["LICENSE", "src/checksi/dp5q/data/LICENSE*.txt", "src/checksi/dp5q/data/NOTICE*.txt", "src/checksi/resources/fonts/LICENSE.txt"]
+license-files = ["LICENSE", "src/checksi/dp5q/data/LICENSE*.txt", "src/checksi/dp5q/data/NOTICE*.txt", "src/checksi/h1shift/data/LICENSE*.txt", "src/checksi/h1shift/data/NOTICE*.txt", "src/checksi/resources/fonts/LICENSE.txt"]
 requires-python = ">=3.12"
 
 # List of all dependencies required for the project to run.
@@ -60,6 +60,7 @@ package-dir = {"" = "src"}
 "checksi" = ["defaults.toml", "resources/fonts/*"]
 "checksi.gui" = ["assets/*.png"]
 "checksi.dp5q" = ["data/*.npz", "data/*.json", "data/LICENSE*.txt", "data/NOTICE*.txt"]
+"checksi.h1shift" = ["data/*.npz", "data/LICENSE*.txt", "data/NOTICE*.txt"]
 
 [dependency-groups]
 dev = [

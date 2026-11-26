@@ -74,7 +74,7 @@ Java and a resolvable name are required for structure generation; `--dp5` does n
 
 The fresh low-score threshold is **20%**; saved thresholds remain unchanged. It affects warnings/table visibility, not scores. [Configuration](configuration.md#schema-and-defaults) describes deliberate threshold changes.
 
-GUI **Refresh Status** is a lightweight metadata check. **Run Full Self-check** uses the same bounded isolated diagnostics as CLI `dp5 doctor`, in the background. Status-check requests queue during analysis/status work; duplicate analyses are refused. Analysis requested during a full self-check must be started afterward. Status is advisory and does not change the DP5q toggle, chemistry eligibility or configuration. Closing waits for an active check. Missing assets require package repair/reinstallation, not a separate DP5 environment.
+GUI **Refresh Status** is a lightweight metadata check. **Run Full Self-check** uses the same bounded isolated diagnostics as CLI `dp5 doctor`, in the background. Status-check requests queue during analysis/status work; duplicate analyses are refused. Analysis requested during a full self-check must be started afterward. Status is advisory and does not change the DP5q toggle, chemistry eligibility or configuration. Closing waits for an active check. Missing assets require package repair/reinstallation, not a separate DP5 environment. **¹H check** toggles `h1_shift.enabled`.
 
 ## Recovery
 

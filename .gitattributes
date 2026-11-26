@@ -8,3 +8,6 @@ src/checksi/dp5q/data/* -text
 scripts/dp5q-reference/notices/* -text
 scripts/dp5q-reference/source-lock.json -text
 scripts/dp5q-reference/tensor-map.json -text
+
+# CASCADE 1H parameters are hash-pinned.
+src/checksi/h1shift/data/* -text

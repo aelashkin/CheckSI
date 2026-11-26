@@ -235,6 +235,7 @@ class CheckSIMainWindow(QMainWindow):
         self.dashboard_page.deep_name_analysis_changed.connect(self._sync_editor_deep_name_analysis)
         self.dashboard_page.output_mode_changed.connect(self._sync_editor_output_mode)
         self.dashboard_page.dp5_enabled_changed.connect(self._sync_editor_dp5_enabled)
+        self.dashboard_page.h1_shift_enabled_changed.connect(self._sync_editor_h1_shift_enabled)
         self.config_editor_page.config_confirmed.connect(self._handle_settings_confirmed)
         self.config_editor_page.dp5_refresh_requested.connect(
             lambda: self._refresh_dp5_runtime_status(show_message=True)
@@ -390,6 +391,7 @@ class CheckSIMainWindow(QMainWindow):
         config = resolve_config_paths(self.config_editor_page.confirmed_config())
         config.paths.input_path = input_path
         config.dp5.enabled = self.dashboard_page.dp5_enabled()
+        config.h1_shift.enabled = self.dashboard_page.h1_shift_enabled()
 
         return config
 
@@ -537,6 +539,11 @@ class CheckSIMainWindow(QMainWindow):
     @Slot(object)
     def _sync_editor_dp5_enabled(self, value) -> None:
         self.config_editor_page.set_dp5_enabled(bool(value))
+        self.config_editor_page.confirm_changes()
+
+    @Slot(object)
+    def _sync_editor_h1_shift_enabled(self, value) -> None:
+        self.config_editor_page.set_h1_shift_enabled(bool(value))
         self.config_editor_page.confirm_changes()
 
     @Slot(object)

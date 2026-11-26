@@ -210,7 +210,8 @@ class DP5qPackagingTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         expected = {"LICENSE", *[path.relative_to(root).as_posix() for path in
                     (root / "src/checksi/dp5q/data").glob("LICENSE*.txt")],
-                    "src/checksi/dp5q/data/NOTICE.txt", "src/checksi/resources/fonts/LICENSE.txt"}
+                    "src/checksi/dp5q/data/NOTICE.txt", "src/checksi/resources/fonts/LICENSE.txt",
+                    "src/checksi/h1shift/data/LICENSE.cascade.txt", "src/checksi/h1shift/data/NOTICE.txt"}
         self.assertEqual(set(metadata.get_all("License-File")), expected)
         for path in expected:
             entry = next(name for name in names if name.endswith(".dist-info/licenses/" + path))

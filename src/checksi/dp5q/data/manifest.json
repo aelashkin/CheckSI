@@ -3,7 +3,7 @@
   "model_id": "dp5q-cascade-owned-v1",
   "preprocessing_id": "dp5q-spatial-v1",
   "score_id": "dp5q-logtail-v1",
-  "geometry_policy": "converged-single-v2",
+  "geometry_policy": "bounded-ensemble-v3",
   "architecture": "three-256-message-blocks-shared-encoder-two-heads",
   "raw_weight_bytes": 11625924,
   "files": {
